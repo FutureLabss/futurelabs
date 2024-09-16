@@ -28,3 +28,25 @@ ul.ul-style > li {
   background-position: center;
   background-size: cover;
 }
+
+/* Define the container and slider */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.slider {
+  display: flex;
+  animation: scroll 8s linear infinite; /* Control the speed with the duration (15s) */
+}
+
+/* Keyframes for the sliding effect */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

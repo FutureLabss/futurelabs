@@ -2,7 +2,6 @@ import Homeimg1 from "../app/assets/images/home-image1.png"
 import Homeimg2 from "../app/assets/images/home-image2.png"
 import Homeimg3 from "../app/assets/images/home-image3.png"
 import Homeimg4 from "../app/assets/images/home-image4.png"
-import FigmaIcon from "../app/assets/icons/Symbol.svg.svg"
 
 
 export const pictureData = [
@@ -34,33 +33,28 @@ export const skillSets = [
   {
     id: 1,
     name: "Product Design",
-    src: FigmaIcon,
     tools: ['Figma', 'Figjam', 'Maze']
   },
 
   {
     id: 2,
     name: "Front End Development",
-    src: FigmaIcon,
     tools: ['HTML', 'CSS', 'Javascript', 'React']
   },
 
   {
     id: 3,
     name: "Backend Development",
-    src: FigmaIcon,
     tools: ['Git', 'Node Js', 'PHP', 'Python', 'Github', 'Docker']
   },
   {
     id: 4,
     name: "Mobile Development",
-    src: FigmaIcon,
     tools: ['React Native', 'Github', 'Git', 'Firebase']
   },
   {
     id: 5,
     name: "Data Analytics",
-    src: FigmaIcon,
     tools: ['Power BI', 'Microsoft Excel', 'Python', 'Github', 'Git']
   }
 ]
