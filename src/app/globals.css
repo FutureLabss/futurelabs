@@ -2,26 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.ul-style {
+  @apply flex flex-col gap-4 text-[.875rem];
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+ul.ul-style > li:first-child {
+  @apply text-[#1E1F24] font-semibold text-[.75rem];
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+ul.ul-style > li {
+  @apply font-normal text-[.875rem];
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.future-text {
+  background: linear-gradient(90deg, #e0e1e6 58.12%, #d9edff 100%);
+  background-clip: text;
+  letter-spacing: -13.7px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.faq-background {
+  background-image: url(../app/assets/logo/World-Map.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
