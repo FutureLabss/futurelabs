@@ -1,3 +1,4 @@
+"use client"
 import Button from "@/app/ui/Button";
 import Nav from "./headcomponents/Nav";
 import Image from "next/image"
@@ -5,19 +6,24 @@ import { pictureData } from "../../data/data";
 import IntroBg from "../assets/icons/intro-bg.png"
 import CompanyLogos from "../assets/logo/Logo-frame.png"
 import HeaderCard from "./headcomponents/HeaderCard";
+import ContactForm from "../ui/ContactForm";
+import { useState } from "react";
 
 
 
 export default function Header() {
+
+  const [showForm, setShowForm] = useState<boolean>(false)
+
   return (
-    <header className="flex flex-col gap-14 w-full">
+    <header className="flex flex-col gap-14 w-full relative">
       <div className="px-[20px] xl:px-[5rem] pt-[1.25rem]">
         <Nav />
 
       </div>
 
 
-      <div className="flex flex-col gap-10 ">
+      <div className="flex flex-col gap-10">
         <div className="text-center flex flex-col gap-4 px-[20px]">
           <h1 className="text-4xl lg:text-[3rem] xl:text-size-61 text-center leading-[48px] mx-auto lg:leading-[60px] xl:leading-[72px] font-normal text-primary-default w-full lg:max-w-[1113px]">
             Start your tech career with FutureLabs
@@ -27,7 +33,7 @@ export default function Header() {
           <p className="text-size-16 text-center mx-auto leading-[32px] font-normal text-primary-default w-full max-w-[895px]">At FutureLabs we help young talents access global opportunities is by empowering them with digital skills through our training programs, we also help companies hire the best technical talents or build their software MVPs</p>
         </div>
         <div className="text-center w-full max-w-[181px] mx-auto">
-          <Button />
+          <Button setShowForm={setShowForm} showForm={showForm} />
         </div>
       </div>
 
@@ -77,6 +83,19 @@ export default function Header() {
       <div className="w-full">
         <HeaderCard />
       </div>
+      {
+        showForm &&
+        (
+          <>
+            <div className={`absolute top-[21%] left-[30%] z-[20]`}>
+              <ContactForm />
+            </div>
+            <div className="w-full h-full fixed bg-black opacity-70 top-0 left-0 right-0 bottom-0 z-[10]" onClick={() => setShowForm(false)}>
+
+            </div>
+          </>
+        )
+      }
     </header>
   )
 }
