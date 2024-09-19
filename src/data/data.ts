@@ -87,3 +87,150 @@ export const faqData = [
     answer: "FutureLabs is industry-agnostic, meaning we support startups and businesses from a wide range of sectors including technology, healthcare, education, and creative industries."
   }
 ];
+
+
+
+import img1 from "../app/assets/images/image-1.png"
+import img2 from "../app/assets/images/Rectangle-98.png"
+import img3 from "../app/assets/images/Rectangle-99.png"
+import img4 from "../app/assets/images/image-4.png"
+import img5 from "../app/assets/images/image-5.png"
+import img6 from "../app/assets/images/image-6.png"
+import img7 from "../app/assets/images/image-7.png"
+import img8 from "../app/assets/images/image-8.png"
+
+
+
+export const imageGallery = [
+  {
+    id: 1,
+    src: img1,
+    alt: "hero image",
+  },
+  {
+    id: 5,
+    src: img5,
+    alt: "hero image",
+  },
+  {
+    id: 2,
+    src: img2,
+    alt: "hero image",
+  },
+  {
+    id: 6,
+    src: img6,
+    alt: "hero image",
+  },
+  {
+    id: 3,
+    src: img3,
+    alt: "hero image",
+  },
+  {
+    id: 7,
+    src: img7,
+    alt: "hero image",
+  },
+  {
+    id: 4,
+    src: img4,
+    alt: "hero image",
+  },
+  {
+    id: 8,
+    src: img8,
+    alt: "hero image",
+  },
+]
+
+
+
+
+export const servicesData = [
+
+  {
+    id: 1,
+    service: "Custom Web and Mobile Solutions",
+    description: "Our software solution is specially designed for startups looking to build minimum viable products  for their ideas quickly",
+    src: img1
+  },
+
+  {
+    id: 2,
+    service: "Software Training Programs",
+    description: "We offer a 9 months bootcamp designed to take you from zero to hero, you will learn new technologies, join a community of techies, build real world projects and collaborate with teammates in a cross functional environment",
+    src: img1,
+  },
+
+  {
+    id: 3,
+    service: "Recorded Courses",
+    description: "Our pre-recorded courses are designed to take your career to the next level",
+    src: img1,
+  },
+  {
+    id: 4,
+    service: "Talent Pool Access",
+    description: "We take the best talents from our training programs and place them in international roles where they contribute and learn new skills. A win win.",
+    src: img1,
+  },
+  {
+    id: 5,
+    service: "Minimum Viable Products",
+    description: "We have free and premium products developed to meet specific needs",
+    src: img1,
+  },
+  {
+    id: 6,
+    service: "Access to Resources",
+    description: "We offer resources to guide on your learning path..",
+    src: img1,
+  },
+]
+
+
+
+import Frame from "../app/assets/images/Frame-testimonial.png"
+import Frame1 from "@/app/assets/testimonials/Frame-one.png"
+import Frame2 from "@/app/assets/testimonials/Frame-two.png"
+import Frame3 from "@/app/assets/testimonials/Frame-three.png"
+import Frame4 from "@/app/assets/testimonials/Frame-four.png"
+
+export const blogData = [
+  {
+    id: 1,
+    content: "My experience at Future Labs, coupled with the opportunity to collaborate with an incredible community of talented innovators, has propelled my career to new heights. It gave me global exposure, led to an invaluable role at one of Nigeria’s top talent accelerators, and ultimately, to my current position as a manager at a leading UK EdTech firm.",
+    name: "Justin Mark",
+    title: "Business Development Manager",
+    src: Frame
+  },
+  {
+    id: 2,
+    content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
+    name: "Usenmfon Uko",
+    title: "Developer",
+    src: Frame1
+  },
+  {
+    id: 3,
+    content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
+    name: "Usenmfon Uko",
+    title: "Developer",
+    src: Frame2
+  },
+  {
+    id: 4,
+    content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
+    name: "Usenmfon Uko",
+    title: "Developer",
+    src: Frame3
+  },
+  {
+    id: 5,
+    content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
+    name: "Usenmfon Uko",
+    title: "Developer",
+    src: Frame4
+  },
+]

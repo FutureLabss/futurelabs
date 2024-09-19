@@ -15,7 +15,7 @@ export default function FAQsection() {
           <Button />
         </div>
       </div>
-      <div className="W-full  lg:max-w-[520px] xl:max-w-[582px]">
+      <div className="W-full  lg:max-w-[500px] xl:max-w-[582px]">
         <Accordion />
       </div>
     </div>
