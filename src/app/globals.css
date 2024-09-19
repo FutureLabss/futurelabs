@@ -85,5 +85,6 @@ ul.ul-style > li {
   background-image: url("../app/assets/icons/service-card-bg.svg");
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: 100% 100%;
+  background-size: calc(100% - 1rem) 100%;
+  overflow: hidden;
 }

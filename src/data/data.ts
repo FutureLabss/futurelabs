@@ -151,6 +151,14 @@ export const imageGallery = [
 ]
 
 
+import serviceimg1 from "../app/assets/images/service-img1.png"
+import serviceimg2 from "../app/assets/images/service-img2.png"
+// import serviceimg3 from "../app/assets/images/service-img3.png"
+// import serviceimg4 from "../app/assets/images/service-img4.png"
+import serviceimg5 from "../app/assets/images/service-img5.png"
+import serviceimg6 from "../app/assets/images/service-img6.png"
+
+
 
 
 export const servicesData = [
@@ -159,14 +167,14 @@ export const servicesData = [
     id: 1,
     service: "Custom Web and Mobile Solutions",
     description: "Our software solution is specially designed for startups looking to build minimum viable products  for their ideas quickly",
-    src: img1
+    src: serviceimg1,
   },
 
   {
     id: 2,
     service: "Software Training Programs",
     description: "We offer a 9 months bootcamp designed to take you from zero to hero, you will learn new technologies, join a community of techies, build real world projects and collaborate with teammates in a cross functional environment",
-    src: img1,
+    src: serviceimg2,
   },
 
   {
@@ -185,13 +193,13 @@ export const servicesData = [
     id: 5,
     service: "Minimum Viable Products",
     description: "We have free and premium products developed to meet specific needs",
-    src: img1,
+    src: serviceimg5,
   },
   {
     id: 6,
     service: "Access to Resources",
     description: "We offer resources to guide on your learning path..",
-    src: img1,
+    src: serviceimg6,
   },
 ]
 

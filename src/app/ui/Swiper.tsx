@@ -46,7 +46,7 @@ export default function SwiperComponent() {
 
                   />
                 </div>
-                <div className='flex flex-col px-4 text-center md:gap-12 w-full justify-start  md:p-8 md:text-start font-manrope md:mr-[110px] '>
+                <div className='flex flex-col px-4 text-center md:gap-12 w-full justify-start  md:p-8 md:text-start font-manrope xl:mr-[110px] '>
                   <p className="w-full">
                     {blog.content}
                   </p>
