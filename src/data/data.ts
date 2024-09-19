@@ -1,7 +1,8 @@
-import Homeimg1 from "../app/assets/images/home-image1.png"
-import Homeimg2 from "../app/assets/images/home-image2.png"
+import Homeimg1 from "../app/assets/images/hero-1.png"
+import Homeimg2 from "../app/assets/images/hero-2.png"
 import Homeimg3 from "../app/assets/images/home-image3.png"
-import Homeimg4 from "../app/assets/images/home-image4.png"
+import Homeimg4 from "../app/assets/images/hero-3.png"
+import Homeimg5 from "../app/assets/images/hero-5.png"
 
 
 export const pictureData = [
@@ -25,7 +26,12 @@ export const pictureData = [
     src: Homeimg4,
     alt: "hero image"
 
-  }
+  },
+  {
+    id: 5,
+    src: Homeimg5,
+    alt: "hero image",
+  },
 ]
 
 

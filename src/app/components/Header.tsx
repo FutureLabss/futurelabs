@@ -33,29 +33,19 @@ export default function Header() {
 
       <div className="text-center justify-center lg:mx-[5rem] bg-hero-image flex flex-col gap-4 relative z-[5] px-[2.5rem] pb-[30px]">
         {/* Slider container */}
-        <div className="slider-container w-full">
-          <div className="slider flex gap-4 justify-center items-center">
-            {pictureData.map((image) => (
+        <div className="slider-container w-[200%]">
+          <div className="slider flex gap-4 justify-center items-center w-[250%]">
+            {pictureData.concat(pictureData).map((image) => (
               <Image
                 key={image.id}
                 src={image.src}
                 alt={image.alt}
                 width={288}
                 height={321}
-                className="w-[400px] h-auto "
+                className="object-cover relative"
               />
             ))}
             {/* Repeat images to create an infinite loop */}
-            {pictureData.map((image) => (
-              <Image
-                key={`${image.id}-duplicate`}
-                src={image.src}
-                alt={image.alt}
-                width={288}
-                height={321}
-                className="w-[400px] h-auto "
-              />
-            ))}
           </div>
         </div>
 

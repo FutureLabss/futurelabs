@@ -7,7 +7,7 @@
 }
 
 ul.ul-style > li:first-child {
-  @apply text-[#1E1F24] font-semibold text-[.75rem];
+  @apply text-[#1E1F24] font-bold text-[.75rem];
 }
 
 ul.ul-style > li {
@@ -38,7 +38,7 @@ ul.ul-style > li {
 
 .slider {
   display: flex;
-  animation: scroll 8s linear infinite; /* Control the speed with the duration (15s) */
+  animation: scroll 20s linear infinite; /* Control the speed with the duration (15s) */
 }
 
 /* Keyframes for the sliding effect */
@@ -47,7 +47,7 @@ ul.ul-style > li {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
