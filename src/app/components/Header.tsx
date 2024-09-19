@@ -87,7 +87,7 @@ export default function Header() {
         showForm &&
         (
           <>
-            <div className={`absolute top-[21%] left-[30%] z-[20]`}>
+            <div className={`fixed top-[21%] left-[30%] z-[20] `}>
               <ContactForm />
             </div>
             <div className="w-full h-full fixed bg-black opacity-70 top-0 left-0 right-0 bottom-0 z-[10]" onClick={() => setShowForm(false)}>
