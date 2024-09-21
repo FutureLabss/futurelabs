@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Manrope, } from 'next/font/google'
 import "./globals.css";
-
+import StateContextProvider from "../app/context";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,8 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${inter.variable} ${manrope.variable}  font-sans max-w-[1440px] mx-auto  w-full `}>
-
-        {children}
+        <StateContextProvider>
+          {children}
+        </StateContextProvider>
 
       </body>
     </html>

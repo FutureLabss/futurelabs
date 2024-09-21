@@ -3,17 +3,22 @@ import Button from "@/app/ui/Button";
 import Nav from "./headcomponents/Nav";
 import Image from "next/image"
 import { pictureData } from "../../data/data";
-import IntroBg from "../assets/icons/intro-bg.png"
+import IntroBg from "@/app/assets/icons/intro-bg.png"
 import CompanyLogos from "../assets/logo/Logo-frame.png"
 import HeaderCard from "./headcomponents/HeaderCard";
 import ContactForm from "../ui/ContactForm";
-import { useState } from "react";
+import { useStateAuthProvider } from "../context";
 
 
 
 export default function Header() {
+  const context = useStateAuthProvider()
 
-  const [showForm, setShowForm] = useState<boolean>(false)
+  if (!context) {
+    return null
+  }
+
+  const { showForm, setShowForm } = context
 
   return (
     <header className="flex flex-col gap-14 w-full relative">
@@ -37,19 +42,21 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="text-center justify-center lg:mx-[5rem] bg-hero-image flex flex-col gap-4 relative z-[5] px-[2.5rem] pb-[30px]">
+      <div className="text-center justify-center lg:mx-[5rem] flex flex-col gap-4 relative z-[5] px-[2.5rem] pb-[30px]">
         {/* Slider container */}
         <div className="slider-container w-[200%]">
           <div className="slider flex gap-4 justify-center items-center w-[250%]">
-            {pictureData.concat(pictureData).map((image) => (
-              <Image
-                key={image.id}
-                src={image.src}
-                alt={image.alt}
-                width={288}
-                height={321}
-                className="object-cover relative"
-              />
+            {pictureData.concat(pictureData).map((image, index) => (
+              <div key={index}>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={288}
+                  height={321}
+                  // className=" relative "
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
             ))}
             {/* Repeat images to create an infinite loop */}
           </div>
@@ -66,7 +73,7 @@ export default function Header() {
               width={700}
               height={300}
               quality={100}
-              className="text-center"
+              className=" w-auto"
             />
           </div>
         </div>
@@ -76,7 +83,7 @@ export default function Header() {
           alt="hero image"
           width={300}
           height={300}
-          className="w-full h-[300px] absolute left-0 bottom-0 right-0 z-[-1]"
+          className="w-full h-[130px] md:h-[290px] absolute left-0 bottom-0 right-0 z-[-1]"
         />
       </div>
 
@@ -84,18 +91,24 @@ export default function Header() {
         <HeaderCard />
       </div>
       {
-        showForm &&
-        (
+        showForm && (
           <>
-            <div className={`fixed top-[21%] left-[30%] z-[20] `}>
-              <ContactForm />
+            {/* Container for centering the form */}
+            <div className="fixed inset-0 flex items-center justify-center z-[20]" onClick={() => setShowForm(false)}>
+              <div className="relative " onClick={(e) => e.stopPropagation()}>
+                <ContactForm />
+              </div>
             </div>
-            <div className="w-full h-full fixed bg-black opacity-70 top-0 left-0 right-0 bottom-0 z-[10]" onClick={() => setShowForm(false)}>
 
-            </div>
+            {/* Background overlay */}
+            <div
+              className="w-full h-full fixed bg-[#00000026] transition-all duration-1000 opacity-70 top-0 left-0 right-0 bottom-0 z-[10]"
+
+            ></div>
           </>
         )
       }
+
     </header>
   )
 }

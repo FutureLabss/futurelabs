@@ -1,8 +1,18 @@
+"use client"
 import Button from "@/app/ui/Button";
 import { skillSets } from "../../../data/data";
+import { useStateAuthProvider } from "@/app/context";
+
 
 
 export default function HeaderCard() {
+
+  const context = useStateAuthProvider()
+  if (!context) {
+    return null
+  }
+
+  const { showForm, setShowForm } = context
   return (
     <div className="w-full  bg-white">
       <div className="flex flex-col lg:flex-row justify-between gap-12  xl:gap-[7.1rem] items-center px-[20px] md:px-[3rem] xl:px-[6rem] md:py-[5.0625rem] w-full py-[25px]">
@@ -15,7 +25,10 @@ export default function HeaderCard() {
           </p>
 
           <div className="w-full max-w-[181px] ">
-            <Button />
+            <Button
+              setShowForm={setShowForm}
+              showForm={showForm}
+            />
           </div>
         </div>
 
@@ -25,8 +38,8 @@ export default function HeaderCard() {
           </div>
           <div className="bg-[#E3EAF9] w-full h-full gap-4 py-7 px-[20px] lg:px-[3rem] flex-col flex lg:justify-center lg:items-center ">
             {
-              skillSets.map(skill => (
-                <div className="flex flex-col xl:gap-[4px] py-[.875rem] px-[1rem] rounded-[1rem] bg-white xl:max-w-[475px] w-full " key={skill.id}>
+              skillSets.map((skill, index) => (
+                <div className="flex flex-col xl:gap-[4px] py-[.875rem] px-[1rem] rounded-[1rem] bg-white xl:max-w-[475px] w-full " key={index}>
                   <h3 className="text-size-20 text-primary-dark leading-6 font-semibold">{skill.name}</h3>
                   <p className="text-size-14 text-primary-light_dark leading-6">{skill.tools.join(", ")}</p>
                 </div>

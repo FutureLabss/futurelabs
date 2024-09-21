@@ -7,28 +7,23 @@ import Homeimg5 from "../app/assets/images/hero-5.png"
 
 export const pictureData = [
   {
-    id: 1,
     src: Homeimg1,
     alt: "hero image",
   },
   {
-    id: 2,
     src: Homeimg2,
     alt: "hero image",
   },
   {
-    id: 3,
     src: Homeimg3,
     alt: "hero image",
   },
   {
-    id: 4,
     src: Homeimg4,
     alt: "hero image"
 
   },
   {
-    id: 5,
     src: Homeimg5,
     alt: "hero image",
   },
@@ -37,29 +32,24 @@ export const pictureData = [
 
 export const skillSets = [
   {
-    id: 1,
     name: "Product Design",
     tools: ['Figma', 'Figjam', 'Maze']
   },
 
   {
-    id: 2,
     name: "Front End Development",
     tools: ['HTML', 'CSS', 'Javascript', 'React']
   },
 
   {
-    id: 3,
     name: "Backend Development",
     tools: ['Git', 'Node Js', 'PHP', 'Python', 'Github', 'Docker']
   },
   {
-    id: 4,
     name: "Mobile Development",
     tools: ['React Native', 'Github', 'Git', 'Firebase']
   },
   {
-    id: 5,
     name: "Data Analytics",
     tools: ['Power BI', 'Microsoft Excel', 'Python', 'Github', 'Git']
   }
@@ -109,42 +99,42 @@ import img8 from "../app/assets/images/image-8.png"
 
 export const imageGallery = [
   {
-    id: 1,
+    id: "img-1",
     src: img1,
     alt: "hero image",
   },
   {
-    id: 5,
+    id: "img-2",
     src: img5,
     alt: "hero image",
   },
   {
-    id: 2,
+    id: "img-3",
     src: img2,
     alt: "hero image",
   },
   {
-    id: 6,
+    id: "img-4",
     src: img6,
     alt: "hero image",
   },
   {
-    id: 3,
+    id: "img-5",
     src: img3,
     alt: "hero image",
   },
   {
-    id: 7,
+    id: "img-6",
     src: img7,
     alt: "hero image",
   },
   {
-    id: 4,
+    id: "img-7",
     src: img4,
     alt: "hero image",
   },
   {
-    id: 8,
+    id: "img-8",
     src: img8,
     alt: "hero image",
   },
@@ -164,39 +154,36 @@ import serviceimg6 from "../app/assets/images/service-img6.png"
 export const servicesData = [
 
   {
-    id: 1,
+    id: "service-1",
     service: "Custom Web and Mobile Solutions",
     description: "Our software solution is specially designed for startups looking to build minimum viable products  for their ideas quickly",
     src: serviceimg1,
   },
 
   {
-    id: 2,
+    id: "service-2",
     service: "Software Training Programs",
     description: "We offer a 9 months bootcamp designed to take you from zero to hero, you will learn new technologies, join a community of techies, build real world projects and collaborate with teammates in a cross functional environment",
     src: serviceimg2,
   },
 
   {
-    id: 3,
+    id: "service-3",
     service: "Recorded Courses",
     description: "Our pre-recorded courses are designed to take your career to the next level",
     src: img1,
   },
   {
-    id: 4,
     service: "Talent Pool Access",
     description: "We take the best talents from our training programs and place them in international roles where they contribute and learn new skills. A win win.",
     src: img1,
   },
   {
-    id: 5,
     service: "Minimum Viable Products",
     description: "We have free and premium products developed to meet specific needs",
     src: serviceimg5,
   },
   {
-    id: 6,
     service: "Access to Resources",
     description: "We offer resources to guide on your learning path..",
     src: serviceimg6,
@@ -213,35 +200,31 @@ import Frame4 from "@/app/assets/testimonials/Frame-four.png"
 
 export const blogData = [
   {
-    id: 1,
+
     content: "My experience at Future Labs, coupled with the opportunity to collaborate with an incredible community of talented innovators, has propelled my career to new heights. It gave me global exposure, led to an invaluable role at one of Nigeria’s top talent accelerators, and ultimately, to my current position as a manager at a leading UK EdTech firm.",
     name: "Justin Mark",
     title: "Business Development Manager",
     src: Frame
   },
   {
-    id: 2,
     content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
     name: "Usenmfon Uko",
     title: "Developer",
     src: Frame1
   },
   {
-    id: 3,
     content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
     name: "Usenmfon Uko",
     title: "Developer",
     src: Frame2
   },
   {
-    id: 4,
     content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
     name: "Usenmfon Uko",
     title: "Developer",
     src: Frame3
   },
   {
-    id: 5,
     content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
     name: "Usenmfon Uko",
     title: "Developer",

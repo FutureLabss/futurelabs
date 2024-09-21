@@ -8,9 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'hero-image': "url('/src/app/assets/icons/intro-bg.png')",
-      },
       fontSize: {
         'size-10': '.625rem', //? 10px
         'size-12': '.75rem', //? 12px

@@ -8,16 +8,17 @@ export default function Gallery() {
     // <div className="grid grid-cols-4 gap-2 grid-rows-1 justify-center">
     <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 md:py-10 gap-4 bg-[#1C2640] relative">
       {
-        imageGallery.map((item) => {
+        imageGallery.map((item, index) => {
           return (
-            <div key={item.id} className=" mb-8 break-inside-avoid">
+            <div key={index} className=" mb-8 break-inside-avoid">
               <Image
                 src={item.src}
                 alt={item.alt}
                 width={312}
                 height={312}
-                objectFit="cover"
-                className="w-full h-auto"
+                quality={100}
+                priority
+                className="w-full h-auto object-cover"
               />
 
             </div>
@@ -34,7 +35,7 @@ export default function Gallery() {
           height={22}
           quality={100}
           priority
-        // className="w-auto h-auto"
+        // className="w-auto"
         />
       </div>
 
