@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  /* border: solid green 1px; */
+}
+
 .ul-style {
   @apply flex flex-col gap-4 text-[.875rem];
 }
@@ -20,6 +24,14 @@ ul.ul-style > li {
   letter-spacing: -13.7px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+label {
+  @apply text-[#000] font-medium text-[1.375rem] font-inter;
+}
+
+select {
+  @apply text-[1.375rem] text-[#222D4BB2] font-[600];
 }
 
 .faq-background {

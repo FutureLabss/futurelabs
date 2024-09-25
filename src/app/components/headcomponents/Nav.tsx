@@ -1,10 +1,11 @@
 
 import Image from "next/image"
 import Logo from "../../assets/logo/Futurelabs-logo.png"
+import Link from "next/link"
 
 export default function Nav() {
   return (
-    <div>
+    <Link href="/">
       <Image
         src={Logo}
         alt="futurelabs logo"
@@ -14,6 +15,6 @@ export default function Nav() {
         priority
       // className="w-auto h-auto"
       />
-    </div>
+    </Link>
   )
 }
