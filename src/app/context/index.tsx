@@ -3,13 +3,16 @@
 import { createContext, useContext } from "react";
 import { useState } from "react";
 import { FormDataProps } from "@/app/types/types";
-
+import { toast } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css"
 
 interface StateContextType {
   showForm: boolean;
   setShowForm: (showForm: boolean) => void;
   formData: FormDataProps;
   setFormData: (formData: FormDataProps) => void;
+  showSuccessMessage: () => void;
+  showErrorMessage: () => void;
 }
 interface ProviderProps {
   children: React.ReactNode;
@@ -28,11 +31,25 @@ export default function StateContextProvider({ children }: ProviderProps) {
     address: ""
   })
 
+  const showSuccessMessage = () => {
+    toast.success("Submitted successfully", {
+      position: toast?.POSITION?.TOP_CENTER,
+    })
+  }
+
+  const showErrorMessage = () => {
+    toast.error("Fields are required", {
+      position: toast?.POSITION?.TOP_CENTER,
+    })
+  }
+
   const contextValue = {
     showForm,
     setShowForm,
     formData,
-    setFormData
+    setFormData,
+    showSuccessMessage,
+    showErrorMessage,
   };
   return (
     <StateContext.Provider value={contextValue} >

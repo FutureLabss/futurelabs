@@ -3,6 +3,7 @@
 import ProceedBtn from "../ui/ProceedBtn";
 import { useStateAuthProvider } from "@/app/context"
 import { useRouter } from "next/navigation";
+import { ToastContainer } from "react-toastify";
 
 
 export default function ReusableForm() {
@@ -15,7 +16,7 @@ export default function ReusableForm() {
     return null;
   }
 
-  const { formData, setFormData } = context;
+  const { formData, setFormData, showErrorMessage } = context;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -26,12 +27,13 @@ export default function ReusableForm() {
     e.preventDefault();
     const { firstName, lastName, email, gender, skill, address } = formData;
     if (!firstName || !lastName || !email || !gender || !skill || !address) {
-      alert("All fields are required")
+      showErrorMessage();
       // return
     } else {
 
       console.log(formData);
       router.push("/services/learnskill/form2")
+
     }
   }
   return (
@@ -111,6 +113,7 @@ export default function ReusableForm() {
         </div>
 
         <ProceedBtn />
+        <ToastContainer autoClose={3000} />
       </form>
     </div>
   )

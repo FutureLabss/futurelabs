@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import SubmitButton from '../../ui/SubmitButton';
 import { useStateAuthProvider } from '@/app/context';
+import { ToastContainer } from 'react-toastify';
 
 export default function LearnSkillForm() {
 
@@ -17,7 +18,7 @@ export default function LearnSkillForm() {
     return null;
   }
 
-  const { formData } = context;
+  const { formData, showErrorMessage } = context;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -31,7 +32,8 @@ export default function LearnSkillForm() {
     const { location, LGA, age, state, aboutus } = userData;
 
     if (!location || !LGA || !age || !state || !aboutus) {
-      alert("All fields are required")
+
+      showErrorMessage();
     } else {
 
       console.log({ ...formData, ...userData });
@@ -109,6 +111,7 @@ export default function LearnSkillForm() {
               </div>
             </div>
             <SubmitButton />
+            <ToastContainer />
           </form>
         </div>
       </div>
