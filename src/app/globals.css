@@ -98,3 +98,21 @@ select {
   background-size: calc(100% - 16px) 100%;
   overflow: hidden;
 }
+
+input.form-input {
+  @apply py-[18px] md:py-[22px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2] text-[24px];
+}
+
+label.form-label {
+  @apply text-[#000] font-medium text-[22px] font-inter;
+}
+
+select.form-select {
+  @apply py-[18px] md:py-[22px] px-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2] text-[24px] w-full;
+}
+
+select.form-select option {
+  font-size: 20px;
+  width: 50px;
+  overflow: hidden;
+}

@@ -39,81 +39,104 @@ export default function ReusableForm() {
   return (
     <div>
       <form action="/form2"
-        className="grid grid-cols-2 gap-[3rem]" onSubmit={handleSubmit}>
+        className="grid grid-cols-1 xl:grid-cols-2 gap-[3rem]" onSubmit={handleSubmit}>
 
         <div className="flex flex-col gap-3 ">
-          <label htmlFor="">
+          <label htmlFor="form-label">
             First Name
           </label>
-          <input className="py-[27px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] placholder:font-[450] placeholder:text-[#222D4BB2]"
+          <input className="form-input"
             type="text"
             name="firstName"
             placeholder="Enter your first name"
             onChange={handleChange}
+            value={formData.firstName}
           />
         </div>
         <div className="flex flex-col gap-3 ">
-          <label htmlFor="">
+          <label htmlFor="form-label">
             Last Name
           </label>
-          <input className="py-[27px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2]"
+          <input className="form-input"
             type="text"
             name="lastName"
             placeholder="Enter your last name"
             onChange={handleChange}
+            value={formData.lastName}
           />
         </div>
         <div className="flex flex-col gap-3 ">
-          <label htmlFor="">
+          <label htmlFor="form-label">
             Email
           </label>
-          <input className="py-[27px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2]"
+          <input className="form-input"
             type="email"
             name="email"
             placeholder="Enter Email Address"
-            onChange={handleChange} />
+            onChange={handleChange}
+            value={formData.email}
+          />
+
         </div>
         <div className="flex flex-col gap-3 ">
-          <label htmlFor="">
+          <label htmlFor="form-label">
             Gender
           </label>
-          <select className="py-[22px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2]"
-            name="gender"
-            id=""
-            onChange={handleChange}
-          >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
+          <div className="relative">
+            <select className="form-select appearance-none"
+              name="gender"
+              onChange={handleChange}
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-6 pointer-events-none">
+              <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
         </div>
         <div className="flex flex-col gap-3 ">
-          <label htmlFor="">
+          <label htmlFor="form-label">
             Contact Address
           </label>
-          <input className="py-[27px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2]"
+          <input className="form-input"
             type="text"
             name="address"
             placeholder="Enter here"
-            onChange={handleChange} />
+            onChange={handleChange}
+
+            value={formData.address}
+          />
         </div>
-        <div className="flex flex-col gap-3 ">
-          <label htmlFor="">
+        <div className="flex flex-col gap-3">
+          <label htmlFor="skill" className="form-label">
             Choose Skill
           </label>
-          <select className="py-[22px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2]"
-            name="skill"
-            id=""
-            onChange={handleChange}>
-            <option value="design">UI/UX Design</option>
-            <option value="development">Web Development</option>
-            <option value="marketing">Marketing</option>
-            <option value="management">Management</option>
-            <option value="data-analysis">Data Analytics</option>
-          </select>
+          <div className="relative">
+            <select
+              className="form-select block appearance-none  border border-gray-300 rounded-md text-gray-900 "
+              name="skill"
+              onChange={handleChange}
+            >
+              <option value="design">UI/UX Design</option>
+              <option value="development">Web Development</option>
+              <option value="marketing">Marketing</option>
+              <option value="management">Management</option>
+              <option value="data-analysis">Data Analytics</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-6 pointer-events-none">
+              <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
         </div>
 
+
         <ProceedBtn />
-        <ToastContainer autoClose={3000} />
+        <ToastContainer autoClose={2000} />
       </form>
     </div>
   )
