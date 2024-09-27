@@ -3,35 +3,35 @@
 @tailwind utilities;
 
 * {
-  /* border: solid green 1px; */
+  /* border: solid green 0.0625rem; */
 }
 
 .ul-style {
-  @apply flex flex-col gap-4 text-[.875rem];
+  @apply flex flex-col gap-4 text-[14px];
 }
 
 ul.ul-style > li:first-child {
-  @apply text-[#1E1F24] font-bold text-[.75rem];
+  @apply text-[#1E1F24] font-bold text-[12px];
 }
 
 ul.ul-style > li {
-  @apply font-normal text-[.875rem];
+  @apply font-normal text-[14px];
 }
 
 .future-text {
   background: linear-gradient(90deg, #e0e1e6 58.12%, #d9edff 100%);
   background-clip: text;
-  letter-spacing: -13.7px;
+  letter-spacing: -0.8562rem;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 label {
-  @apply text-[#000] font-medium text-[1.375rem] font-inter;
+  @apply text-[#000] font-medium text-[22px] font-inter;
 }
 
 select {
-  @apply text-[1.375rem] text-[#222D4BB2] font-[600];
+  @apply text-[24px] text-[#222D4BB2] font-[450] pr-[1.25rem];
 }
 
 .faq-background {
@@ -65,13 +65,13 @@ select {
 
 .swiper {
   width: 100%;
-  max-height: 520px;
+  max-height: 32.5rem;
   height: 100%;
 }
 
 .swiper-slide {
   text-align: center;
-  font-size: 18px;
+  font-size: 1.125rem;
   /* background: ; */
   display: flex;
   justify-content: center;
@@ -84,8 +84,8 @@ select {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
+  gap: 32px;
 }
 
 .grid-item {
@@ -95,6 +95,6 @@ select {
   background-image: url("../app/assets/icons/service-card-bg.svg");
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: calc(100% - 1rem) 100%;
+  background-size: calc(100% - 16px) 100%;
   overflow: hidden;
 }

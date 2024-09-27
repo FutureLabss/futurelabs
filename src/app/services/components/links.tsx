@@ -21,9 +21,9 @@ export default function Links() {
     },
   ]
   return (
-    <div className="flex gap-[1.5625rem] ">
+    <div className="flex gap-[1rem] xl:justify-between ">
       {links.map((link, index) => (
-        <Link href={link.path} key={index} className={`font-inter rounded-lg px-[3.5rem] py-[1rem] ${link.path === pathname ? "active bg-[#222D4B] text-white" : "text-[#222D4B]"}`}>
+        <Link href={link.path} key={index} className={`font-inter font-medium border-[2px] border-[#222D4B] rounded-lg px-[3.5rem] py-[1rem] ${pathname.startsWith(link.path) ? " bg-[#222D4B] text-white" : "text-[#222D4B]"}`}>
           {link.title}
         </Link>
       ))}
