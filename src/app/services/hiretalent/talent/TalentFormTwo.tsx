@@ -4,7 +4,6 @@ import SubmitButton from '../../ui/SubmitButton';
 import { useStateAuthProvider } from '@/app/context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import PaymentMethod from '../../components/PaymentMethod';
 
 
 type TalentForm = {
@@ -31,8 +30,7 @@ export default function TalentFormTwo() {
     return null;
   }
 
-  const { talentForm, setTalentForm, showErrorMessage, showPayment,
-    setShowPayment } = context;
+  const { talentForm, setTalentForm, showErrorMessage } = context;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -59,7 +57,6 @@ export default function TalentFormTwo() {
       showErrorMessage();
     } else {
       console.log({ ...talentForm, ...userData });
-      setShowPayment(true);
 
       setUserData({
         skill: "",
@@ -188,9 +185,6 @@ export default function TalentFormTwo() {
             <SubmitButton />
             <ToastContainer autoClose={2000} />
           </form>
-          <div className={`fixed top-0 left-0 flex items-center bg-black/20 justify-center min-h-screen  ${showPayment ? "block" : "hidden"} w-full`} onClick={() => setShowPayment(false)}>
-            <PaymentMethod />
-          </div>
         </div>
       </div>
     </div>

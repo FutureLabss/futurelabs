@@ -4,6 +4,7 @@ import SubmitButton from '../../ui/SubmitButton';
 import { useStateAuthProvider } from '@/app/context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PaymentMethod from '../../components/PaymentMethod';
 
 
 
@@ -25,7 +26,8 @@ export default function LearnSkillForm() {
     return null;
   }
 
-  const { formData, setFormData, showErrorMessage } = context;
+  const { formData, setFormData, showErrorMessage, showPayment,
+    setShowPayment } = context;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -44,6 +46,7 @@ export default function LearnSkillForm() {
       showErrorMessage();
     } else {
       console.log({ ...formData, ...userData });
+      setShowPayment(true);
 
       setUserData({
         location: '',
@@ -135,6 +138,9 @@ export default function LearnSkillForm() {
                 />
 
               </div>
+            </div>
+            <div className={`fixed top-0 left-0 flex items-center bg-black/20 justify-center min-h-screen  ${showPayment ? "block" : "hidden"} w-full`} onClick={() => setShowPayment(false)}>
+              <PaymentMethod />
             </div>
             <SubmitButton />
             <ToastContainer autoClose={2000} />
