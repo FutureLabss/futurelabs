@@ -1,10 +1,10 @@
-import LearnSkillForm from "./LearnSkillForm";
+import TalentFormTwo from "./TalentFormTwo";
 
 
 export default function page() {
   return (
     <div>
-      <LearnSkillForm />
+      <TalentFormTwo />
     </div>
   )
 }

@@ -9,11 +9,9 @@ export default function Nav() {
       <Image
         src={Logo}
         alt="futurelabs logo"
-        width={113}
-        height={22}
-        quality={100}
-        priority
-      // className="w-auto h-auto"
+        width={153}
+        // height={29}
+        className="h-auto"
       />
     </Link>
   )

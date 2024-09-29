@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 export default function LearnSkillForm() {
 
 
@@ -14,9 +15,10 @@ export default function LearnSkillForm() {
     location: '',
     LGA: '',
     age: '',
-    state: '',
     aboutus: '',
   });
+
+
 
   const context = useStateAuthProvider();
   if (!context) {
@@ -35,9 +37,9 @@ export default function LearnSkillForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
     e.preventDefault();
-    const { location, LGA, age, state, aboutus } = userData;
+    const { location, LGA, age, aboutus } = userData;
 
-    if (!location || !LGA || !age || !state || !aboutus) {
+    if (!location || !LGA || !age || !aboutus) {
 
       showErrorMessage();
     } else {
@@ -47,7 +49,6 @@ export default function LearnSkillForm() {
         location: '',
         LGA: '',
         age: '',
-        state: '',
         aboutus: '',
       });
       setFormData({
@@ -59,25 +60,26 @@ export default function LearnSkillForm() {
         address: "",
       })
     }
+
   }
 
 
   return (
-    <div>
+    <div className='relative'>
 
       <div className='flex flex-col gap-4'>
         <div className='text-end text-[#000] text-[2rem] font-inter font-[450]'>
-          <p>2 out of 2</p>
+          <p className='text-[1.5rem] sm:text-[2rem] xl:text-[3rem]'>2 out of 2</p>
         </div>
         <div>
           <form className='flex flex-col gap-12'
             onSubmit={handleSubmit}>
-            <div className="grid grid-cols-2 gap-[3rem]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[1rem] xl:gap-[3rem]">
               <div className="flex flex-col gap-3 ">
-                <label htmlFor="">
-                  Location
+                <label htmlFor="" className='form-label'>
+                  Location by State
                 </label>
-                <input className="py-[27px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2]"
+                <input className="form-input"
                   type="text"
                   name="location"
                   placeholder="Enter your location"
@@ -86,38 +88,32 @@ export default function LearnSkillForm() {
                 />
               </div>
               <div className="flex flex-col gap-3 ">
-                <label htmlFor="">
-                  Location by State
-                </label>
-                <input className="py-[27px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2]"
-                  type="text"
-                  name="state"
-                  placeholder="Enter your State"
-                  onChange={handleChange}
-                  value={userData.state}
-                />
-              </div>
-              <div className="flex flex-col gap-3 ">
-                <label htmlFor="">
+                <label htmlFor="" className='form-label'>
                   Age Range
                 </label>
-                <select className="py-[22px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2]"
-                  name="age"
-                  id=""
-
-                  onChange={handleChange}>
-                  <option value="">Choose Age</option>
-                  <option value="15-20">15-20</option>
-                  <option value="20-25">20-25</option>
-                  <option value="25-30">25-30</option>
-                  <option value="30+">30+</option>
-                </select>
+                <div className='relative'>
+                  <select className="form-select block appearance-none  border border-gray-300 rounded-md text-gray-900"
+                    name="age"
+                    id=""
+                    onChange={handleChange}>
+                    <option value="">Choose Age</option>
+                    <option value="15-20">15-20</option>
+                    <option value="20-25">20-25</option>
+                    <option value="25-30">25-30</option>
+                    <option value="30+">30+</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center px-6 pointer-events-none">
+                    <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
               <div className="flex flex-col gap-3 ">
-                <label htmlFor="">
+                <label htmlFor="" className='form-label'>
                   Location by LGA
                 </label>
-                <input className="py-[27px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2]"
+                <input className="form-input"
                   type="text"
                   name="LGA"
                   placeholder="Enter your LGA"
@@ -126,11 +122,11 @@ export default function LearnSkillForm() {
                 />
 
               </div>
-              <div className="flex flex-col gap-3 col-span-2 ">
-                <label htmlFor="">
+              <div className="flex flex-col gap-3 ">
+                <label htmlFor="" className='form-label'>
                   How did you hear about us
                 </label>
-                <input className="py-[27px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2]"
+                <input className="form-input"
                   type="text"
                   name="aboutus"
                   placeholder="Enter here"

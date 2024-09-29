@@ -38,8 +38,8 @@ export default function ReusableForm() {
   }
   return (
     <div>
-      <form action="/form2"
-        className="grid grid-cols-1 xl:grid-cols-2 gap-[3rem]" onSubmit={handleSubmit}>
+      <form
+        className="grid grid-cols-1 md:grid-cols-2 gap-[3rem]" onSubmit={handleSubmit}>
 
         <div className="flex flex-col gap-3 ">
           <label htmlFor="form-label">

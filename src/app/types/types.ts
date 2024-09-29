@@ -4,6 +4,8 @@ export type FormDataProps = {
   lastName: string;
   email: string;
   gender: string;
-  skill: string;
-  address: string;
+  skill?: string;
+  address?: string;
+  number?: string;
+  location?: string;
 }

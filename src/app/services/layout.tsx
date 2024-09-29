@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Links from "./components/links";
 import Image from "next/image"
 import Talent from "@/app/assets/images/talent-image.png"
@@ -5,16 +6,15 @@ import Nav from "../components/headcomponents/Nav";
 import FrameBright from "@/app/assets/images/Frame-bright.png"
 import Footer from "../components/Footer";
 
-
-
 export default function layout({ children }: { children: React.ReactNode }) {
+
   return (
-    <div>
-      <div className="pl-[15px] lg:pl-[2rem] xl:pl-[5rem] mt-[2rem] mb-[3.0625rem] ">
+    <div className="flex flex-col gap-6 xl:gap-[3rem]">
+      <div className="pl-[15px]  lg:pl-[2rem] xl:pl-[5rem] mt-[2rem] ">
         <Nav />
       </div>
       <div className="flex flex-col-reverse  lg:flex-row w-full justify-between">
-        <div className="flex flex-col grow gap-[50px] w-full px-[15px] lg:px-[2rem] xl:px-[5rem] pb-[80px]">
+        <div className="flex flex-col grow gap-[50px] w-full px-[15px] lg:px-[1.5rem] xl:px-[5rem] pb-[80px]">
           <div className="flex gap-8 flex-col">
             <div className="my-[30px] lg:my-0">
               <Links />
@@ -30,7 +30,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
             height={1024}
             quality={100}
             priority
-            className="hidden lg:block "
+            className="hidden lg:block h-auto "
           />
           <Image
             src={FrameBright}
@@ -46,6 +46,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
       <div>
         <Footer />
       </div>
+
     </div>
   )
 }

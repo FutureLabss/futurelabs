@@ -13,6 +13,10 @@ interface StateContextType {
   setFormData: (formData: FormDataProps) => void;
   showSuccessMessage: () => void;
   showErrorMessage: () => void;
+  talentForm: FormDataProps;
+  setTalentForm: (talentForm: FormDataProps) => void;
+  showPayment: boolean;
+  setShowPayment: (showPayment: boolean) => void;
 }
 interface ProviderProps {
   children: React.ReactNode;
@@ -22,6 +26,7 @@ const StateContext = createContext<StateContextType | undefined>(undefined);
 
 export default function StateContextProvider({ children }: ProviderProps) {
   const [showForm, setShowForm] = useState<boolean>(false);
+  const [showPayment, setShowPayment] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormDataProps>({
     firstName: "",
     lastName: "",
@@ -29,6 +34,15 @@ export default function StateContextProvider({ children }: ProviderProps) {
     gender: "male",
     skill: "UI/UX Design",
     address: ""
+  })
+
+  const [talentForm, setTalentForm] = useState<FormDataProps>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    number: "",
+    gender: "male",
+    location: "",
   })
 
   const showSuccessMessage = () => {
@@ -50,6 +64,10 @@ export default function StateContextProvider({ children }: ProviderProps) {
     setFormData,
     showSuccessMessage,
     showErrorMessage,
+    talentForm,
+    setTalentForm,
+    showPayment,
+    setShowPayment
   };
   return (
     <StateContext.Provider value={contextValue} >

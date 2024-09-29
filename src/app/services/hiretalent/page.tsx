@@ -1,9 +1,13 @@
-import ReusableForm from "../components/ReusableForm";
+import BeAPro from "../components/BeAPro";
+import HireTalentForm from "./HireTalentForm";
 
 export default function page() {
   return (
     <div>
-      <ReusableForm />
+      <div>
+        <BeAPro />
+      </div>
+      <HireTalentForm />
     </div>
   )
 }
