@@ -106,7 +106,6 @@ export default function ReusableForm() {
             name="address"
             placeholder="Enter here"
             onChange={handleChange}
-
             value={formData.address}
           />
         </div>
@@ -116,7 +115,7 @@ export default function ReusableForm() {
           </label>
           <div className="relative">
             <select
-              className="form-select block appearance-none  border border-gray-300 rounded-md text-gray-900 "
+              className="form-select appearance-none"
               name="skill"
               onChange={handleChange}
             >

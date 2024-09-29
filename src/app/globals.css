@@ -104,7 +104,7 @@ input.form-input {
 }
 
 label.form-label {
-  @apply text-[#000] font-medium text-[18px] xl:text-[22px] font-inter;
+  @apply text-[#000] font-medium  xl:text-[22px] font-inter;
 }
 
 select.form-select {
@@ -118,5 +118,5 @@ select.form-select option {
 }
 
 label.form-input {
-  @apply py-[18px] md:py-[22px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2] text-[24px];
+  @apply py-[18px] md:py-[22px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] font-[450] text-[#222D4BB2] text-[24px];
 }

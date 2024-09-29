@@ -97,7 +97,7 @@ export default function TalentFormTwo() {
                 </label>
                 <div className="relative">
                   <select
-                    className="form-select block appearance-none  border border-gray-300 rounded-md text-gray-900 "
+                    className="form-select block appearance-none  border border-gray-300 rounded-md "
                     name="skill"
                     onChange={handleChange}
                     value={userData.skill}
@@ -121,7 +121,7 @@ export default function TalentFormTwo() {
                 </label>
                 <div className="relative">
                   <select
-                    className="form-select block appearance-none  border border-gray-300 rounded-md text-gray-900 "
+                    className="form-select block appearance-none  border border-gray-300 rounded-md"
                     name="experience"
                     onChange={handleChange}
                     value={userData.experience}

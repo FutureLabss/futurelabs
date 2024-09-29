@@ -15,7 +15,7 @@ export default function PaymentMethod() {
     }
   ]
   return (
-    <div className="max-w-[658px] w-full rounded-[1rem] flex flex-col justify-center p-5 md:p-10  xl:p-20 bg-white text-center max-h-[489px] h-full">
+    <div className="max-w-[658px] w-full rounded-[1rem] flex flex-col justify-center p-5 md:p-10  xl:p-20 bg-white text-center max-h-[489px] h-full" onClick={(e) => e.stopPropagation()}>
       <div className="flex flex-col gap-[99px] w-full  justify-center">
         <h2 className="text-[2rem] md:text-[2.5rem] xl:text-[3rem] font-medium leading-[2.875rem] text-[#222D4B]">Payment Method</h2>
 
