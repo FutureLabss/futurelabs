@@ -17,14 +17,17 @@ interface StateContextType {
   setTalentForm: (talentForm: FormDataProps) => void;
   showPayment: boolean;
   setShowPayment: (showPayment: boolean) => void;
+  linkIndex: number | undefined;
+  setLinkIndex: (linkIndex: number) => void;
 }
 interface ProviderProps {
   children: React.ReactNode;
 }
 
-const StateContext = createContext<StateContextType | undefined>(undefined);
+const StateContext = createContext<StateContextType>({} as StateContextType);
 
 export default function StateContextProvider({ children }: ProviderProps) {
+  const [linkIndex, setLinkIndex] = useState<number | undefined>(undefined);
   const [showForm, setShowForm] = useState<boolean>(false);
   const [showPayment, setShowPayment] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormDataProps>({
@@ -35,6 +38,7 @@ export default function StateContextProvider({ children }: ProviderProps) {
     skill: "UI/UX Design",
     address: ""
   })
+
 
   const [talentForm, setTalentForm] = useState<FormDataProps>({
     firstName: "",
@@ -67,7 +71,9 @@ export default function StateContextProvider({ children }: ProviderProps) {
     talentForm,
     setTalentForm,
     showPayment,
-    setShowPayment
+    setShowPayment,
+    linkIndex,
+    setLinkIndex
   };
   return (
     <StateContext.Provider value={contextValue} >

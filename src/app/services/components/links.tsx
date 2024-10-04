@@ -17,13 +17,13 @@ export default function Links() {
     },
     {
       title: "Service Needed",
-      path: "/services/serviceneeded",
+      path: "https://studio.futurelabs.ng",
     },
   ]
   return (
     <div className="flex gap-[1rem] xl:justify-between ">
       {links.map((link, index) => (
-        <Link href={link.path} key={index} className={`font-inter text-[.6rem] sm:text-[1.125rem] xl:text-[20px] font-medium border-[2px] border-[#222D4B] rounded-lg max-w-[230px] py-[1rem] w-full text-center ${pathname.startsWith(link.path) ? " bg-[#222D4B] text-white" : "text-[#222D4B]"}`}>
+        <Link href={link.path} key={index} className={`font-inter text-[.6rem] sm:text-[1.125rem] xl:text-[20px] font-medium border-[2px] border-[#222D4B] rounded-lg max-w-[230px] py-[1rem] w-full text-center ${pathname.startsWith(link.path) ? " bg-[#222D4B] text-white" : "text-[#222D4B]"}`} target={`${link.path === "https://studio.futurelabs.ng" ? "_blank" : ""}`}>
           {link.title}
         </Link>
       ))}

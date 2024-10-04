@@ -231,3 +231,37 @@ export const blogData = [
     src: Frame4
   },
 ]
+
+
+
+export const programData = [
+  {
+    skill: "UI/UX DESIGN",
+    description: `We offer a 9 months bootcamp designed to take you from zero to hero, you will learn new technologies, join a community of techies, build real world projects and collaborate with teammates in a cross functional environment
+    We offer a 9 months bootcamp designed to take you from zero to hero, you will learn new technologies, join a community of techies, build real world projects and collaborate with teammates in a cross functional environment`,
+    outline: ["Foundations of User Interface(UI) and User Experience(UX) Design", "Start the UX Process: Empathize, Define and Ideate", "Build Wireframes and Low-Fidelity Prototypes", "Create High-Fidelity Designs in Figma", "Prototypes in Figma", "Responsive Web Design in Adobe XD", "Capstone Projects for your Portfolio"],
+  },
+
+  {
+    skill: "Graphics Design",
+    description: "This course prepares you to master typography, imagery, composition, and colour ti solve visualcommunication problems in everyday products, and build capstone projects that culminate into hiring  visibility.",
+    outline: ["Fundamentals of Graphic Design", "Introduction to Typography", "The Colour Theory", "Photoshop", "Introduction to Image Making", "Portfolio Building"],
+  },
+  {
+    skill: "Website Development",
+    description: "Master the art of web development with our comprehensive training programs. From front-end design to back-end architecture, you’ll learn how to create dynamic, responsive and user-centric websites. Whether you're just starting or looking to advance your skills, our courses cover essential technologies like HTML, CSS, JavaScript, and frameworks such as React and Node.js. With hands-on projects and mentorship from industry experts, you'll be equipped to build cutting-edge web applications that meet the demands of today’s digital world.",
+    outline: ["Introduction to CMS (Content Management Systems)", "Responsive Design and Layout with Elementor", "Plugins and Integrations", "PhotoshopMotion Effects and Popups", "Web Optimization (SEO)", "Building a landing page", 'Building an online store', 'Building a blog'],
+  },
+  {
+    skill: "Motion Design",
+    description: "Master the art of web development with our comprehensive training programs. From front-end design to back-end architecture, you’ll learn how to create dynamic, responsive and user-centric websites. Whether you're just starting or looking to advance your skills, our courses cover essential technologies like HTML, CSS, JavaScript, and frameworks such as React and Node.js. With hands-on projects and mentorship from industry experts, you'll be equipped to build cutting-edge web applications that meet the demands of today’s digital world.",
+    outline: ["Introduction to CMS (Content Management Systems)", "Responsive Design and Layout with Elementor", "Plugins and Integrations", "PhotoshopMotion Effects and Popups", "Web Optimization (SEO)", "Building a landing page", 'Building an online store', 'Building a blog'],
+  },
+  {
+    skill: "Digital Marketing",
+    description: "Master the art of web development with our comprehensive training programs. From front-end design to back-end architecture, you’ll learn how to create dynamic, responsive and user-centric websites. Whether you're just starting or looking to advance your skills, our courses cover essential technologies like HTML, CSS, JavaScript, and frameworks such as React and Node.js. With hands-on projects and mentorship from industry experts, you'll be equipped to build cutting-edge web applications that meet the demands of today’s digital world.",
+    outline: ["Introduction to CMS (Content Management Systems)", "Responsive Design and Layout with Elementor", "Plugins and Integrations", "PhotoshopMotion Effects and Popups", "Web Optimization (SEO)", "Building a landing page", 'Building an online store', 'Building a blog'],
+  },
+
+
+]
