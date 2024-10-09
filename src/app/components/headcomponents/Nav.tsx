@@ -10,7 +10,7 @@ export default function Nav() {
         src={Logo}
         alt="futurelabs logo"
         width={153}
-        // height={29}
+        height={29}
         className="h-auto"
       />
     </Link>

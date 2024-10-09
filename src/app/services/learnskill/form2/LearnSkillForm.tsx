@@ -5,6 +5,7 @@ import { useStateAuthProvider } from '@/app/context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PaymentMethod from '../../components/PaymentMethod';
+import axiosInstance from '@/app/BaseURL/baseURL';
 
 
 
@@ -13,10 +14,10 @@ export default function LearnSkillForm() {
 
 
   const [userData, setUserData] = useState({
-    location: '',
-    LGA: '',
-    age: '',
-    aboutus: '',
+    state: '',
+    locality: '',
+    ageRange: '',
+    discoveryMethod: '',
   });
 
 
@@ -36,23 +37,28 @@ export default function LearnSkillForm() {
   }
 
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
     e.preventDefault();
-    const { location, LGA, age, aboutus } = userData;
+    const { state, locality, ageRange, discoveryMethod } = userData;
 
-    if (!location || !LGA || !age || !aboutus) {
+    if (!state || !locality || !ageRange || !discoveryMethod) {
 
-      showErrorMessage();
+      showErrorMessage(); 
     } else {
-      console.log({ ...formData, ...userData });
+
+      const learnSkillFormdata = { ...formData, ...userData }
+      console.log(learnSkillFormdata);
+      const res = await axiosInstance.post('/register/entry', learnSkillFormdata)
+
+      console.log(res);
       setShowPayment(true);
 
       setUserData({
-        location: '',
-        LGA: '',
-        age: '',
-        aboutus: '',
+        state: '',
+        locality: '',
+        ageRange: '',
+        discoveryMethod: '',
       });
       setFormData({
         firstName: "",
@@ -84,10 +90,10 @@ export default function LearnSkillForm() {
                 </label>
                 <input className="form-input"
                   type="text"
-                  name="location"
+                  name="state"
                   placeholder="Enter your location"
                   onChange={handleChange}
-                  value={userData.location}
+                  value={userData.state}
                 />
               </div>
               <div className="flex flex-col gap-3 ">
@@ -96,9 +102,10 @@ export default function LearnSkillForm() {
                 </label>
                 <div className='relative'>
                   <select className="form-select block appearance-none  border border-gray-300 rounded-md text-gray-900"
-                    name="age"
+                    name="ageRange"
                     id=""
                     onChange={handleChange}>
+                    value={userData.ageRange}
                     <option value="">Choose Age</option>
                     <option value="15-20">15-20</option>
                     <option value="20-25">20-25</option>
@@ -118,10 +125,10 @@ export default function LearnSkillForm() {
                 </label>
                 <input className="form-input"
                   type="text"
-                  name="LGA"
+                  name="locality"
                   placeholder="Enter your LGA"
                   onChange={handleChange}
-                  value={userData.LGA}
+                  value={userData.locality}
                 />
 
               </div>
@@ -131,10 +138,10 @@ export default function LearnSkillForm() {
                 </label>
                 <input className="form-input"
                   type="text"
-                  name="aboutus"
+                  name="discoveryMethod"
                   placeholder="Enter here"
                   onChange={handleChange}
-                  value={userData.aboutus}
+                  value={userData.discoveryMethod}
                 />
 
               </div>

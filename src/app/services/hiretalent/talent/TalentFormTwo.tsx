@@ -4,14 +4,16 @@ import SubmitButton from '../../ui/SubmitButton';
 import { useStateAuthProvider } from '@/app/context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axiosInstance from '@/app/BaseURL/baseURL';
 
 
 type TalentForm = {
   skill: string;
   experience: string;
-  preference: string;
-  url: string;
+  availability: string;
+  smLink: string;
   resume: File | null;
+
 }
 
 
@@ -20,8 +22,8 @@ export default function TalentFormTwo() {
   const [userData, setUserData] = useState<TalentForm>({
     skill: 'design',
     experience: "beginner",
-    preference: '',
-    url: '',
+    availability: 'Full-time',
+    smLink: '',
     resume: null,
   });
 
@@ -47,22 +49,28 @@ export default function TalentFormTwo() {
   }
 
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
     e.preventDefault();
-    const { skill, experience, preference, url, resume } = userData;
+    const { skill, experience, availability, smLink, resume } = userData;
 
-    if (!skill || !experience || !preference || !url || !resume) {
+    if (!skill || !experience || !availability || !smLink || !resume) {
 
       showErrorMessage();
     } else {
-      console.log({ ...talentForm, ...userData });
+
+      const talentFormdata = { ...talentForm, ...userData }
+      console.log(talentFormdata);
+
+      const response = await axiosInstance.post('/register/talent', talentFormdata);
+
+      console.log(response.data);
 
       setUserData({
         skill: "",
         experience: "",
-        preference: "",
-        url: "",
+        availability: "Full-time",
+        smLink: "",
         resume: null,
       });
       setTalentForm({
@@ -125,7 +133,33 @@ export default function TalentFormTwo() {
                   >
                     <option value="beginer">Beginner</option>
                     <option value="intermediate">Intermediate</option>
-                    <option value="advanced">Advanced</option>
+                    <option value="advanced">Expert</option>
+                    <option value="advanced">Profesional</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center px-6 pointer-events-none">
+                    <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-3">
+                <label htmlFor="skill" className="form-label">
+                  Work Preference
+                </label>
+                <div className="relative">
+                  <select
+                    className="form-select block appearance-none  border border-gray-300 rounded-md"
+                    name="availability "
+                    onChange={handleChange}
+                    value={userData.experience}
+                  >
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Remote">Remote</option>
+                    <option value="On-site">On-site</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Shift Work">Shift Work</option>
                   </select>
                   <div className="absolute inset-y-0 right-0 flex items-center px-6 pointer-events-none">
                     <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,28 +171,14 @@ export default function TalentFormTwo() {
 
               <div className="flex flex-col gap-3 ">
                 <label htmlFor="" className='form-label'>
-                  Work Preference
-                </label>
-                <input className="form-input"
-                  type="text"
-                  name="preference"
-                  placeholder="Input Email"
-                  onChange={handleChange}
-                  value={userData.preference}
-
-                />
-
-              </div>
-              <div className="flex flex-col gap-3 ">
-                <label htmlFor="" className='form-label'>
                   Social media profile link
                 </label>
                 <input className="form-input"
                   type="text"
-                  name="url"
+                  name="smLink"
                   placeholder="Paste URL"
                   onChange={handleChange}
-                  value={userData.url}
+                  value={userData.smLink}
                 />
 
               </div>

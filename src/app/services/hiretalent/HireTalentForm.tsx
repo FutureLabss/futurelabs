@@ -25,8 +25,8 @@ export default function HireTalentForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { firstName, lastName, email, gender, number, location } = talentForm;
-    if (!firstName || !lastName || !email || !gender || !number || !location) {
+    const { firstName, lastName, email, gender, phone, locality } = talentForm;
+    if (!firstName || !lastName || !email || !gender || !phone || !locality) {
       showErrorMessage();
       // return
     } else {
@@ -80,10 +80,10 @@ export default function HireTalentForm() {
           <input
             className="form-input"
             type="number"
-            name="number"
+            name="phone"
             placeholder="Enter phone umber"
             onChange={handleChange}
-            value={talentForm.number}
+            value={talentForm.phone}
           />
         </div>
         <div className="flex flex-col gap-3 ">
@@ -112,10 +112,10 @@ export default function HireTalentForm() {
           <input
             className="form-input"
             type="text"
-            name="location"
+            name="locality"
             placeholder="Enter Location"
             onChange={handleChange}
-            value={talentForm.location}
+            value={talentForm.locality}
           />
         </div>
 

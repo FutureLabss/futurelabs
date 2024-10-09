@@ -36,7 +36,7 @@ export default function StateContextProvider({ children }: ProviderProps) {
     email: "",
     gender: "male",
     skill: "UI/UX Design",
-    address: ""
+    locality: ""
   })
 
 
@@ -44,9 +44,9 @@ export default function StateContextProvider({ children }: ProviderProps) {
     firstName: "",
     lastName: "",
     email: "",
-    number: "",
+    phone: "",
     gender: "male",
-    location: "",
+    locality: "",
   })
 
   const showSuccessMessage = () => {
