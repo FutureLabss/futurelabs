@@ -10,14 +10,14 @@ export default function SlickSwiper() {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
   };
   return (
-    <div className="slider-container ">
+    <div className="slider-container px-4 sm:px-0 pt-4 sm:pt-0">
       <Slider {...settings}>
         {imageGallery.map((blog, index) => (
           <div className="flex items-center" key={index}>
