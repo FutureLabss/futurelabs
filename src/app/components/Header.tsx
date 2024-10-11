@@ -2,12 +2,14 @@
 import Button from "@/app/ui/Button";
 import Nav from "./headcomponents/Nav";
 import Image from "next/image"
-import { pictureData } from "../../data/data";
 import IntroBg from "@/app/assets/icons/intro-bg.png"
 import CompanyLogos from "../assets/logo/Logo-frame.png"
 import HeaderCard from "./headcomponents/HeaderCard";
 import ContactForm from "../ui/ContactForm";
 import { useStateAuthProvider } from "../context";
+import Link from "next/link";
+import HeaderImageSlider from "../ui/HeaderImageSlider";
+import ImageGallerySwiper from "../ui/ImageGallerySwiper";
 
 
 
@@ -22,9 +24,12 @@ export default function Header() {
 
   return (
     <header className="flex flex-col gap-14 w-full relative">
-      <div className="px-[20px] xl:px-[5rem] pt-[1.25rem]">
+      <div className="px-[20px] xl:px-[5rem] pt-[1.25rem] flex justify-between items-center">
         <Nav />
 
+        <div className=" text-white font-medium text-[14px] sm:text-[20px] font-manrope bg-secondary-default px-3 py-1 rounded">
+          <Link href="https://studio.futurelabs.ng" target="_blank">Studios</Link>
+        </div>
       </div>
 
 
@@ -44,22 +49,11 @@ export default function Header() {
 
       <div className="text-center justify-center lg:mx-[5rem] flex flex-col gap-4 relative z-[5] px-[2.5rem] pb-[30px]">
         {/* Slider container */}
-        <div className="slider-container w-[200%]">
-          <div className="slider flex gap-4 justify-center items-center w-[250%]">
-            {pictureData.concat(pictureData).map((image, index) => (
-              <div key={index}>
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={288}
-                  height={321}
-                  // className=" relative "
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-            ))}
-            {/* Repeat images to create an infinite loop */}
-          </div>
+        <div className="hidden sm:block">
+          <HeaderImageSlider />
+        </div>
+        <div className="block sm:hidden">
+          <ImageGallerySwiper />
         </div>
 
         <div className="flex justify-center flex-col gap-2 ">

@@ -47,12 +47,12 @@ export default function SwiperComponent() {
                   />
                 </div>
                 <div className='flex flex-col  text-center md:gap-12 w-full justify-start  md:p-8 md:text-start font-manrope xl:mr-[110px] '>
-                  <p className="text-[14px] px-5 sm:px-6 md:px-0 lg:px-0 sm:text-[16px] lg:text-[24px] leading-normal">
+                  <p className="text-[14px] px-5 sm:px-6 md:px-0 lg:px-0 sm:text-[16px] lg:text-[24px] leading-normal text-justify">
                     {blog.content}
                   </p>
                   <div className='flex flex-col mt-4 md:mt-0 md:gap-2 w-full'>
-                    <h6 className="font-bold text-[1.5rem]">{blog.name}</h6>
-                    <p className="text-[1.5rem] font-normal">{blog.title}</p>
+                    <h6 className="font-bold text-[18px] md:text-[1.5rem]">{blog.name}</h6>
+                    <p className="text-[18px] md:text-[1.5rem] font-normal">{blog.title}</p>
                   </div>
                 </div>
               </div>

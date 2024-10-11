@@ -118,6 +118,7 @@ export default function ReusableForm() {
               className="form-select appearance-none"
               name="skill"
               onChange={handleChange}
+              value={formData.skill}
             >
               <option value="design">UI/UX Design</option>
               <option value="development">Web Development</option>

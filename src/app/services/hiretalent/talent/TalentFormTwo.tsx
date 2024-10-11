@@ -64,7 +64,7 @@ export default function TalentFormTwo() {
 
       const response = await axiosInstance.post('/register/talent', talentFormdata);
 
-      console.log(response.data);
+      console.log(response);
 
       setUserData({
         skill: "",
