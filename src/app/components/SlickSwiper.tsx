@@ -2,9 +2,11 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import { imageGallery } from "@/data/data";
 import Image from "next/image";
+import { mobileImages } from "@/data/data";
+
+
+
 
 export default function SlickSwiper() {
   const settings = {
@@ -19,10 +21,12 @@ export default function SlickSwiper() {
   return (
     <div className="slider-container px-4 sm:px-0 pt-4 sm:pt-0">
       <Slider {...settings}>
-        {imageGallery.map((blog, index) => (
-          <div className="flex items-center" key={index}>
+        {mobileImages.map((image) => (
+          <div className="block md:hidden items-center" key={image.id}>
             <Image
-              src={blog.src}
+              src={image.src}
+              width={312}
+              height={312}
               alt="futurelabs logo"
               className="w-full h-auto object-cover"
             />

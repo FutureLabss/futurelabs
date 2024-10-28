@@ -3,6 +3,9 @@ import { pictureData } from "@/data/data";
 import Image from "next/image";
 import Slider from "react-slick";
 
+
+
+
 export default function ImageGallerySwiper() {
   const settings = {
     dots: false,
@@ -20,6 +23,7 @@ export default function ImageGallerySwiper() {
           <div className="flex items-center" key={index}>
             <Image
               src={blog.src}
+              width={312}
               height={312}
               alt="futurelabs logo"
               className="w-full h-auto "

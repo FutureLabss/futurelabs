@@ -265,3 +265,33 @@ export const programData = [
 
 
 ]
+
+
+import Hero1 from "@/app/assets/images/hero--1.jpg"
+import Hero2 from "@/app/assets/images/hero--2.jpg"
+import Hero3 from "@/app/assets/images/hero--3.jpg"
+import Hero4 from "@/app/assets/images/hero--4.jpg"
+import Hero5 from "@/app/assets/images/hero--5.jpg"
+
+export const mobileImages = [
+  {
+    id: "img-1",
+    src: Hero1
+  },
+  {
+    id: "img-2",
+    src: Hero2
+  },
+  {
+    id: "img-3",
+    src: Hero3
+  },
+  {
+    id: "img-4",
+    src: Hero4
+  },
+  {
+    id: "img-5",
+    src: Hero5
+  },
+]
