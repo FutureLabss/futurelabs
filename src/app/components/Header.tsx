@@ -89,7 +89,7 @@ export default function Header() {
           <>
             {/* Container for centering the form */}
             <div className="fixed inset-0 flex items-center justify-center z-[20]" onClick={() => setShowForm(false)}>
-              <div className="relative " onClick={(e) => e.stopPropagation()}>
+              <div className="relative w-full  max-w-[580px] " onClick={(e) => e.stopPropagation()}>
                 <ContactForm setShowForm={setShowForm} />
               </div>
             </div>

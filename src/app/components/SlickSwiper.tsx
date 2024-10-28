@@ -27,8 +27,9 @@ export default function SlickSwiper() {
               src={image.src}
               width={312}
               height={312}
+              priority
               alt="futurelabs logo"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto"
             />
           </div>
         ))}
