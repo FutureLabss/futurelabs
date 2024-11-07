@@ -207,26 +207,26 @@ export const blogData = [
     src: Frame
   },
   {
-    content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
+    content: "Every day, I am grateful for the people and opportunities that have made my tech journey a breeze. Especially when I took a leap of faith by quitting my teaching job as a classroom teacher to start a tech career with little savings. My strategy? It's either it works or it works.",
     name: "Usenmfon Uko",
     title: "Developer",
     src: Frame1
   },
   {
     content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
-    name: "Usenmfon Uko",
+    name: "Ukpono Titus",
     title: "Developer",
     src: Frame2
   },
   {
     content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
-    name: "Usenmfon Uko",
-    title: "Developer",
+    name: "Akpan Iniobong",
+    title: "UI/UX",
     src: Frame3
   },
   {
-    content: "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
-    name: "Usenmfon Uko",
+    content: "The journey has not been smooth but I had a good start on the shoulder of @FutureLabsNG So if you are looking for a tech hub, community to join, visit them, their physical location is in Ikot Ekpene, Akwa Ibom State.",
+    name: "Awah Bright",
     title: "Developer",
     src: Frame4
   },
