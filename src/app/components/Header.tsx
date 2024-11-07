@@ -10,7 +10,7 @@ import { useStateAuthProvider } from "../context";
 import Link from "next/link";
 import HeaderImageSlider from "../ui/HeaderImageSlider";
 import ImageGallerySwiper from "../ui/ImageGallerySwiper";
-import RapidRiver from "@/app/assets/logo/rapid-river-logo.svg"
+// import RapidRiver from "@/app/assets/logo/rapid-river-logo.svg"
 
 
 
