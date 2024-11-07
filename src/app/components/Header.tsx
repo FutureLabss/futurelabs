@@ -10,6 +10,7 @@ import { useStateAuthProvider } from "../context";
 import Link from "next/link";
 import HeaderImageSlider from "../ui/HeaderImageSlider";
 import ImageGallerySwiper from "../ui/ImageGallerySwiper";
+import RapidRiver from "@/app/assets/logo/rapid-river-logo.svg"
 
 
 
@@ -60,15 +61,23 @@ export default function Header() {
           <p className="text-size-16 text-center leading-[24px] font-normal text-[#7F94CB] ">
             Where Futurist work
           </p>
-          <div className="text-center mx-auto">
+          <div className="text-center py-5 sm:py-0 mx-auto">
             <Image
               src={CompanyLogos}
               alt="company logos"
               width={700}
               height={300}
               quality={100}
-              className=" w-auto"
+              className="w-auto"
             />
+            {/* <Image
+              src={RapidRiver}
+              alt="company logos"
+              width={50}
+              height={50}
+              quality={100}
+              className="bg-white rounded-lg"
+            /> */}
           </div>
         </div>
 
@@ -77,7 +86,7 @@ export default function Header() {
           alt="hero image"
           width={300}
           height={300}
-          className="w-full h-[130px] md:h-[290px] absolute left-0 bottom-0 right-0 z-[-1]"
+          className="w-full h-[190px] sm:h-[150px] md:h-[200px] lg:h-[290px] absolute left-0 bottom-0 right-0 z-[-1]"
         />
       </div>
 
