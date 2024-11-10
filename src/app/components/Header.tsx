@@ -3,15 +3,14 @@ import Button from "@/app/ui/Button";
 import Nav from "./headcomponents/Nav";
 import Image from "next/image"
 import IntroBg from "@/app/assets/icons/intro-bg.png"
-import CompanyLogos from "../assets/logo/Logo-frame.png"
+import CompanyLogos from "../assets/logo/company-logos.png"
 import HeaderCard from "./headcomponents/HeaderCard";
 import ContactForm from "../ui/ContactForm";
 import { useStateAuthProvider } from "../context";
 import Link from "next/link";
 import HeaderImageSlider from "../ui/HeaderImageSlider";
 import ImageGallerySwiper from "../ui/ImageGallerySwiper";
-// import RapidRiver from "@/app/assets/logo/rapid-river-logo.svg"
-
+// import CompanyLogos
 
 
 export default function Header() {
