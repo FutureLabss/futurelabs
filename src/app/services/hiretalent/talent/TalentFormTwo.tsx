@@ -4,7 +4,9 @@ import SubmitButton from '../../ui/SubmitButton';
 import { useStateAuthProvider } from '@/app/context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axiosInstance from '@/app/BaseURL/baseURL';
+// import axiosInstance from '@/app/BaseURL/baseURL';
+import { useRouter } from 'next/navigation';
+// import axios from 'axios';
 
 
 type TalentForm = {
@@ -26,6 +28,10 @@ export default function TalentFormTwo() {
     smLink: '',
     resume: null,
   });
+
+  const router = useRouter();
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const context = useStateAuthProvider();
   if (!context) {
@@ -50,39 +56,85 @@ export default function TalentFormTwo() {
 
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-
     e.preventDefault();
+
+
+
     const { skill, experience, availability, smLink, resume } = userData;
 
     if (!skill || !experience || !availability || !smLink || !resume) {
 
       showErrorMessage();
-    } else {
-
-      const talentFormdata = { ...talentForm, ...userData }
-      console.log(talentFormdata);
-
-      const response = await axiosInstance.post('/register/talent', talentFormdata);
-
-      console.log(response);
-
-      setUserData({
-        skill: "",
-        experience: "",
-        availability: "Full-time",
-        smLink: "",
-        resume: null,
-      });
-      setTalentForm({
-        firstName: "",
-        lastName: "",
-        email: "",
-        gender: "male",
-        skill: "UI/UX Design",
-        address: "",
-      })
+      return;
     }
+
+    setIsLoading(true);
+
+    try {
+      const formData = new FormData();
+      formData.append('resume', resume as Blob);
+
+      const UploadUrl = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!UploadUrl.ok) {
+        throw new Error("Failed to upload resume");
+      }
+
+      const responseURL = await UploadUrl.json();
+      console.log("api response", responseURL.url);
+
+      const talentFormdata = { ...talentForm, ...userData, resume: responseURL.url };
+      console.log("talentFormdata", talentFormdata);
+
+      const response = await fetch('/api/register/talentform', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(talentFormdata),
+
+      });
+
+      const jsonResponse = await response.json();
+
+      if (jsonResponse.success) {
+        console.log("response data", response);
+        setUserData({
+          skill: "UI/UX Design",
+          experience: "beginner",
+          availability: "Full-time",
+          smLink: "",
+          resume: null,
+        });
+        setTalentForm({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          gender: "male",
+          locality: "",
+        })
+        router.push('/');
+      }
+      else {
+        throw new Error("Failed to register talent form");
+      }
+
+    } catch (error) {
+      console.error("Error during submission process:", error);
+
+
+    } finally {
+      setIsLoading(false);
+    }
+
   }
+
+
+
 
 
   return (
@@ -121,7 +173,7 @@ export default function TalentFormTwo() {
                 </div>
               </div>
               <div className="flex flex-col gap-3">
-                <label htmlFor="skill" className="form-label">
+                <label className="form-label">
                   Experience
                 </label>
                 <div className="relative">
@@ -131,10 +183,10 @@ export default function TalentFormTwo() {
                     onChange={handleChange}
                     value={userData.experience}
                   >
-                    <option value="beginer">Beginner</option>
+                    <option value="beginner">Beginner</option>
                     <option value="intermediate">Intermediate</option>
-                    <option value="advanced">Expert</option>
-                    <option value="advanced">Profesional</option>
+                    <option value="expert">Expert</option>
+                    <option value="profesional">Profesional</option>
                   </select>
                   <div className="absolute inset-y-0 right-0 flex items-center px-6 pointer-events-none">
                     <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,9 +202,9 @@ export default function TalentFormTwo() {
                 <div className="relative">
                   <select
                     className="form-select block appearance-none  border border-gray-300 rounded-md"
-                    name="availability "
+                    name="availability"
                     onChange={handleChange}
-                    value={userData.experience}
+                    value={userData.availability}
                   >
                     <option value="Full-time">Full-time</option>
                     <option value="Part-time">Part-time</option>
@@ -202,7 +254,7 @@ export default function TalentFormTwo() {
                 </label>
               </div>
             </div>
-            <SubmitButton />
+            <SubmitButton isLoading={isLoading} isDisabled={isLoading} />
             <ToastContainer autoClose={2000} />
           </form>
         </div>

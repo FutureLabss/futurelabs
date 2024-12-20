@@ -5,11 +5,17 @@ import { useStateAuthProvider } from '@/app/context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PaymentMethod from '../../components/PaymentMethod';
-import axiosInstance from '@/app/BaseURL/baseURL';
+
+import { useRouter } from 'next/navigation';
+// import axiosInstance from '@/app/BaseURL/baseURL';
 
 
 
 export default function LearnSkillForm() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const router = useRouter();
+
 
 
 
@@ -44,33 +50,56 @@ export default function LearnSkillForm() {
 
     if (!state || !locality || !ageRange || !discoveryMethod) {
 
-      showErrorMessage(); 
-    } else {
+      showErrorMessage();
+    }
 
+    try {
+      setIsLoading(true);
       const learnSkillFormdata = { ...formData, ...userData }
       console.log(learnSkillFormdata);
-      const res = await axiosInstance.post('/register/entry', learnSkillFormdata)
+      const response = await fetch('/api/register/learnskill', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(learnSkillFormdata),
 
-      console.log(res);
-      setShowPayment(true);
-
-      setUserData({
-        state: '',
-        locality: '',
-        ageRange: '',
-        discoveryMethod: '',
       });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        gender: "male",
-        skill: "UI/UX Design",
-        address: "",
-      })
+
+      const jsonResponse = await response.json();
+
+      if (jsonResponse.success) {
+        console.log("response data", response);
+        setUserData({
+          state: '',
+          locality: '',
+          ageRange: '',
+          discoveryMethod: '',
+        });
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          gender: "male",
+          skill: "design",
+          address: "",
+        })
+        router.push('/');
+      }
+      else {
+        throw new Error("Failed to register talent form");
+      }
+
+    } catch (error) {
+      console.error("Error during submission process:", error);
+
+
+    } finally {
+      setIsLoading(false);
     }
 
   }
+
 
 
   return (
@@ -149,7 +178,7 @@ export default function LearnSkillForm() {
             <div className={`fixed top-0 left-0 flex items-center bg-black/20 justify-center min-h-screen  ${showPayment ? "block" : "hidden"} w-full`} onClick={() => setShowPayment(false)}>
               <PaymentMethod />
             </div>
-            <SubmitButton />
+            <SubmitButton isLoading={isLoading} />
             <ToastContainer autoClose={2000} />
           </form>
         </div>

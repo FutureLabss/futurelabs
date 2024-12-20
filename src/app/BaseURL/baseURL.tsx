@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 const axiosInstance = axios.create({
-  baseURL: 'https://nest-auth-68hy.onrender.com/api/v1',
+  baseURL: 'http://localhost:3000/api',
 });
 
 export default axiosInstance;

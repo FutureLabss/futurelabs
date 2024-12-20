@@ -6,9 +6,9 @@ const UserDataSchema = new mongoose.Schema({
   lastName: { type: String, required: true },
   email: { type: String, required: true },
   gender: { type: String, enum: ["male", "female"], required: true },
-  phone: { type: String, required: true }, // Only required in the second form
+  phone: { type: String, required: false }, // Only required in the second form
   locality: { type: String },
-  skill: { type: String },
+  skill: { type: String, enum: ["development", "design", "marketing", "management", "data-analysis"], default: "development" },
 
   // Form-specific fields (optional)
   // For Enrolling for a Job form
@@ -18,10 +18,10 @@ const UserDataSchema = new mongoose.Schema({
   state: { type: String },
 
   // For Hiring a Talent form
-  availability: { type: String }, // e.g., "Full-time"
+  availability: { type: String, enum: ["Full-time", "Part-time", "Remote", "On-site", "Hybrid", "Shift Work"], trim: true, default: "Full-time" }, // e.g., "Full-time"
   workPreference: { type: String }, // e.g., "Remote"
-  experience: { type: String }, // e.g., "Intermediate"
-  resume: { type: Object }, // To store the uploaded file object
+  experience: { type: String, enum: ["beginner", "intermediate", "professional", "expert"], trim: true, default: "beginner" }, // e.g., "Intermediate"
+  resume: { type: String }, // To store the uploaded file object
   smLink: { type: String }, // Social media or portfolio link
 }, {
   timestamps: true

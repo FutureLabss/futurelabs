@@ -3,6 +3,7 @@ import Homeimg2 from "../app/assets/images/hero-2.png"
 import Homeimg3 from "../app/assets/images/home-image3.png"
 import Homeimg4 from "../app/assets/images/hero-3.png"
 import Homeimg5 from "../app/assets/images/hero-5.png"
+// import Homeimg6 from "../app/assets/images/gold-pic.jpg"
 
 
 export const pictureData = [

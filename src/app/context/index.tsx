@@ -35,7 +35,7 @@ export default function StateContextProvider({ children }: ProviderProps) {
     lastName: "",
     email: "",
     gender: "male",
-    skill: "UI/UX Design",
+    skill: "design",
     locality: ""
   })
 
