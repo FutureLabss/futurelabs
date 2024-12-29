@@ -4,7 +4,7 @@ import SubmitButton from '../../ui/SubmitButton';
 import { useStateAuthProvider } from '@/app/context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import axiosInstance from '@/app/BaseURL/baseURL';
+import axiosInstance from '@/app/BaseURL/baseURL';
 import { useRouter } from 'next/navigation';
 // import axios from 'axios';
 
@@ -12,9 +12,9 @@ import { useRouter } from 'next/navigation';
 type TalentForm = {
   skill: string;
   experience: string;
-  availability: string;
-  smLink: string;
-  resume: File | null;
+  work_preference: string;
+  social_link: string;
+  pdf: File | null;
 
 }
 
@@ -24,9 +24,9 @@ export default function TalentFormTwo() {
   const [userData, setUserData] = useState<TalentForm>({
     skill: 'design',
     experience: "beginner",
-    availability: 'Full-time',
-    smLink: '',
-    resume: null,
+    work_preference: 'Full-time',
+    social_link: '',
+    pdf: null,
   });
 
   const router = useRouter();
@@ -46,7 +46,7 @@ export default function TalentFormTwo() {
     if (name === 'resume' && e.target instanceof HTMLInputElement && e.target.files) {
       const files = e.target.files;
       console.log(files);
-      setUserData({ ...userData, resume: files ? files[0] : null });
+      setUserData({ ...userData, pdf: files ? files[0] : null });
     }
     // Handle text input and select
     else if (e.target instanceof HTMLSelectElement || e.target instanceof HTMLInputElement) {
@@ -60,9 +60,9 @@ export default function TalentFormTwo() {
 
 
 
-    const { skill, experience, availability, smLink, resume } = userData;
+    const { skill, experience, work_preference, social_link, pdf } = userData;
 
-    if (!skill || !experience || !availability || !smLink || !resume) {
+    if (!skill || !experience || !work_preference || !social_link || !pdf) {
 
       showErrorMessage();
       return;
@@ -72,50 +72,51 @@ export default function TalentFormTwo() {
 
     try {
       const formData = new FormData();
-      formData.append('resume', resume as Blob);
+      formData.append('resume', pdf as Blob);
 
-      const UploadUrl = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
-      });
+      // const UploadUrl = await fetch("/api/upload", {
+      //   method: "POST",
+      //   body: formData,
+      // });
 
-      if (!UploadUrl.ok) {
-        throw new Error("Failed to upload resume");
-      }
+      // if (!UploadUrl.ok) {
+      //   throw new Error("Failed to upload resume");
+      // }
 
-      const responseURL = await UploadUrl.json();
-      console.log("api response", responseURL.url);
+      // const responseURL = await UploadUrl.json();
+      // console.log("api response", responseURL.url);
 
-      const talentFormdata = { ...talentForm, ...userData, resume: responseURL.url };
+      const talentFormdata = { ...talentForm, ...userData, pdf: formData.get('pdf') };
       console.log("talentFormdata", talentFormdata);
 
-      const response = await fetch('/api/register/talentform', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(talentFormdata),
+      const response = await axiosInstance.post(
+        '/service/applicant',
+        talentFormdata,
+        {
+          headers: {
+            'x-api-key': 'NKa4Do2rjKnhYhmHHXIyw9nGEG3o7fNvCGoS9s0VFRQ',
+          },
+        }
+      );
 
-      });
-
-      const jsonResponse = await response.json();
+      const jsonResponse = response.data;
 
       if (jsonResponse.success) {
         console.log("response data", response);
         setUserData({
           skill: "UI/UX Design",
           experience: "beginner",
-          availability: "Full-time",
-          smLink: "",
-          resume: null,
+          work_preference: "Full-time",
+          social_link: "",
+          pdf: null,
         });
         setTalentForm({
-          firstName: "",
-          lastName: "",
+          first_name: "",
+          surname: "",
           email: "",
-          phone: "",
+          phone_number: "",
           gender: "male",
-          locality: "",
+          lga: "",
         })
         router.push('/');
       }
@@ -202,9 +203,9 @@ export default function TalentFormTwo() {
                 <div className="relative">
                   <select
                     className="form-select block appearance-none  border border-gray-300 rounded-md"
-                    name="availability"
+                    name="work_preference"
                     onChange={handleChange}
-                    value={userData.availability}
+                    value={userData.work_preference}
                   >
                     <option value="Full-time">Full-time</option>
                     <option value="Part-time">Part-time</option>
@@ -227,10 +228,10 @@ export default function TalentFormTwo() {
                 </label>
                 <input className="form-input"
                   type="text"
-                  name="smLink"
+                  name="social_link"
                   placeholder="Paste URL"
                   onChange={handleChange}
-                  value={userData.smLink}
+                  value={userData.social_link}
                 />
 
               </div>
@@ -242,7 +243,7 @@ export default function TalentFormTwo() {
                   type="file"
                   id="resume-upload"
                   name="resume"
-                  placeholder="Upload from device"
+                  placeholder="Upload from device (pdf only)"
                   onChange={handleChange}
                 />
                 {/* Custom label acting as the upload button */}
@@ -250,7 +251,7 @@ export default function TalentFormTwo() {
                   htmlFor="resume-upload" // Triggers the hidden input
                   className="form-input block appearance-none cursor-pointer overflow-auto"
                 >
-                  {userData.resume ? userData.resume.name : "Upload from device"} {/* Show file name if selected */}
+                  {userData.pdf ? userData.pdf.name : "Upload from device (.pdf)"} {/* Show file name if selected */}
                 </label>
               </div>
             </div>

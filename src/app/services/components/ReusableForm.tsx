@@ -25,8 +25,8 @@ export default function ReusableForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { firstName, lastName, email, gender, skill, address } = formData;
-    if (!firstName || !lastName || !email || !gender || !skill || !address) {
+    const { first_name, surname, email, gender, skill, address } = formData;
+    if (!first_name || !surname || !email || !gender || !skill || !address) {
       showErrorMessage();
       // return
     } else {
@@ -47,10 +47,10 @@ export default function ReusableForm() {
           </label>
           <input className="form-input"
             type="text"
-            name="firstName"
+            name="first_name"
             placeholder="Enter your first name"
             onChange={handleChange}
-            value={formData.firstName}
+            value={formData.first_name}
           />
         </div>
         <div className="flex flex-col gap-3 ">
@@ -59,10 +59,10 @@ export default function ReusableForm() {
           </label>
           <input className="form-input"
             type="text"
-            name="lastName"
-            placeholder="Enter your last name"
+            name="surname"
+            placeholder="Enter your surname"
             onChange={handleChange}
-            value={formData.lastName}
+            value={formData.surname}
           />
         </div>
         <div className="flex flex-col gap-3 ">

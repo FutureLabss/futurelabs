@@ -1,11 +1,12 @@
 
 export type FormDataProps = {
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  surname: string;
   email: string;
   gender: string;
   skill?: string;
   address?: string;
-  phone?: string;
-  locality?: string;
+  phone_number?: string;
+  lga?: string;
+  state?: string;
 }

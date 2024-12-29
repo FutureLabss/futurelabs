@@ -31,22 +31,22 @@ export default function StateContextProvider({ children }: ProviderProps) {
   const [showForm, setShowForm] = useState<boolean>(false);
   const [showPayment, setShowPayment] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormDataProps>({
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    surname: "",
     email: "",
     gender: "male",
     skill: "design",
-    locality: ""
+    address: "",
   })
 
 
   const [talentForm, setTalentForm] = useState<FormDataProps>({
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    surname: "",
     email: "",
-    phone: "",
+    phone_number: "",
     gender: "male",
-    locality: "",
+    state: "",
   })
 
   const showSuccessMessage = () => {

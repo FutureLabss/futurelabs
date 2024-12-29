@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SubmitButton from '../../ui/SubmitButton';
 import { useStateAuthProvider } from '@/app/context';
 import { ToastContainer } from 'react-toastify';
@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PaymentMethod from '../../components/PaymentMethod';
 
 import { useRouter } from 'next/navigation';
-// import axiosInstance from '@/app/BaseURL/baseURL';
+import axiosInstance from '@/app/BaseURL/baseURL';
 
 
 
@@ -21,12 +21,25 @@ export default function LearnSkillForm() {
 
   const [userData, setUserData] = useState({
     state: '',
-    locality: '',
-    ageRange: '',
-    discoveryMethod: '',
+    lga: '',
+    age_range: '',
+    heard_about_us: '',
   });
 
 
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await axiosInstance.get('/service/applicant', {
+        headers: {
+          'x-api-key': 'NKa4Do2rjKnhYhmHHXIyw9nGEG3o7fNvCGoS9s0VFRQ',
+        },
+      });
+      const response = await data.data;
+      console.log(response);
+    }
+    fetchData();
+  }, []);
 
   const context = useStateAuthProvider();
   if (!context) {
@@ -46,9 +59,9 @@ export default function LearnSkillForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
     e.preventDefault();
-    const { state, locality, ageRange, discoveryMethod } = userData;
+    const { state, lga, age_range, heard_about_us } = userData;
 
-    if (!state || !locality || !ageRange || !discoveryMethod) {
+    if (!state || !lga || !age_range || !heard_about_us) {
 
       showErrorMessage();
     }
@@ -57,28 +70,29 @@ export default function LearnSkillForm() {
       setIsLoading(true);
       const learnSkillFormdata = { ...formData, ...userData }
       console.log(learnSkillFormdata);
-      const response = await fetch('/api/register/learnskill', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(learnSkillFormdata),
+      const response = await axiosInstance.post(
+        '/service/applicant',
+        learnSkillFormdata,
+        {
+          headers: {
+            'x-api-key': 'NKa4Do2rjKnhYhmHHXIyw9nGEG3o7fNvCGoS9s0VFRQ',
+          },
+        }
+      );
 
-      });
-
-      const jsonResponse = await response.json();
+      const jsonResponse = response.data;
 
       if (jsonResponse.success) {
         console.log("response data", response);
         setUserData({
           state: '',
-          locality: '',
-          ageRange: '',
-          discoveryMethod: '',
+          lga: '',
+          age_range: '',
+          heard_about_us: '',
         });
         setFormData({
-          firstName: "",
-          lastName: "",
+          first_name: "",
+          surname: "",
           email: "",
           gender: "male",
           skill: "design",
@@ -131,10 +145,10 @@ export default function LearnSkillForm() {
                 </label>
                 <div className='relative'>
                   <select className="form-select block appearance-none  border border-gray-300 rounded-md text-gray-900"
-                    name="ageRange"
+                    name="age_range"
                     id=""
                     onChange={handleChange}>
-                    value={userData.ageRange}
+                    value={userData.age_range}
                     <option value="">Choose Age</option>
                     <option value="15-20">15-20</option>
                     <option value="20-25">20-25</option>
@@ -154,10 +168,10 @@ export default function LearnSkillForm() {
                 </label>
                 <input className="form-input"
                   type="text"
-                  name="locality"
+                  name="lga"
                   placeholder="Enter your LGA"
                   onChange={handleChange}
-                  value={userData.locality}
+                  value={userData.lga}
                 />
 
               </div>
@@ -167,10 +181,10 @@ export default function LearnSkillForm() {
                 </label>
                 <input className="form-input"
                   type="text"
-                  name="discoveryMethod"
+                  name="heard_about_us"
                   placeholder="Enter here"
                   onChange={handleChange}
-                  value={userData.discoveryMethod}
+                  value={userData.heard_about_us}
                 />
 
               </div>

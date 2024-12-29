@@ -25,8 +25,8 @@ export default function HireTalentForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { firstName, lastName, email, gender, phone, locality } = talentForm;
-    if (!firstName || !lastName || !email || !gender || !phone || !locality) {
+    const { first_name, surname, email, gender, phone_number, state } = talentForm;
+    if (!first_name || !surname || !email || !gender || !phone_number || !state) {
       showErrorMessage();
       // return
     } else {
@@ -47,10 +47,10 @@ export default function HireTalentForm() {
           <input
             className="form-input"
             type="text"
-            name="firstName"
+            name="first_name"
             placeholder="Enter your first name"
             onChange={handleChange}
-            value={talentForm.firstName}
+            value={talentForm.first_name}
           />
         </div>
         <div className="flex flex-col gap-3 ">
@@ -58,10 +58,10 @@ export default function HireTalentForm() {
           <input
             className="form-input"
             type="text"
-            name="lastName"
+            name="surname"
             placeholder="Enter your last name"
             onChange={handleChange}
-            value={talentForm.lastName}
+            value={talentForm.surname}
           />
         </div>
         <div className="flex flex-col gap-3 ">
@@ -80,10 +80,10 @@ export default function HireTalentForm() {
           <input
             className="form-input"
             type="number"
-            name="phone"
+            name="phone_number"
             placeholder="Enter phone umber"
             onChange={handleChange}
-            value={talentForm.phone}
+            value={talentForm.phone_number}
           />
         </div>
         <div className="flex flex-col gap-3 ">
@@ -108,14 +108,14 @@ export default function HireTalentForm() {
         </div>
 
         <div className="flex flex-col gap-3" >
-          <label htmlFor="form-label">Location by LGA</label>
+          <label htmlFor="form-label">Location by state</label>
           <input
             className="form-input"
             type="text"
-            name="locality"
+            name="state"
             placeholder="Enter Location"
             onChange={handleChange}
-            value={talentForm.locality}
+            value={talentForm.state}
           />
         </div>
 
