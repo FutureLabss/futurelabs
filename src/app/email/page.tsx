@@ -11,6 +11,7 @@ export default function VerifyEmail() {
   }
 
   const { formData: { email } } = context;
+  console.log(" email", email);
 
   return (
     <div className='px-12 flex flex-col mx-auto justify-center  items-center'>

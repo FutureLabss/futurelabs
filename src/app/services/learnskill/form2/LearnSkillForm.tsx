@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import SubmitButton from '../../ui/SubmitButton';
 import { useStateAuthProvider } from '@/app/context';
 import { ToastContainer } from 'react-toastify';
@@ -79,14 +79,14 @@ export default function LearnSkillForm() {
           age_range: '',
           heard_about_us: '',
         });
-        setFormData({
-          first_name: "",
-          surname: "",
-          email: "",
-          gender: "male",
-          skill: "design",
-          address: "",
-        })
+        // setFormData({
+        //   first_name: "",
+        //   surname: "",
+        //   email: "",
+        //   gender: "male",
+        //   skill: "design",
+        //   address: "",
+        // })
 
         router.push('/email');
 
