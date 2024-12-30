@@ -8,6 +8,7 @@ import PaymentMethod from '../../components/PaymentMethod';
 
 import { useRouter } from 'next/navigation';
 import axiosInstance from '@/app/BaseURL/baseURL';
+import { isAxiosError } from 'axios';
 
 
 
@@ -27,27 +28,13 @@ export default function LearnSkillForm() {
   });
 
 
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await axiosInstance.get('/service/applicant', {
-        headers: {
-          'x-api-key': 'NKa4Do2rjKnhYhmHHXIyw9nGEG3o7fNvCGoS9s0VFRQ',
-        },
-      });
-      const response = await data.data;
-      console.log(response);
-    }
-    fetchData();
-  }, []);
-
   const context = useStateAuthProvider();
   if (!context) {
     return null;
   }
 
   const { formData, setFormData, showErrorMessage, showPayment,
-    setShowPayment } = context;
+    setShowPayment, showEmailErrorMessage, showEmailSuccessMessage } = context;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -69,9 +56,9 @@ export default function LearnSkillForm() {
     try {
       setIsLoading(true);
       const learnSkillFormdata = { ...formData, ...userData }
-      console.log(learnSkillFormdata);
+
       const response = await axiosInstance.post(
-        '/service/applicant',
+        '/service/learn',
         learnSkillFormdata,
         {
           headers: {
@@ -81,8 +68,10 @@ export default function LearnSkillForm() {
       );
 
       const jsonResponse = response.data;
+      console.log(" jsonResponse", jsonResponse);
 
       if (jsonResponse.success) {
+        showEmailSuccessMessage();
         console.log("response data", response);
         setUserData({
           state: '',
@@ -98,13 +87,20 @@ export default function LearnSkillForm() {
           skill: "design",
           address: "",
         })
-        router.push('/');
+
+        router.push('/email');
+
       }
       else {
         throw new Error("Failed to register talent form");
       }
 
     } catch (error) {
+      if (isAxiosError(error) && error.response) {
+        showEmailErrorMessage(error.response.data.message);
+      } else {
+        showEmailErrorMessage("An unexpected error occurred");
+      }
       console.error("Error during submission process:", error);
 
 

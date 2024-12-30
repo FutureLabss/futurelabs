@@ -13,6 +13,8 @@ interface StateContextType {
   setFormData: (formData: FormDataProps) => void;
   showSuccessMessage: () => void;
   showErrorMessage: () => void;
+  showEmailSuccessMessage: () => void;
+  showEmailErrorMessage: (message: string) => void;
   talentForm: FormDataProps;
   setTalentForm: (talentForm: FormDataProps) => void;
   showPayment: boolean;
@@ -60,6 +62,16 @@ export default function StateContextProvider({ children }: ProviderProps) {
       position: "top-right",
     })
   }
+  const showEmailSuccessMessage = () => {
+    toast.success("Check your mail box to verify email address", {
+      position: "top-right",
+    })
+  }
+  const showEmailErrorMessage = (message: string) => {
+    toast.error(message, {
+      position: "top-right",
+    })
+  }
 
   const contextValue = {
     showForm,
@@ -72,6 +84,8 @@ export default function StateContextProvider({ children }: ProviderProps) {
     setTalentForm,
     showPayment,
     setShowPayment,
+    showEmailErrorMessage,
+    showEmailSuccessMessage,
     linkIndex,
     setLinkIndex
   };

@@ -43,7 +43,7 @@ export default function TalentFormTwo() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
 
-    if (name === 'resume' && e.target instanceof HTMLInputElement && e.target.files) {
+    if (name === 'pdf' && e.target instanceof HTMLInputElement && e.target.files) {
       const files = e.target.files;
       console.log(files);
       setUserData({ ...userData, pdf: files ? files[0] : null });
@@ -71,30 +71,20 @@ export default function TalentFormTwo() {
     setIsLoading(true);
 
     try {
-      const formData = new FormData();
-      formData.append('resume', pdf as Blob);
+      // const formData = new FormData();
+      // formData.append('pdf', pdf);
 
-      // const UploadUrl = await fetch("/api/upload", {
-      //   method: "POST",
-      //   body: formData,
-      // });
 
-      // if (!UploadUrl.ok) {
-      //   throw new Error("Failed to upload resume");
-      // }
-
-      // const responseURL = await UploadUrl.json();
-      // console.log("api response", responseURL.url);
-
-      const talentFormdata = { ...talentForm, ...userData, pdf: formData.get('pdf') };
+      const talentFormdata = { ...talentForm, ...userData };
       console.log("talentFormdata", talentFormdata);
 
       const response = await axiosInstance.post(
-        '/service/applicant',
+        '/service/hire',
         talentFormdata,
         {
           headers: {
             'x-api-key': 'NKa4Do2rjKnhYhmHHXIyw9nGEG3o7fNvCGoS9s0VFRQ',
+            'Content-Type': 'multipart/form-data',
           },
         }
       );
@@ -116,7 +106,7 @@ export default function TalentFormTwo() {
           email: "",
           phone_number: "",
           gender: "male",
-          lga: "",
+          state: "",
         })
         router.push('/');
       }
@@ -147,7 +137,7 @@ export default function TalentFormTwo() {
         </div>
         <div>
           <form className='flex flex-col gap-12'
-            onSubmit={handleSubmit}>
+            onSubmit={handleSubmit} encType="multipart/form-data">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[1rem] xl:gap-[3rem]">
               <div className="flex flex-col gap-3">
                 <label htmlFor="skill" className="form-label">
@@ -242,8 +232,9 @@ export default function TalentFormTwo() {
                 <input className="form-input hidden"
                   type="file"
                   id="resume-upload"
-                  name="resume"
+                  name="pdf"
                   placeholder="Upload from device (pdf only)"
+                  accept='application/pdf'
                   onChange={handleChange}
                 />
                 {/* Custom label acting as the upload button */}
