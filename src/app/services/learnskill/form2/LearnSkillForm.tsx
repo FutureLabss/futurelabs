@@ -33,7 +33,7 @@ export default function LearnSkillForm() {
     return null;
   }
 
-  const { formData, setFormData, showErrorMessage, showPayment,
+  const { formData, showErrorMessage, showPayment,
     setShowPayment, showEmailErrorMessage, showEmailSuccessMessage } = context;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {

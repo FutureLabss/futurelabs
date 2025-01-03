@@ -70,12 +70,16 @@ export default function TalentFormTwo() {
 
     setIsLoading(true);
 
+    const formData = new FormData();
+    formData.append('pdf', pdf);
+    // console.log("formData", formData);
+
     try {
-      // const formData = new FormData();
-      // formData.append('pdf', pdf);
 
 
-      const talentFormdata = { ...talentForm, ...userData };
+
+
+      const talentFormdata = { ...talentForm, ...userData, pdf: formData.get('pdf') };
       console.log("talentFormdata", talentFormdata);
 
       const response = await axiosInstance.post(
@@ -136,8 +140,12 @@ export default function TalentFormTwo() {
           <p className='text-[1.5rem] sm:text-[2rem] xl:text-[3rem]'>2 out of 2</p>
         </div>
         <div>
-          <form className='flex flex-col gap-12'
-            onSubmit={handleSubmit} encType="multipart/form-data">
+          <form
+            className='flex flex-col gap-12'
+            onSubmit={handleSubmit}
+            encType="multipart/form-data">
+
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[1rem] xl:gap-[3rem]">
               <div className="flex flex-col gap-3">
                 <label htmlFor="skill" className="form-label">
@@ -233,14 +241,14 @@ export default function TalentFormTwo() {
                   type="file"
                   id="resume-upload"
                   name="pdf"
+                  accept='.pdf'
                   placeholder="Upload from device (pdf only)"
-                  accept='application/pdf'
                   onChange={handleChange}
                 />
                 {/* Custom label acting as the upload button */}
                 <label
                   htmlFor="resume-upload" // Triggers the hidden input
-                  className="form-input block appearance-none cursor-pointer overflow-auto"
+                  className="form-input block appearance-none cursor-pointer overflow-auto text-nowrap"
                 >
                   {userData.pdf ? userData.pdf.name : "Upload from device (.pdf)"} {/* Show file name if selected */}
                 </label>
