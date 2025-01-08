@@ -15,11 +15,11 @@ export default function EmailSuccessPage() {
   console.log(" email", email);
   return (
 
-    <div className='flex gap-4 justify-between flex-wrap-reverse w-full h-screen'>
+    <div className='flex gap-4 justify-between md:flex-row flex-col-reverse w-full min-h-screen'>
       <div className='bg-[#212C4A] p-4 flex flex-col gap-4 items-center justify-center flex-1'>
         <Image
           src="/images/successmail.png"
-          width={600}
+          width={500}
           height={500}
           alt="verify email"
         />
@@ -28,8 +28,8 @@ export default function EmailSuccessPage() {
           <p>Kick start your tech join with us and learn from the industry best</p>
         </div>
       </div>
-      <div className='flex flex-col flex-1 gap-4 justify-between'>
-        <div className=' self-start ml-auto'>
+      <div className='flex flex-col flex-1 gap-4 justify-between px-4'>
+        <div className=' self-start ml-auto py-5'>
           <Nav />
         </div>
         <div className='flex flex-col flex-1 gap-4 items-center justify-center text-center'>
@@ -42,7 +42,7 @@ export default function EmailSuccessPage() {
             alt="verify email"
           />
 
-          <p className='max-w-[400px] w-full text-center text-[20px]'>We&apos;ve sent a verification link to {email}. Please check your inbox and click on the link to verify your account</p>
+          <p className='max-w-[430px] w-full text-center text-[20px]'>We&apos;ve sent a verification link to {email}. Please check your inbox and click on the link to verify your account</p>
         </div>
       </div>
     </div>
