@@ -86,15 +86,7 @@ export default function TalentFormTwo() {
       console.log("formData", formData);
 
 
-      const response = await axiosInstance.post(
-        '/service/hire',
-        formData,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        }
-      );
+      const response = await axiosInstance.post('/service/hire', formData,);
 
       const jsonResponse = response.data;
 

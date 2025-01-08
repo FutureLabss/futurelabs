@@ -3,8 +3,6 @@ import Nav from '../components/headcomponents/Nav'
 import Image from 'next/image'
 import { useStateAuthProvider } from '../context'
 
-
-
 export default function EmailSuccessPage() {
   const context = useStateAuthProvider();
   if (!context) {
@@ -12,7 +10,6 @@ export default function EmailSuccessPage() {
   }
 
   const { formData: { email } } = context;
-  console.log(" email", email);
   return (
 
     <div className='flex gap-4 justify-between md:flex-row flex-col-reverse w-full min-h-screen'>

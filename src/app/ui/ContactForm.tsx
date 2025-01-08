@@ -10,7 +10,7 @@ const links = [
   {
     id: 1,
     name: "Learn a Skill",
-    url: "services/learnskill",
+    url: "https://futurelabs-lms.vercel.app/",
   },
   {
     id: 2,

@@ -153,6 +153,13 @@ import serviceimg6 from "../app/assets/images/service-img6.png"
 
 
 export const servicesData = [
+  {
+    id: "service-2",
+    service: "Software Training Programs",
+    description: "We offer a 9 months bootcamp designed to take you from zero to hero, you will learn new technologies, join a community of techies, build real world projects and collaborate with teammates in a cross functional environment",
+    src: serviceimg2,
+    href: "https://futurelabs-lms.vercel.app/",
+  },
 
   {
     id: "service-1",
@@ -161,12 +168,6 @@ export const servicesData = [
     src: serviceimg1,
   },
 
-  {
-    id: "service-2",
-    service: "Software Training Programs",
-    description: "We offer a 9 months bootcamp designed to take you from zero to hero, you will learn new technologies, join a community of techies, build real world projects and collaborate with teammates in a cross functional environment",
-    src: serviceimg2,
-  },
 
   {
     id: "service-3",
