@@ -17,9 +17,6 @@ export default function LearnSkillForm() {
 
   const router = useRouter();
 
-
-
-
   const [userData, setUserData] = useState({
     state: '',
     lga: '',
@@ -79,14 +76,6 @@ export default function LearnSkillForm() {
           age_range: '',
           heard_about_us: '',
         });
-        // setFormData({
-        //   first_name: "",
-        //   surname: "",
-        //   email: "",
-        //   gender: "male",
-        //   skill: "design",
-        //   address: "",
-        // })
 
         router.push('/email');
 
