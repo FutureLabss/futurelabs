@@ -71,23 +71,26 @@ export default function TalentFormTwo() {
     setIsLoading(true);
 
     const formData = new FormData();
-    formData.append('pdf', pdf);
-    // console.log("formData", formData);
 
     try {
-
-
-
-
-      const talentFormdata = { ...talentForm, ...userData, pdf: formData.get('pdf') };
+      const talentFormdata = { ...talentForm, ...userData };
       console.log("talentFormdata", talentFormdata);
+
+      for (const [key, value] of Object.entries(talentFormdata)) {
+        if (value !== null && value !== undefined) {
+          // If value is a File or a string, append it directly
+          formData.append(key, value instanceof File ? value : String(value));
+        }
+      }
+
+      console.log("formData", formData);
+
 
       const response = await axiosInstance.post(
         '/service/hire',
-        talentFormdata,
+        formData,
         {
           headers: {
-            'x-api-key': 'NKa4Do2rjKnhYhmHHXIyw9nGEG3o7fNvCGoS9s0VFRQ',
             'Content-Type': 'multipart/form-data',
           },
         }
