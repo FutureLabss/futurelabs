@@ -15,7 +15,7 @@ const links = [
   {
     id: 2,
     name: "Hiring Talent",
-    url: "services/hiretalent",
+    url: "https://futurelabs-lms.vercel.app/",
   },
   {
     id: 3,

@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axiosInstance from '@/app/BaseURL/baseURL';
 import { useRouter } from 'next/navigation';
+import { isAxiosError } from 'axios';
 // import axios from 'axios';
 
 
@@ -38,7 +39,7 @@ export default function TalentFormTwo() {
     return null;
   }
 
-  const { talentForm, setTalentForm, showErrorMessage } = context;
+  const { talentForm, setTalentForm, showErrorMessage, talentSubmissionErrorMessage, showEmailErrorMessage } = context;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -88,6 +89,7 @@ export default function TalentFormTwo() {
 
       const response = await axiosInstance.post('/service/hire', formData,);
 
+      console.log("response", response);
       const jsonResponse = response.data;
 
       if (jsonResponse.success) {
@@ -110,10 +112,16 @@ export default function TalentFormTwo() {
         router.push('/');
       }
       else {
+        talentSubmissionErrorMessage();
         throw new Error("Failed to register talent form");
       }
 
     } catch (error) {
+      if (isAxiosError(error) && error.response) {
+        showEmailErrorMessage(error.response.data.message);
+      } else {
+        showEmailErrorMessage("An unexpected error occurred");
+      }
       console.error("Error during submission process:", error);
 
 
@@ -250,7 +258,7 @@ export default function TalentFormTwo() {
               </div>
             </div>
             <SubmitButton isLoading={isLoading} isDisabled={isLoading} />
-            <ToastContainer autoClose={2000} />
+            <ToastContainer autoClose={3000} />
           </form>
         </div>
       </div>

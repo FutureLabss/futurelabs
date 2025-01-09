@@ -15,6 +15,7 @@ interface StateContextType {
   showErrorMessage: () => void;
   showEmailSuccessMessage: () => void;
   showEmailErrorMessage: (message: string) => void;
+  talentSubmissionErrorMessage: () => void;
   talentForm: FormDataProps;
   setTalentForm: (talentForm: FormDataProps) => void;
   showPayment: boolean;
@@ -67,6 +68,11 @@ export default function StateContextProvider({ children }: ProviderProps) {
       position: "top-right",
     })
   }
+  const talentSubmissionErrorMessage = () => {
+    toast.error("Failed to register talent form", {
+      position: "top-right",
+    })
+  }
   const showEmailErrorMessage = (message: string) => {
     toast.error(message, {
       position: "top-right",
@@ -81,6 +87,7 @@ export default function StateContextProvider({ children }: ProviderProps) {
     showSuccessMessage,
     showErrorMessage,
     talentForm,
+    talentSubmissionErrorMessage,
     setTalentForm,
     showPayment,
     setShowPayment,
