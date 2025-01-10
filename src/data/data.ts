@@ -144,10 +144,10 @@ export const imageGallery = [
 
 import serviceimg1 from "../app/assets/images/service-img1.png"
 import serviceimg2 from "../app/assets/images/service-img2.png"
-// import serviceimg3 from "../app/assets/images/service-img3.png"
-// import serviceimg4 from "../app/assets/images/service-img4.png"
+import videorecord from "../app/assets/images/videorecord.png"
 import serviceimg5 from "../app/assets/images/service-img5.png"
 import serviceimg6 from "../app/assets/images/service-img6.png"
+import talentpool from "../app/assets/images/talentpool.png"
 
 
 
@@ -173,12 +173,12 @@ export const servicesData = [
     id: "service-3",
     service: "Recorded Courses",
     description: "Our pre-recorded courses are designed to take your career to the next level",
-    src: img1,
+    src: videorecord,
   },
   {
     service: "Talent Pool Access",
     description: "We take the best talents from our training programs and place them in international roles where they contribute and learn new skills. A win win.",
-    src: img1,
+    src: talentpool,
   },
   {
     service: "Minimum Viable Products",
