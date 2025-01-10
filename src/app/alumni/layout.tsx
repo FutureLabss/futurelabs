@@ -10,8 +10,8 @@ export default function AlumniForumLayout({
   return (
     <div>
         <div>
-        <AppBarComponent />
     <TopNavBarComponents />
+        <AppBarComponent />
         </div>
       <div>
           {children}

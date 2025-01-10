@@ -42,11 +42,23 @@ const config: Config = {
           700: "#105F89",
         },
       },
+      screens: {
+        xsm: "320px",
+        xxs: "375px",
+        xs: "425px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        xxl: "1440px",
+        "2xl": "1536px",
+        // "3xl": "60px"
+      },
     },
-    fontFamily: {
-      inter: ['var(--font-inter)'],
-      manrope: ['var(--font-manrope)'],
-    },
+      fontFamily: {
+        inter: ['var(--font-inter)'],
+        manrope: ['var(--font-manrope)'],
+      },
   },
   plugins: [],
 };

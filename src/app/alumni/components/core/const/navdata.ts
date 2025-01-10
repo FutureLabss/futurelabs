@@ -4,11 +4,11 @@ interface MenuItem {
     submenu?: MenuItem[]; 
   }
 export const navigation:MenuItem[] = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
+    { name: "Home", href: "/alumni" },
+    { name: "About", href: "/alumni/aboutus" },
     { 
       name: "Our Services", 
-      href: "/services",
+      href: "",
       submenu: [
         { name: "Web Development", href: "/services/web-development" },
         { name: "Mobile Development", href: "/services/mobile-development" },
@@ -17,12 +17,13 @@ export const navigation:MenuItem[] = [
     },
     { 
       name: "Programmes", 
-      href: "/programmes",
+      href: "",
       submenu: [
         { name: "Tech Training", href: "/programmes/tech-training" },
         { name: "Innovation Hub", href: "/programmes/innovation-hub" },
       ]
     },
-    { name: "Events", href: "/events" },
-    { name: "Jobs", href: "/jobs" },
+    { name: "Events", href: "" },
+    { name: "Jobs", href: "" },
+    { name: "Blog", href: "" },
 ]
