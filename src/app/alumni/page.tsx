@@ -9,8 +9,8 @@ export default function AlumniForum() {
       <div className="  ">
       {/* &apos;s */}
         <div className="text-center  bg-gray-100 md:py-20 xsm:py-10 px-3 ">
-          <h1 className="md:text-[3.75rem] xsm:text-[2rem] font-bold text-gray-500 mb-6">Celebrating Alumni Excellence</h1>
-          <p className="text-gray-500 max-w-4xl mx-auto md:text-[1.35rem] text-[1.2em] text-start">
+          <h1 className="md:text-[3.75rem] xsm:text-[1.75rem] font-bold text-gray-500 mb-6">Celebrating Alumni Excellence</h1>
+          <p className="text-gray-500 max-w-4xl mx-auto md:text-[1.35rem] text-[1em] leading-7 md:leading-10 text-start">
           Welcome to Future Labs Alumni, a global network of tech pioneers and change makers with 
           roots in the heart of Ikot Ekpene. Our alumni are shaping industries, solving real-world
            challenges, and driving innovation on local and international stages. Together, 
@@ -20,7 +20,7 @@ export default function AlumniForum() {
           </p>
 
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-28 mt-20 mb-10 md:mb-[4rem] md:mt-[7rem] md:px-[5rem]  px-3 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-28 mt-28 mb-10 md:mb-[4rem] md:mt-[9rem] md:px-[5rem]  px-3 ">
           {alumni.map((person) => (
             <div key={person.name} className="bg-white rounded-lg p-6 text-center
              shadow-md border-black border-t-[6px]">
