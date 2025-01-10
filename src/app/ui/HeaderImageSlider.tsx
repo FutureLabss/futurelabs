@@ -14,8 +14,8 @@ export default function HeaderImageSlider() {
               alt={image.alt}
               width={288}
               height={321}
-              // className=" relative "
-              style={{ objectFit: "cover" }}
+              className=" object-cover"
+            // style={{ objectFit: "cover" }}
             />
           </div>
         ))}
