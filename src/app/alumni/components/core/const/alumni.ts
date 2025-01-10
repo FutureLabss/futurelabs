@@ -17,6 +17,8 @@ import uyia from "../../../../assets/alumni/uyia.jpeg"
 import dan from "../../../../assets/alumni/dan.jpg"
 import ukpono from "../../../../assets/alumni/mainprofile.jpg"
 import clark from "../../../../assets/alumni/clark.jpg"
+import raph from "../../../../assets/alumni/Raphael.jpeg"
+
 
 interface IAlumni{
     name:string;
@@ -108,6 +110,11 @@ export const alumni:IAlumni[] = [
       name: "Emediong Harrison",
       image: harison,
       linkedin: "https://www.linkedin.com/in/delcyharrison/"
+    },
+    {
+      name: "Raphael Michael",
+      image: raph,
+      linkedin: "https://www.linkedin.com/in/raphael-michael-1b60722a8/"
     },
     {
       name: "Ukpono Titus",
