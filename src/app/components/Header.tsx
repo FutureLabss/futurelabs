@@ -41,12 +41,18 @@ export default function Header() {
 
       <div className="flex flex-col gap-10">
         <div className="text-center flex flex-col gap-4 px-[20px]">
-          <h1 className="text-4xl lg:text-[3rem] xl:text-size-61 text-center leading-[48px] mx-auto lg:leading-[60px] xl:leading-[72px] font-normal text-primary-default w-full lg:max-w-[1113px]">
+          <h1 className="text-4xl lg:text-[3rem] xl:text-size-61 text-center leading-[48px]
+           mx-auto lg:leading-[60px] xl:leading-[72px] font-normal text-primary-default w-full 
+           lg:max-w-[1113px]">
             Start your tech career with FutureLabs
             Develop skills for the future
           </h1>
 
-          <p className="text-size-16 text-center mx-auto leading-[32px] font-normal text-primary-default w-full max-w-[895px]">At FutureLabs we help young talents access global opportunities is by empowering them with digital skills through our training programs, we also help companies hire the best technical talents or build their software MVPs</p>
+          <p className="text-size-16 text-center mx-auto leading-[32px] 
+          font-normal text-primary-default w-full max-w-[895px]">
+            At FutureLabs we help young talents access global opportunities is by empowering 
+            them with digital skills through our training programs, we also help companies hire 
+            the best technical talents or build their software MVPs</p>
         </div>
         <div className="text-center w-full max-w-[181px] mx-auto">
           <Button setShowForm={setShowForm} showForm={showForm} />
