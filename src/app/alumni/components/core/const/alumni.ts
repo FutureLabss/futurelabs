@@ -18,6 +18,9 @@ import dan from "../../../../assets/alumni/dan.jpg"
 import ukpono from "../../../../assets/alumni/mainprofile.jpg"
 import clark from "../../../../assets/alumni/clark.jpg"
 import raph from "../../../../assets/alumni/Raphael.jpeg"
+import ima from "../../../../assets/alumni/ima.jpg"
+import imo from "../../../../assets/alumni/imo.jpeg"
+import eno from "../../../../assets/alumni/eno.jpg"
 
 
 interface IAlumni{
@@ -52,6 +55,12 @@ export const alumni:IAlumni[] = [
       role: "Senior Motion Designer"
     },
     {
+      name: "Ezekiel Simon",
+      image: ima,
+      linkedin: "https://www.linkedin.com/in//",
+      role: "Senior Motion Designer"
+    },
+    {
       name: "Peter Ime",
       image: ime,
       linkedin: "https://www.linkedin.com/in/peter-ime-bbb18719b/",
@@ -74,6 +83,12 @@ export const alumni:IAlumni[] = [
       image: utibe,
       linkedin: "https://www.linkedin.com/in/utibeabasi-akaninyene-09199722a/",
       role: "Product Designer, UI/UX Designe"
+    },
+    {
+      name: "EnoAbasi Asuquo",
+      image: eno,
+      linkedin: "https://www.linkedin.com/in/enoabasi-asuquo-effiong-817a22137/",
+      role: "Hardware Engineer"
     },
     {
       name: "John fidelis",
@@ -140,5 +155,11 @@ export const alumni:IAlumni[] = [
       image: ukpono,
       linkedin: "https://www.linkedin.com/in/ukpono-titus-72810b346/",
       role: "Frontend Developer"
+    },
+    {
+      name: "Imo Udoh",
+      image: imo,
+      linkedin: "https://www.linkedin.com/in/imo-udoh-747347197/",
+      role: "Backend Developer"
     },
   ]
