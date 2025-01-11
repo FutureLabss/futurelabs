@@ -58,7 +58,7 @@ export const alumni:IAlumni[] = [
       name: "Ezekiel Simon",
       image: ima,
       linkedin: "https://www.linkedin.com/in//",
-      role: "Senior Motion Designer"
+      role: "Graphics Designer"
     },
     {
       name: "Peter Ime",
