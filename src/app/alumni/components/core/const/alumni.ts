@@ -24,101 +24,121 @@ interface IAlumni{
     name:string;
     image:StaticImageData;
     linkedin:string;
+    role:string;
 }
 export const alumni:IAlumni[] = [
     {
       name: "Clark Essiet",
       image: clark,
-      linkedin: "https://linkedin.com/in/nsikak-thompson"
+      linkedin: "https://www.linkedin.com/in/clarkessiet/",
+      role: "Full Stack Developer"
     },
     {
       name: "Daniel Mendie",
       image: dan,
-      linkedin: "https://linkedin.com/in/david-inyang-etoh"
+      linkedin: "https://www.linkedin.com/in/danielmendie/",
+      role: "Fullstack .Net Developer"
     },
     {
       name: "Usenmfon Uko",
       image: usenmfon,
-      linkedin: "https://www.linkedin.com/in/usenmfon-uko/"
+      linkedin: "https://www.linkedin.com/in/usenmfon-uko/",
+      role: "Full Stack Developer"
     },
     {
       name: "Triumph Anointing",
       image: triumph,
-      linkedin: "https://www.linkedin.com/in/mrteee/"
+      linkedin: "https://www.linkedin.com/in/mrteee/",
+      role: "Senior Motion Designer"
     },
     {
       name: "Peter Ime",
       image: ime,
-      linkedin: "https://www.linkedin.com/in/peter-ime-bbb18719b/"
+      linkedin: "https://www.linkedin.com/in/peter-ime-bbb18719b/",
+      role: "Software developer"
     },
     {
       name: "Bright Awah",
       image: bright,
-      linkedin: "https://www.linkedin.com/in/bright-awah-59b707223/"
+      linkedin: "https://www.linkedin.com/in/bright-awah-59b707223/",
+      role: "Fullstack developer"
     },
     {
-      name: "Imaobong Elijahe",
+      name: "Imaobong Elijah",
       image: imaobong,
-      linkedin: "https://www.linkedin.com/in/imaobong-elijah/"
+      linkedin: "https://www.linkedin.com/in/imaobong-elijah/",
+      role: "Product Designer, UI/UX Designe"
     },
     {
       name: "Utibe Akaninyene",
       image: utibe,
-      linkedin: "https://www.linkedin.com/in/utibeabasi-akaninyene-09199722a/"
+      linkedin: "https://www.linkedin.com/in/utibeabasi-akaninyene-09199722a/",
+      role: "Product Designer, UI/UX Designe"
     },
     {
       name: "John fidelis",
       image: john,
-      linkedin: "https://www.linkedin.com/in/jayfidelis/"
+      linkedin: "https://www.linkedin.com/in/jayfidelis/",
+      role: "Software Developer"
     },
     {
       name: "Ekemini Sunday",
       image: ekemini,
-      linkedin: "https://www.linkedin.com/in/ekemini-sunday-924b62103/"
+      linkedin: "https://www.linkedin.com/in/ekemini-sunday-924b62103/",
+      role: "3D Artist"
     },
     {
       name: "UyaiAbasi Isidore",
       image: uyia,
-      linkedin: "https://www.linkedin.com/in/uyaiabasi/"
+      linkedin: "https://www.linkedin.com/in/uyaiabasi/",
+      role: "Software Developer"
     },
     {
       name: "Justin Mark",
       image: justine,
-      linkedin: "https://www.linkedin.com/in/justin-mark/"
+      linkedin: "https://www.linkedin.com/in/justin-mark/",
+      role: "Management"
     },
     {
       name: "Gold Nseuwem",
       image: gold,
-      linkedin: "https://www.linkedin.com/in/gold-nseuwem-23584a259/"
+      linkedin: "https://www.linkedin.com/in/gold-nseuwem-23584a259/",
+      role: "UI/UX Designer"
     },
     {
       name: "Godswill Akpan",
       image: godswill,
-      linkedin: "https://www.linkedin.com/in/godswill-akpan-94270422b/"
+      linkedin: "https://www.linkedin.com/in/godswill-akpan-94270422b/",
+      role: "UI/UX Designer"
     },
     {
       name: "Gideon Oquongudo",
       image: gideon,
-      linkedin: "https://www.linkedin.com/in/gideon-oquongudo/"
+      linkedin: "https://www.linkedin.com/in/gideon-oquongudo/",
+      role: "Data Analyst"
     },
     {
       name: "Abraham Unoinyang",
       image: uiux,
-      linkedin: "https://www.linkedin.com/in/abraham-udoinyang-37221424a/"
+      linkedin: "https://www.linkedin.com/in/abraham-udoinyang-37221424a/",
+      role: "UI/UX Designer"
     },
     {
       name: "Emediong Harrison",
       image: harison,
-      linkedin: "https://www.linkedin.com/in/delcyharrison/"
+      linkedin: "https://www.linkedin.com/in/delcyharrison/",
+      role: "Data Analyst"
     },
     {
       name: "Raphael Michael",
       image: raph,
-      linkedin: "https://www.linkedin.com/in/raphael-michael-1b60722a8/"
+      linkedin: "https://www.linkedin.com/in/raphael-michael-1b60722a8/",
+      role: "Frontend Developer"
     },
     {
       name: "Ukpono Titus",
       image: ukpono,
-      linkedin: "https://www.linkedin.com/in/ukpono-titus-72810b346/"
+      linkedin: "https://www.linkedin.com/in/ukpono-titus-72810b346/",
+      role: "Frontend Developer"
     },
   ]
