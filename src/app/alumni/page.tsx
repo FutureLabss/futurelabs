@@ -40,17 +40,7 @@ export default function AlumniForum() {
                 className="inline-flex items-center justify-center w-10 h-10"
               >
                 <Image src={linkedin} alt="" />
-                {/* <FaLinkedinIn size={23} /> */}
               </Link>
-              {/* <Link
-                href={person.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 bg-blue-600 rounded-full hover:bg-blue-700 transition-colors"
-              >
-                <LinkedinIcon className="w-5 h-5 text-white" />
-                <span className="sr-only">LinkedIn profile of {person.name}</span>
-              </Link> */}
             </div>
           ))}
         </div>
