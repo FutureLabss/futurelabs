@@ -49,11 +49,12 @@ export const alumni:IAlumni[] = [
       role: "Full Stack Developer"
     },
     {
-      name: "Triumph Anointing",
-      image: triumph,
-      linkedin: "https://www.linkedin.com/in/mrteee/",
-      role: "Senior Motion Designer"
+      name: "Justin Mark",
+      image: justine,
+      linkedin: "https://www.linkedin.com/in/justin-mark/",
+      role: "Management"
     },
+    
     {
       name: "Ezekiel Simon",
       image: ima,
@@ -109,10 +110,10 @@ export const alumni:IAlumni[] = [
       role: "Software Developer"
     },
     {
-      name: "Justin Mark",
-      image: justine,
-      linkedin: "https://www.linkedin.com/in/justin-mark/",
-      role: "Management"
+      name: "Triumph Anointing",
+      image: triumph,
+      linkedin: "https://www.linkedin.com/in/mrteee/",
+      role: "Senior Motion Designer"
     },
     {
       name: "Gold Nseuwem",
