@@ -18,6 +18,9 @@ import dan from "../../../../assets/alumni/dan.jpg"
 import ukpono from "../../../../assets/alumni/mainprofile.jpg"
 import clark from "../../../../assets/alumni/clark.jpg"
 import raph from "../../../../assets/alumni/Raphael.jpeg"
+import ima from "../../../../assets/alumni/ima.jpg"
+import imo from "../../../../assets/alumni/imo.jpeg"
+import eno from "../../../../assets/alumni/eno.jpg"
 
 
 interface IAlumni{
@@ -46,10 +49,17 @@ export const alumni:IAlumni[] = [
       role: "Full Stack Developer"
     },
     {
-      name: "Triumph Anointing",
-      image: triumph,
-      linkedin: "https://www.linkedin.com/in/mrteee/",
-      role: "Senior Motion Designer"
+      name: "Justin Mark",
+      image: justine,
+      linkedin: "https://www.linkedin.com/in/justin-mark/",
+      role: "Management"
+    },
+    
+    {
+      name: "Ezekiel Simon",
+      image: ima,
+      linkedin: "https://www.linkedin.com/in//",
+      role: "Graphics Designer"
     },
     {
       name: "Peter Ime",
@@ -76,6 +86,12 @@ export const alumni:IAlumni[] = [
       role: "Product Designer, UI/UX Designe"
     },
     {
+      name: "EnoAbasi Asuquo",
+      image: eno,
+      linkedin: "https://www.linkedin.com/in/enoabasi-asuquo-effiong-817a22137/",
+      role: "Hardware Engineer"
+    },
+    {
       name: "John fidelis",
       image: john,
       linkedin: "https://www.linkedin.com/in/jayfidelis/",
@@ -94,10 +110,10 @@ export const alumni:IAlumni[] = [
       role: "Software Developer"
     },
     {
-      name: "Justin Mark",
-      image: justine,
-      linkedin: "https://www.linkedin.com/in/justin-mark/",
-      role: "Management"
+      name: "Triumph Anointing",
+      image: triumph,
+      linkedin: "https://www.linkedin.com/in/mrteee/",
+      role: "Senior Motion Designer"
     },
     {
       name: "Gold Nseuwem",
@@ -140,5 +156,11 @@ export const alumni:IAlumni[] = [
       image: ukpono,
       linkedin: "https://www.linkedin.com/in/ukpono-titus-72810b346/",
       role: "Frontend Developer"
+    },
+    {
+      name: "Imo Udoh",
+      image: imo,
+      linkedin: "https://www.linkedin.com/in/imo-udoh-747347197/",
+      role: "Backend Developer"
     },
   ]
