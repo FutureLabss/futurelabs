@@ -120,3 +120,16 @@ select.form-select option {
 label.form-input {
   @apply py-[18px] md:py-[22px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] font-[450] text-[#222D4BB2] text-[24px];
 }
+
+.slick-dots li button:before {
+  color: #F57F20 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #F57F20 !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #F57F20 !important;
+}
