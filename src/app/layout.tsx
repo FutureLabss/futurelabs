@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Manrope, } from 'next/font/google'
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import StateContextProvider from "../app/context";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const manrope = Manrope({
-  subsets: ['latin'],
-  variable: '--font-manrope',
-  display: 'swap',
-})
-
-
-
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "FutureLabs",
@@ -24,7 +21,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-
 };
 
 export default function RootLayout({
@@ -35,11 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${manrope.variable}  font-sans max-w-[1440px] mx-auto  w-full `}>
-        <StateContextProvider>
-          {children}
-        </StateContextProvider>
-
+        className={`${inter.variable} ${manrope.variable}  font-sans  mx-auto  w-full `}
+      >
+        <StateContextProvider>{children}</StateContextProvider>
       </body>
     </html>
   );

@@ -21,6 +21,5 @@ export default function Home() {
       <FAQsection />
       <Footer />
     </div>
-
   );
 }
