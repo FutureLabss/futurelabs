@@ -12,7 +12,7 @@ export default function LmsHero() {
           loop={true}
           className="absolute top-0 left-0 z-[-2] object-cover h-full xl:max-h-[690px]"
         ></video>
-        <div className="flex flex-col min-w-[1150px] mx-auto  mt-[20rem] mb-20 ">
+        <div className="flex flex-col max-w-[1150px] mx-auto  mt-[20rem] mb-20 ">
           <h1 className="font-semibold text-[2rem] leading-8 w-full text-white">
             Where You Journey to <br />
             <span className="text-[#F57F20]">Infinite Possibilities</span>{" "}
@@ -27,10 +27,7 @@ export default function LmsHero() {
               type="button"
               className="font-semibold rounded-md bg-[#F57f20] px-12 py-3 text-white text-[0.8rem] flex items-center justify-center "
             >
-              <Link
-                href="https://futurelabs-two.vercel.app/services/learnskill"
-                passHref
-              >
+              <Link href="" passHref>
                 Apply now
               </Link>
             </button>

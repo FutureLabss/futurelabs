@@ -290,12 +290,8 @@ export default function LmsMain() {
           <span className="text-[#F57F20]">Alumni</span>
         </h3>
         <div className="max-w-[900px] mx-auto flex flex-col md:flex-row">
-          <div className="w-full md:w-[50%] border border-red">
-            <Image
-              src={abraham}
-              style={{ objectFit: "contain" }}
-              alt="abraham"
-            />
+          <div className="w-full md:w-[50%]">
+            <Image src={abraham} style={{ objectFit: "cover" }} alt="abraham" />
           </div>
           <div className="w-full md:w-[50%] bg-black p-5 flex flex-col justify-center">
             <h4 className="text-white text-[1.5rem] leading-6">

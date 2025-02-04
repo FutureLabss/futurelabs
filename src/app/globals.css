@@ -6,6 +6,10 @@
   /* border: solid green 0.0625rem; */
 }
 
+html {
+  scroll-behavior: smooth
+}
+
 .ul-style {
   @apply flex flex-col gap-4 text-[14px];
 }
