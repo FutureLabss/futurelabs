@@ -36,7 +36,7 @@ export default function LmsHero() {
       </div>
       {/* <p>Where Your Journey to Infinite Possibilities Begins.</p>
       <p>Learn, Create, and Thrive with Future-Ready Tech Skills</p>
-      <button>Apply now</button> */}
+      <button>Apply now</button>. */}
     </section>
   );
 }
