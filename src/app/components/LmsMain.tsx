@@ -10,194 +10,122 @@ import frame5 from "@/app/assets/images/Frame5.jpg";
 import frame6 from "@/app/assets/images/Frame6.jpg";
 import { FaArrowRightLong } from "react-icons/fa6";
 
+const courses = [
+  {
+    title: "Web Development",
+    description:
+      "Dive into the exciting world of web development and learn to build stunning, responsive, and functional websites from scratch. This course takes you through the fundamentals of HTML, CSS, and JavaScript to advanced frameworks and backend development.",
+    image: frame1,
+    bgColor: "bg-[#212C4A]",
+    textColor: "text-white",
+    highlightColor: "text-[#F57F20]",
+    order: "normal",
+  },
+  {
+    title: "Product Design",
+    description:
+      "Explore the dynamic realm of product design and discover how to create visually appealing, user-friendly, and effective digital products from the ground up. This course guides you through the essentials of design principles, prototyping, and user experience.",
+    image: frame2,
+    bgColor: "bg-[#F57F20]",
+    textColor: "text-white",
+    highlightColor: "text-white",
+    order: "reverse",
+  },
+  {
+    title: "Data Analytics",
+    description:
+      "Dive into the fascinating world of data analytics and learn how to transform raw data into actionable insights. This course covers the fundamentals of data collection, analysis techniques, and visualization tools, leading to predictive analytics and decision-making.",
+    image: frame3,
+    bgColor: "bg-white border border-gray-250",
+    textColor: "text-black",
+    highlightColor: "text-[#F57F20]",
+    order: "normal",
+  },
+  {
+    title: "Web Design",
+    description:
+      "Explore the captivating realm of web design and discover how to turn creative ideas into stunning websites. This course will guide you through the basics of layout design, user experience principles, and coding essentials.",
+    image: frame4,
+    bgColor: "bg-[#212C4A]",
+    textColor: "text-white",
+    highlightColor: "text-[#F57F20]",
+    order: "reverse",
+  },
+  {
+    title: "Graphic Design",
+    description:
+      "Dive into the fascinating world of graphic design and learn how to transform imaginative concepts into eye-catching visuals. This course covers the fundamentals of composition, visual communication, and essential software skills.",
+    image: frame5,
+    bgColor: "bg-[#F57F20]",
+    textColor: "text-white",
+    highlightColor: "text-white",
+    order: "normal",
+  },
+  {
+    title: "Digital Marketing",
+    description:
+      "Explore the exciting realm of digital marketing and discover how to turn creative ideas into compelling campaigns. This course covers audience engagement, key marketing strategies, and essential tools.",
+    image: frame6,
+    bgColor: "bg-white border border-gray-250",
+    textColor: "text-black",
+    highlightColor: "text-[#F57F20]",
+    order: "reverse",
+  },
+];
+
+export function CoursesSection() {
+  return (
+    <div className="max-w-[100%] mx-auto">
+      {courses.map((course, index) => (
+        <section
+          key={index}
+          className={`flex flex-col md:flex-row justify-center max-w-[100%] mx-auto ${
+            course.order === "reverse" ? "md:flex-row-reverse" : ""
+          }`}
+        >
+          {/* Image Section */}
+          <div className="min-w-[50%]">
+            <Image
+              src={course.image}
+              alt={course.title}
+              width={600}
+              height={400}
+              className="object-cover w-full h-full"
+            />
+          </div>
+
+          {/* Content Section */}
+          <div className={`min-w-[50%] px-12 py-10 ${course.bgColor}`}>
+            <p className={`text-[1.4rem] ${course.textColor}`}>
+              Explore a World of{" "}
+              <span className={course.highlightColor}>Skills</span>
+            </p>
+            <h3
+              className={`mt-40 md:mt-60 ${course.textColor} text-[2rem] font-semibold`}
+            >
+              {course.title.split(" ")[0]} <br />
+              <span>{course.title.split(" ")[1]}</span>
+            </h3>
+            <p className={`mt-3 ${course.textColor} text-[0.8rem]`}>
+              {course.description}
+            </p>
+            <article
+              className={`mt-3 ${course.highlightColor} flex items-center gap-2`}
+            >
+              <span className="text-[1rem] font-semibold">Learn More</span>
+              <FaArrowRightLong />
+            </article>
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+}
+
 export default function LmsMain() {
   return (
     <div>
-      <section className="md:flex max-w-[100%] justify-center mx-auto border border-red">
-        <div className="min-w-[50%] px-12 py-10 bg-[#212C4A]">
-          <p className="text-[1.4rem] text-white">
-            Explore a World of <span className="text-[#F57F20]">Skills</span>
-          </p>
-          <h3 className="mt-40 text-white text-[2rem] leading-8 font-semibold">
-            Web <br />
-            <span>Development</span>
-          </h3>
-          <p className="mt-3 text-white text-[0.8rem]">
-            Dive into the exciting world of web development and learn to build
-            stunning, responsive, and functional websites from scratch. This
-            course takes you through the fundamentals of HTML, CSS, and
-            JavaScript to advanced frameworks and backend development
-          </p>
-          <article className="mt-3 text-[#F57F20] flex items-center gap-2">
-            <span className="text-[1.1rem] font-semibold">Learn More</span>
-            <span className="text-[#F57F20] flex items-center">
-              <FaArrowRightLong />
-            </span>
-          </article>
-        </div>
-        <div className="min-w-[50%]">
-          <Image
-            src={frame1}
-            alt="man reading"
-            style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          />
-        </div>
-      </section>
-
-      <section className="flex flex-col md:flex-row justify-center max-w-[100%] mx-auto">
-        <div className="min-w-[50%] order-2 md:order-1">
-          <Image
-            src={frame2}
-            alt="man reading"
-            style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          />
-        </div>
-        <div className="min-w-[50%] px-12 py-10 bg-[#F57F20]">
-          <p className="text-[1.4rem] text-white">
-            Explore a World of <span className="">Skills</span>
-          </p>
-          <h3 className="mt-40 text-white text-[2rem] leading-8 font-semibold">
-            Product <br />
-            <span>Design</span>
-          </h3>
-          <p className="mt-3 text-white text-[0.8rem]">
-            Dive into the exciting world of web development and learn to build
-            stunning, responsive, and functional websites from scratch. This
-            course takes you through the fundamentals of HTML, CSS, and
-            JavaScript to advanced frameworks and backend development
-          </p>
-          <article className="mt-3 text-white flex items-center gap-2">
-            <span className="text-[1.1rem] font-semibold">Learn More</span>
-            <span className="text-white flex items-center">
-              <FaArrowRightLong />
-            </span>
-          </article>
-        </div>
-      </section>
-
-      <section className="md:flex max-w-[100%] justify-center mx-auto">
-        <div className="min-w-[50%] px-12 py-10 bg-white border border-gray-250">
-          <p className="text-[1.4rem] text-[#F57F20]">
-            Explore a World of <span className="">Skills</span>
-          </p>
-          <h3 className="mt-40 text-black text-[2rem] leading-8 font-semibold">
-            Data <br />
-            <span>Analytics</span>
-          </h3>
-          <p className="mt-3 text-black text-[0.8rem]">
-            Dive into the exciting world of web development and learn to build
-            stunning, responsive, and functional websites from scratch. This
-            course takes you through the fundamentals of HTML, CSS, and
-            JavaScript to advanced frameworks and backend development
-          </p>
-          <article className="mt-3 text-[#F57F20] flex items-center gap-2">
-            <span className="text-[1rem] font-semibold">Learn More</span>
-            <span className="text-[#F57F20] flex items-center">
-              <FaArrowRightLong />
-            </span>
-          </article>
-        </div>
-        <div className="min-w-[50%]">
-          <Image
-            src={frame3}
-            alt="man reading"
-            style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          />
-        </div>
-      </section>
-
-      <section className="flex flex-col md:flex-row justify-center max-w-[100%] mx-auto">
-        <div className="min-w-[50%] order-2 md:order-1">
-          <Image
-            src={frame4}
-            alt="man reading"
-            style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          />
-        </div>
-        <div className="min-w-[50%] px-12 py-10 bg-[#212C4A]">
-          <p className="text-[1.4rem] text-white">
-            Explore a World of <span className="text-[#F57F20]">Skills</span>
-          </p>
-          <h3 className="mt-40 text-white text-[2rem] leading-8 font-semibold">
-            Web <br />
-            <span>Design</span>
-          </h3>
-          <p className="mt-3 text-white text-[0.8rem]">
-            Dive into the exciting world of web development and learn to build
-            stunning, responsive, and functional websites from scratch. This
-            course takes you through the fundamentals of HTML, CSS, and
-            JavaScript to advanced frameworks and backend development
-          </p>
-          <article className="mt-3 text-[#F57F20] flex items-center gap-2">
-            <span className="text-[1rem] font-semibold">Learn More</span>
-            <span className="text-[#F57F20] flex items-center">
-              <FaArrowRightLong />
-            </span>
-          </article>
-        </div>
-      </section>
-
-      <section className="md:flex max-w-[100%] justify-center mx-auto">
-        <div className="min-w-[50%] px-12 py-10 bg-[#F57F20]">
-          <p className="text-[1.4rem] text-white">
-            Explore a World of <span className="">Skills</span>
-          </p>
-          <h3 className="mt-40 text-white text-[2rem] leading-8 font-bold">
-            Graphic <br />
-            <span>Design</span>
-          </h3>
-          <p className="mt-3 text-white text-[0.8rem]">
-            Dive into the exciting world of web development and learn to build
-            stunning, responsive, and functional websites from scratch. This
-            course takes you through the fundamentals of HTML, CSS, and
-            JavaScript to advanced frameworks and backend development
-          </p>
-          <article className="mt-3 text-white flex items-center gap-2">
-            <span className="text-[1rem] font-semibold">Learn More</span>
-            <span className="text-white flex items-center">
-              <FaArrowRightLong />
-            </span>
-          </article>
-        </div>
-        <div className="min-w-[50%]">
-          <Image
-            src={frame5}
-            alt="man reading"
-            style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          />
-        </div>
-      </section>
-
-      <section className="flex flex-col md:flex-row justify-center max-w-[100%] mx-auto">
-        <div className="min-w-[50%] order-2 order-1">
-          <Image
-            src={frame6}
-            alt="man reading"
-            style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          />
-        </div>
-        <div className="min-w-[50%] px-12 py-10 bg-white border border-gray-250">
-          <p className="text-[1.4rem] text-black">
-            Explore a World of <span className="text-[#F57F20]">Skills</span>
-          </p>
-          <h3 className="mt-40 text-black text-[2rem] leading-8 font-semibold">
-            Digital <br />
-            <span>Marketing</span>
-          </h3>
-          <p className="mt-3 text-black text-[0.8rem]">
-            Dive into the exciting world of web development and learn to build
-            stunning, responsive, and functional websites from scratch. This
-            course takes you through the fundamentals of HTML, CSS, and
-            JavaScript to advanced frameworks and backend development
-          </p>
-          <article className="mt-3 text-[#F57F20] flex items-center gap-2">
-            <span className="text-[1rem] font-semibold">Learn More</span>
-            <span className="text-[#F57F20] flex items-center">
-              <FaArrowRightLong />
-            </span>
-          </article>
-        </div>
-      </section>
+      <CoursesSection />
 
       {/* Stat Section */}
       <section className="max-w-[700px] mx-auto mt-10">
