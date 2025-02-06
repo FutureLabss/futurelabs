@@ -21,7 +21,7 @@ interface Course {
   programLength: string;
   startDate: string;
   location: string;
-  image: any; // Or more specific type if known
+  image: unknown; // Or more specific type if known
   bgColor: string;
   textColor: string;
   highlightColor: string;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export const dynamic = "force-dynamic";
@@ -30,7 +30,7 @@ interface CourseData {
 const CoursePage = () => {
   const [activeTab, setActiveTab] = useState("overview");
   const router = useRouter();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const [courseData, setCourseData] = useState<CourseData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -249,7 +249,7 @@ const CoursePage = () => {
             </div>
             <div className="text-center flex flex-col mt-10 md:mt-0 items-center justify-center">
               <h2 className="text-xl font-bold">Are you ready to learn?</h2>
-              <p className="text-gray-600">Let's get started</p>
+              <p className="text-gray-600">Let&apos;s get started</p>
               <button className="mt-4 px-12 py-2 bg-[#212C4A] text-white rounded-xl">
                 Apply now
               </button>
