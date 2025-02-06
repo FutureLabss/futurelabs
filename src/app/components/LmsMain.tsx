@@ -9,12 +9,20 @@ import frame4 from "@/app/assets/images/Frame4.jpg";
 import frame5 from "@/app/assets/images/Frame5.jpg";
 import frame6 from "@/app/assets/images/Frame6.jpg";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Link from "next/link";
 
 const courses = [
   {
     title: "Web Development",
     description:
       "Dive into the exciting world of web development and learn to build stunning, responsive, and functional websites from scratch. This course takes you through the fundamentals of HTML, CSS, and JavaScript to advanced frameworks and backend development.",
+    aboutCourse:
+      "Step into the world of web development and unlock the skills to build modern, interactive websites. This course covers foundational coding aspects, UI/UX principles, and backend technologies like Node.js.",
+    applicationFee: "NGN120,000",
+    installmentAmount: "NGN20,000",
+    programLength: "6 Months",
+    startDate: "February 2025",
+    location: "Hybrid",
     image: frame1,
     bgColor: "bg-[#212C4A]",
     textColor: "text-white",
@@ -25,6 +33,13 @@ const courses = [
     title: "Product Design",
     description:
       "Explore the dynamic realm of product design and discover how to create visually appealing, user-friendly, and effective digital products from the ground up. This course guides you through the essentials of design principles, prototyping, and user experience.",
+    aboutCourse:
+      "This course introduces design thinking, UI/UX fundamentals, and prototyping using industry-standard tools. You'll gain hands-on experience in designing intuitive digital products.",
+    applicationFee: "NGN100,000",
+    installmentAmount: "NGN20,000",
+    programLength: "5 Months",
+    startDate: "March 2025",
+    location: "Online",
     image: frame2,
     bgColor: "bg-[#F57F20]",
     textColor: "text-white",
@@ -35,6 +50,13 @@ const courses = [
     title: "Data Analytics",
     description:
       "Dive into the fascinating world of data analytics and learn how to transform raw data into actionable insights. This course covers the fundamentals of data collection, analysis techniques, and visualization tools, leading to predictive analytics and decision-making.",
+    aboutCourse:
+      "Gain in-demand skills in data analysis, visualization, and business intelligence. This course covers statistical techniques, SQL, and data visualization tools like Power BI and Tableau.",
+    applicationFee: "NGN150,000",
+    installmentAmount: "NGN25,000",
+    programLength: "7 Months",
+    startDate: "April 2025",
+    location: "Hybrid",
     image: frame3,
     bgColor: "bg-white border border-gray-250",
     textColor: "text-black",
@@ -45,6 +67,13 @@ const courses = [
     title: "Web Design",
     description:
       "Explore the captivating realm of web design and discover how to turn creative ideas into stunning websites. This course will guide you through the basics of layout design, user experience principles, and coding essentials.",
+    aboutCourse:
+      "Learn how to design visually engaging and user-friendly websites. This course covers design principles, wireframing, prototyping, and front-end development using HTML, CSS, and Figma.",
+    applicationFee: "NGN90,000",
+    installmentAmount: "NGN22,500",
+    programLength: "4 Months",
+    startDate: "May 2025",
+    location: "Online",
     image: frame4,
     bgColor: "bg-[#212C4A]",
     textColor: "text-white",
@@ -55,6 +84,13 @@ const courses = [
     title: "Graphic Design",
     description:
       "Dive into the fascinating world of graphic design and learn how to transform imaginative concepts into eye-catching visuals. This course covers the fundamentals of composition, visual communication, and essential software skills.",
+    aboutCourse:
+      "Master the art of digital graphics, branding, and visual storytelling. This course includes training in Adobe Photoshop, Illustrator, and CorelDRAW to create impactful designs.",
+    applicationFee: "NGN85,000",
+    installmentAmount: "NGN28,333",
+    programLength: "3 Months",
+    startDate: "June 2025",
+    location: "Hybrid",
     image: frame5,
     bgColor: "bg-[#F57F20]",
     textColor: "text-white",
@@ -65,6 +101,13 @@ const courses = [
     title: "Digital Marketing",
     description:
       "Explore the exciting realm of digital marketing and discover how to turn creative ideas into compelling campaigns. This course covers audience engagement, key marketing strategies, and essential tools.",
+    aboutCourse:
+      "Understand digital marketing strategies, social media management, SEO, and paid advertising. This course covers marketing funnels, analytics, and campaign optimization.",
+    applicationFee: "NGN110,000",
+    installmentAmount: "NGN22,000",
+    programLength: "5 Months",
+    startDate: "July 2025",
+    location: "Online",
     image: frame6,
     bgColor: "bg-white border border-gray-250",
     textColor: "text-black",
@@ -73,59 +116,61 @@ const courses = [
   },
 ];
 
-export function CoursesSection() {
-  return (
-    <div className="max-w-[100%] mx-auto">
-      {courses.map((course, index) => (
-        <section
-          key={index}
-          className={`flex flex-col md:flex-row justify-center max-w-[100%] mx-auto ${
-            course.order === "reverse" ? "md:flex-row-reverse" : ""
-          }`}
-        >
-          {/* Image Section */}
-          <div className="min-w-[50%]">
-            <Image
-              src={course.image}
-              alt={course.title}
-              width={600}
-              height={400}
-              className="object-cover w-full h-full"
-            />
-          </div>
-
-          {/* Content Section */}
-          <div className={`min-w-[50%] px-12 py-10 ${course.bgColor}`}>
-            <p className={`text-[1.4rem] ${course.textColor}`}>
-              Explore a World of{" "}
-              <span className={course.highlightColor}>Skills</span>
-            </p>
-            <h3
-              className={`mt-40 md:mt-60 ${course.textColor} text-[2rem] font-semibold`}
-            >
-              {course.title.split(" ")[0]} <br />
-              <span>{course.title.split(" ")[1]}</span>
-            </h3>
-            <p className={`mt-3 ${course.textColor} text-[0.8rem]`}>
-              {course.description}
-            </p>
-            <article
-              className={`mt-3 ${course.highlightColor} flex items-center gap-2`}
-            >
-              <span className="text-[1rem] font-semibold">Learn More</span>
-              <FaArrowRightLong />
-            </article>
-          </div>
-        </section>
-      ))}
-    </div>
-  );
-}
-
 export default function LmsMain() {
   return (
-    <div>
-      <CoursesSection />
+    <div className="">
+      <div className="max-w-[100%] mx-auto">
+        {courses.map((course, index) => (
+          <section
+            key={index}
+            className={`flex flex-col md:flex-row justify-center max-w-[100%] mx-auto ${
+              course.order === "reverse" ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            {/* Image Section */}
+            <div className="min-w-[50%]">
+              <Image
+                src={course.image}
+                alt={course.title}
+                width={600}
+                height={400}
+                className="object-cover w-full h-full"
+              />
+            </div>
+
+            {/* Content Section */}
+            <div className={`min-w-[50%] px-12 py-10 ${course.bgColor}`}>
+              <p className={`text-[1.4rem] ${course.textColor}`}>
+                Explore a World of{" "}
+                <span className={course.highlightColor}>Skills</span>
+              </p>
+              <h3
+                className={`mt-40 md:mt-60 ${course.textColor} text-[2rem] font-semibold`}
+              >
+                {course.title.split(" ")[0]} <br />
+                <span>{course.title.split(" ")[1]}</span>
+              </h3>
+              <p className={`mt-3 ${course.textColor} text-[0.8rem]`}>
+                {course.description}
+              </p>
+              <Link
+                href={{
+                  pathname: "/course-details",
+                  query: { course: JSON.stringify(course) },
+                }}
+                passHref
+              >
+                <article
+                  className={`mt-3 ${course.highlightColor} flex items-center gap-2`}
+                >
+                  <span className="text-[1rem] font-semibold">Learn More</span>
+                  <FaArrowRightLong />
+                </article>
+              </Link>
+            </div>
+          </section>
+        ))}
+      </div>
 
       {/* Stat Section */}
       <section className="max-w-[700px] mx-auto mt-10">
