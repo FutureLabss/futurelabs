@@ -8,7 +8,7 @@ import Stories from "./components/Stories";
 
 export default function Home() {
   return (
-    <div className="bg-background w-full max-w-[1440px]">
+    <div className="bg-background  max-w-[100%]">
       {/* header */}
       <Header />
       <div className="w-full hidden sm:block">

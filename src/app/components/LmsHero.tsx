@@ -1,8 +1,8 @@
 import Link from "next/link";
 export default function LmsHero() {
   return (
-    <section className="">
-      <div className="flex flex-col px-5 h-[600px]  items-start justify-start w-full relative lg:px-12">
+    <section className="h-screen">
+      <div className="flex flex-col px-5 items-start justify-start w-full relative lg:px-12">
         <video
           src="/hero-video.mp4"
           width="100%"
@@ -10,7 +10,7 @@ export default function LmsHero() {
           autoPlay={true}
           muted={true}
           loop={true}
-          className="absolute top-0 left-0 z-[-2] object-cover h-full xl:max-h-[690px]"
+          className="absolute top-0 left-0 z-[-2] object-cover h-screen"
         ></video>
         <div className="flex flex-col w-full md:max-w-[1130px]  mx-auto  mt-[20rem] mb-20 ">
           <h1 className="font-semibold text-[2rem] leading-8 w-full text-white">
