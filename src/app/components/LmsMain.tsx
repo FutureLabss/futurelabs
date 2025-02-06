@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import nsikan from "@/app/assets/images/nsikan.jpg";
 import dev from "@/app/assets/images/dev.jpg";
