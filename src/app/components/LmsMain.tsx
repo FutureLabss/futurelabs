@@ -11,6 +11,23 @@ import frame6 from "@/app/assets/images/Frame6.jpg";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
 
+// Add interface for course type
+interface Course {
+  title: string;
+  description: string;
+  aboutCourse: string;
+  applicationFee: string;
+  installmentAmount: string;
+  programLength: string;
+  startDate: string;
+  location: string;
+  image: any; // Or more specific type if known
+  bgColor: string;
+  textColor: string;
+  highlightColor: string;
+  order: string;
+}
+
 const courses = [
   {
     title: "Web Development",
@@ -116,6 +133,11 @@ const courses = [
   },
 ];
 
+// Update function with type
+const handleCourseClick = (course: Course) => {
+  localStorage.setItem("selectedCourse", JSON.stringify(course));
+};
+
 export default function LmsMain() {
   return (
     <div className="">
@@ -158,6 +180,7 @@ export default function LmsMain() {
                   pathname: "/course-details",
                   query: { course: JSON.stringify(course) },
                 }}
+                onClick={() => handleCourseClick(course)}
                 passHref
               >
                 <article

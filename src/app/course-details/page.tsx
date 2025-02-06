@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 import work from "@/app/assets/images/work.png";
 import PricingCard from "../components/PricingCard";
@@ -29,6 +30,7 @@ interface CourseData {
 const CoursePage = () => {
   const [activeTab, setActiveTab] = useState("overview");
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [courseData, setCourseData] = useState<CourseData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -53,25 +55,27 @@ const CoursePage = () => {
   };
 
   useEffect(() => {
-    const { query } = router;
-    if (query.course) {
-      setCourseData(JSON.parse(query.course as string));
+    if (typeof window !== "undefined") {
+      try {
+        const savedCourse = localStorage.getItem("selectedCourse");
+        if (savedCourse) {
+          setCourseData(JSON.parse(savedCourse));
+        } else {
+          router.push("/");
+        }
+      } catch (error) {
+        console.error("Error loading course data:", error);
+        router.push("/");
+      } finally {
+        setIsLoading(false);
+      }
     }
-    setIsLoading(false);
   }, [router]);
 
-  if (isLoading) {
+  if (isLoading || !courseData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-[#F57F20]"></div>
-      </div>
-    );
-  }
-
-  if (!courseData) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p>No course data found.</p>
       </div>
     );
   }
@@ -245,7 +249,7 @@ const CoursePage = () => {
             </div>
             <div className="text-center flex flex-col mt-10 md:mt-0 items-center justify-center">
               <h2 className="text-xl font-bold">Are you ready to learn?</h2>
-              <p className="text-gray-600">Let’s get started</p>
+              <p className="text-gray-600">Let's get started</p>
               <button className="mt-4 px-12 py-2 bg-[#212C4A] text-white rounded-xl">
                 Apply now
               </button>
