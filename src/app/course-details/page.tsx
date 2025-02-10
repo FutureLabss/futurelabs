@@ -248,9 +248,11 @@ const CoursePage = () => {
             <div className="text-center flex flex-col mt-10 md:mt-0 items-center justify-center">
               <h2 className="text-xl font-bold">Are you ready to learn?</h2>
               <p className="text-gray-600">Let’s get started</p>
-              <button className="mt-4 px-12 py-2 bg-[#212C4A] text-white rounded-xl">
-                Apply now
-              </button>
+              <Link href="https://futurelabs-lms.netlify.app/">
+                <button className="mt-4 px-12 py-2 bg-[#212C4A] text-white rounded-xl">
+                  Apply now
+                </button>
+              </Link>
             </div>
           </div>
         </section>
