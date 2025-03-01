@@ -29,7 +29,7 @@ function ForTalent({ item, id }: { item: TalentPoolTab; id: number }) {
     <div
       className={`${styles[id].color}  shadow-lg rounded-2xl text-center flex flex-col justify-between`}
     >
-      <div className="px-8 pt-8 text-start space-y-3">
+      <div className="px-4 lg:px-6 xl:px-8 pt-8 text-start space-y-3">
         <h3
           className={`text-lg font-semibold  flex items-center  gap-2 ${styles[id].text} `}
         >
@@ -42,11 +42,15 @@ function ForTalent({ item, id }: { item: TalentPoolTab; id: number }) {
           </span>{" "}
           {item.title}
         </h3>
-        <p className={`text-gray-600 text-[1rem] ${styles[id].text}`}>
+        <p
+          className={`text-gray-600 text-[1rem] ${
+            id + 1 === 1 ? "text-white" : ""
+          }`}
+        >
           {item.description}
         </p>
       </div>
-      <div className="w-full">
+      <div className="w-full flex justify-center items-center">
         <Image
           src={item.image}
           alt={item.title}
@@ -54,8 +58,8 @@ function ForTalent({ item, id }: { item: TalentPoolTab; id: number }) {
           height={300}
           priority
           quality={100}
-          className={`w-full object-cover rounded-md ${
-            id + 1 === 3 ? "h-[400px] object-fill object-[top_right]" : "h-auto"
+          className={`w-full object-contain rounded-md ${
+            id + 1 === 3 ? "object-fill object-[top_right]" : "h-auto"
           }`}
         />
       </div>
