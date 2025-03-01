@@ -179,6 +179,7 @@ export const servicesData = [
     service: "Talent Pool Access",
     description: "We take the best talents from our training programs and place them in international roles where they contribute and learn new skills. A win win.",
     src: talentpool,
+    href: "/talentpool",
   },
   {
     service: "Minimum Viable Products",

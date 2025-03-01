@@ -55,10 +55,11 @@ const config: Config = {
         // "3xl": "60px"
       },
     },
-      fontFamily: {
-        inter: ['var(--font-inter)'],
-        manrope: ['var(--font-manrope)'],
-      },
+    fontFamily: {
+      inter: ['var(--font-inter)'],
+      manrope: ['var(--font-manrope)'],
+      poppins: ['var(--font-poppins)'],
+    },
   },
   plugins: [],
 };

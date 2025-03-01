@@ -1,18 +1,16 @@
-
-import Image from "next/image"
-import Logo from "../../assets/logo/Futurelabs-logo.png"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Nav() {
   return (
     <Link href="/">
       <Image
-        src={Logo}
+        src={"/Futurelabs-logo.png"}
         alt="futurelabs logo"
         width={153}
         height={29}
-        className="h-auto"
+        className="h-auto focus:outline-none outline-none"
       />
     </Link>
-  )
+  );
 }
