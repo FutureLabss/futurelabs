@@ -56,12 +56,12 @@ export default function TalentPool() {
           </div>
           <div className="w-full  flex lg:hidden">
             <Image
-              src="/talent-pool.png"
+              src="/talentpool/herotalent-img.png"
               width={1000}
               height={500}
               priority
               alt="talent pool"
-              className="w-full h-auto mx-auto object-[center_center]"
+              className="w-full h-auto mx-auto object-[center_center] "
             />
           </div>
         </div>
