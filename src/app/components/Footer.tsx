@@ -1,9 +1,8 @@
-
-import Image from "next/image"
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
-import { SiMedium } from "react-icons/si"
-import FutureLogo from "../assets/logo/Futurelabs-logo.png"
-import FutureLabs from "../assets/logo/FutureLabs.png"
+import Image from "next/image";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { SiMedium } from "react-icons/si";
+import FutureLogo from "../assets/logo/Futurelabs-logo.png";
+import FutureLabs from "../assets/logo/FutureLabs.png";
 
 export default function Footer() {
   return (
@@ -11,14 +10,15 @@ export default function Footer() {
       <div className="flex  gap-6 flex-col lg:flex-row justify-between px-[20px] py-[20px] md:px-[40px] md:py-[40px]  xl:px-[80px] xl:py-[80px] ">
         <div className="flex gap-4 flex-col lg:max-w-[27.5rem] w-full ">
           <div>
-            <Image
-              src={FutureLogo}
-              alt=""
-              width={100}
-              height={100}
-            />
+            <Image src={FutureLogo} alt="" width={100} height={100} />
           </div>
-          <p className="leading-[1.5rem] font-inter font-normal text-primary-light_dark">An innovative design agency  with the passion to deliver exceptional solutions to problems thereby guaranteeing maximum customer satisfaction and retainership bridge An innovative design agency  with the passion to deliver exceptional solutions to problems thereby guaranteeing maximum customer satisfaction and retainership bridge
+          <p className="leading-[1.5rem] font-inter font-normal text-primary-light_dark">
+            An innovative design agency with the passion to deliver exceptional
+            solutions to problems thereby guaranteeing maximum customer
+            satisfaction and retainership bridge An innovative design agency
+            with the passion to deliver exceptional solutions to problems
+            thereby guaranteeing maximum customer satisfaction and retainership
+            bridge
           </p>
 
           <div className="flex gap-4 content-end">
@@ -54,9 +54,12 @@ export default function Footer() {
           </ul>
           <ul className="ul-style">
             <li>CONTACT</li>
-            <li>No. 3 Chubb Road <span className="block mt-[2px]">Ikot Ekpene, Akwa Ibom</span></li>
-            <li>(654) 123-4567</li>
-            <li>(654) 123-4567</li>
+            <li>
+              No. 3 Chubb Road{" "}
+              <span className="block mt-[2px]">Ikot Ekpene, Akwa Ibom</span>
+            </li>
+            <li>+234 708 034 3781</li>
+            {/* <li>(654) 123-4567</li> */}
             <li>Info@futurelabs.com.ng</li>
           </ul>
         </div>
@@ -74,8 +77,10 @@ export default function Footer() {
             className="max-w-[1400px] h-auto w-full"
           />
         </div>
-        <p className="py-[.75rem] bg-[#FCFCFD] text-[#B9BBC6]">Copyright Futurelabs 2024</p>
+        <p className="py-[.75rem] bg-[#FCFCFD] text-[#B9BBC6]">
+          Copyright Futurelabs 2024
+        </p>
       </div>
     </div>
-  )
+  );
 }
