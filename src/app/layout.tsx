@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${manrope.variable} ${poppins.variable} font-sans max-w-[1440px] mx-auto  w-full `}
+        className={`${inter.variable} ${manrope.variable} ${poppins.variable} font-sans mx-auto  w-full `}
       >
         <StateContextProvider>{children}</StateContextProvider>
       </body>
