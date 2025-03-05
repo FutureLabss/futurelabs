@@ -162,6 +162,7 @@ export const servicesData = [
     description:
       "Our software solution is specially designed for startups looking to build minimum viable products  for their ideas quickly",
     src: serviceimg1,
+    href: "https://studio.futurelabs.ng"
   },
 
   {

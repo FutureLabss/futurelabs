@@ -1,58 +1,46 @@
-"use client"
+"use client";
 import Button from "@/app/ui/Button";
-import Nav from "./headcomponents/Nav";
-import Image from "next/image"
-import IntroBg from "@/app/assets/icons/intro-bg.png"
-import CompanyLogos from "../assets/logo/company-logos.png"
+import Image from "next/image";
+import IntroBg from "@/app/assets/icons/intro-bg.png";
+import CompanyLogos from "../assets/logo/company-logos.png";
 import HeaderCard from "./headcomponents/HeaderCard";
 import ContactForm from "../ui/ContactForm";
 import { useStateAuthProvider } from "../context";
-import Link from "next/link";
 import HeaderImageSlider from "../ui/HeaderImageSlider";
 import ImageGallerySwiper from "../ui/ImageGallerySwiper";
-// import CompanyLogos
-
+import Navigation from "@/app/components/Navigation";
 
 export default function Header() {
-  const context = useStateAuthProvider()
+  const context = useStateAuthProvider();
 
   if (!context) {
-    return null
+    return null;
   }
 
-  const { showForm, setShowForm } = context
+  const { showForm, setShowForm } = context;
 
   return (
     <header className="flex flex-col gap-14 w-full relative">
-      <div className="px-[20px] xl:px-[5rem] pt-[1.25rem] flex justify-between items-center">
-        <Nav />
-        <div className="flex flex-row gap-5  ">
-        <Link href={"/alumni"} className=" text-secondary-default font-medium text-[14px] sm:text-[20px] font-manrope
-         border border-secondary-default px-5 py-1 rounded">
-        <button>Alumni</button>
-        </Link>
-        <div className=" text-white font-medium text-[14px] sm:text-[20px] font-manrope
-         bg-secondary-default px-3 py-1 rounded">
-          <Link href="https://studio.futurelabs.ng" target="_blank">Studios</Link>
-        </div>
-        </div>
-      </div>
-
-
+      <Navigation />
       <div className="flex flex-col gap-10">
         <div className="text-center flex flex-col gap-4 px-[20px]">
-          <h1 className="text-4xl lg:text-[3rem] xl:text-size-61 text-center leading-[48px]
-           mx-auto lg:leading-[60px] xl:leading-[72px] font-normal text-primary-default w-full 
-           lg:max-w-[1113px]">
-            Start your tech career with FutureLabs
-            Develop skills for the future
+          <h1
+            className="text-2xl font-medium leading-[32px] sm:text-3xl md:text-4xl lg:text-[3rem] xl:text-size-61 text-center md:leading-[48px]
+           mx-auto lg:leading-[60px] xl:leading-[72px] text-primary-default w-full 
+           lg:max-w-[1113px]"
+          >
+            Start your tech career with FutureLabs Develop skills for the future
           </h1>
 
-          <p className="text-size-16 text-center mx-auto leading-[32px] 
-          font-normal text-primary-default w-full max-w-[895px]">
-            At FutureLabs we help young talents access global opportunities is by empowering 
-            them with digital skills through our training programs, we also help companies hire 
-            the best technical talents or build their software MVPs</p>
+          <p
+            className="text-size-16 text-center mx-auto leading-[32px] 
+          font-normal text-primary-default w-full max-w-[895px]"
+          >
+            At FutureLabs we help young talents access global opportunities is
+            by empowering them with digital skills through our training
+            programs, we also help companies hire the best technical talents or
+            build their software MVPs
+          </p>
         </div>
         <div className="text-center w-full max-w-[181px] mx-auto">
           <Button setShowForm={setShowForm} showForm={showForm} />
@@ -104,25 +92,25 @@ export default function Header() {
       <div className="w-full">
         <HeaderCard />
       </div>
-      {
-        showForm && (
-          <>
-            {/* Container for centering the form */}
-            <div className="fixed inset-0 flex items-center justify-center z-[20]" onClick={() => setShowForm(false)}>
-              <div className="relative w-full  max-w-[580px] " onClick={(e) => e.stopPropagation()}>
-                <ContactForm setShowForm={setShowForm} />
-              </div>
-            </div>
-
-            {/* Background overlay */}
+      {showForm && (
+        <>
+          {/* Container for centering the form */}
+          <div
+            className="fixed inset-0 flex items-center justify-center z-[20]"
+            onClick={() => setShowForm(false)}
+          >
             <div
-              className="w-full h-full fixed bg-[#00000026] transition-all duration-1000 opacity-70 top-0 left-0 right-0 bottom-0 z-[10]"
+              className="relative w-full  max-w-[580px] "
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ContactForm setShowForm={setShowForm} />
+            </div>
+          </div>
 
-            ></div>
-          </>
-        )
-      }
-
+          {/* Background overlay */}
+          <div className="w-full h-full fixed bg-[#00000026] transition-all duration-1000 opacity-70 top-0 left-0 right-0 bottom-0 z-[10]"></div>
+        </>
+      )}
     </header>
-  )
+  );
 }

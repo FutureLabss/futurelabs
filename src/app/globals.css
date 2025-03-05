@@ -7,7 +7,7 @@
 }
 
 html {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 
 .ul-style {
@@ -86,12 +86,6 @@ select {
   background: #f57f20 !important;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
-  gap: 32px;
-}
-
 .grid-item {
   display: grid;
   grid-template-rows: subgrid;
@@ -126,14 +120,14 @@ label.form-input {
 }
 
 .slick-dots li button:before {
-  color: #F57F20 !important;
+  color: #f57f20 !important;
 }
 
 .slick-dots li.slick-active button:before {
-  color: #F57F20 !important;
+  color: #f57f20 !important;
 }
 
 .slick-prev:before,
 .slick-next:before {
-  color: #F57F20 !important;
+  color: #f57f20 !important;
 }
