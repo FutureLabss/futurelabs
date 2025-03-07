@@ -1,3 +1,4 @@
+"use client";
 import Nav from "../headcomponents/Nav";
 import Link from "next/link";
 import Image from "next/image";
@@ -5,9 +6,17 @@ import { FaAngleRight } from "react-icons/fa6";
 import Footer from "../Footer";
 import TalentTabComponent from "./TalentTabComponent";
 import SponsorsList from "@/app/ui/SponsorLists";
+import { useState } from "react";
+import Modal from "@/app/ui/Modal";
 // md:bg-[url(/talent-pool.png)] bg-contain bg-no-repeat bg-right h-[80dvh]
 
 export default function TalentPool() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
     <div>
       <header className="pb-5 lg:pb-0 pt-10 bg-background px-4 lg:px-12 xl:px-20 font-poppins">
@@ -16,9 +25,10 @@ export default function TalentPool() {
 
           <Link
             href=""
+            onClick={handleShowModal}
             className="text-primary text-sm sm:text-lg px-2 py-1 bg-secondary-default/20 md:px-5 md:py-2 rounded text-secondary-default md:text-2xl font-semibold"
           >
-            For Recruiters
+            Get Started
           </Link>
         </div>
         <div className="flex flex-col-reverse lg:flex-row pt-20 md:pt-40 ">
@@ -47,7 +57,7 @@ export default function TalentPool() {
                 roles.
               </p>
               <Link
-                href=""
+                href="/services/hiretalent/talent"
                 className="block mx-auto md:mx-0 text-primary bg-secondary-default/20 px-3 py-2 md:px-5 md:py-2 rounded text-secondary-default text-2xl font-semibold w-fit"
               >
                 Hire Talent
@@ -130,6 +140,12 @@ export default function TalentPool() {
           </div>
         </div>
       </section>
+
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <Modal handleShowModal={handleShowModal} />
+        </div>
+      )}
 
       <footer>
         <Footer />
