@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "@/app/assets/logo/Futurelabs-logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
+import Link from "next/link";
 
 export default function LmsHeader() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -52,10 +53,10 @@ export default function LmsHeader() {
             <p className="h-1 w-1 bg-red-500 rounded-full absolute top-1 left-12"></p>
           </div> */}
           <div className="flex items-center gap-1 sm:gap-2">
-            <p className="font-semibold text-[#F57F20] text-[1rem] sm:text-[1.3rem] cursor-pointer">
+            {/* <p className="font-semibold text-[#F57F20] text-[1rem] sm:text-[1.3rem] cursor-pointer">
               Login
             </p>
-            <p className="border-l-2 py-2 sm:py-3 border-[#F57F20] flex items-center justify-center"></p>
+            <p className="border-l-2 py-2 sm:py-3 border-[#F57F20] flex items-center justify-center"></p> */}
             <button
               onClick={toggleSidebar}
               className="cursor-pointer z-50 focus:outline-none"
@@ -78,15 +79,22 @@ export default function LmsHeader() {
       >
         <div className="p-8 mt-20">
           <ul className="space-y-8">
-            <li className="text-[1.1rem] font-semibold text-[#212C4A] cursor-pointer hover:text-[#F57F20] transition-colors">
-              Home
-            </li>
-            <li className="text-[1.1rem] font-semibold text-gray-400 cursor-pointer hover:text-[#F57F20] transition-colors">
-              Schools
-            </li>
-            <li className="text-[1.1rem] font-semibold text-gray-400 cursor-pointer hover:text-[#F57F20] transition-colors">
+            <Link
+              href="https://futurelabs-lms.onrender.com/login"
+              target="_blank"
+            >
+              <li className="text-[1.1rem] font-semibold text-[#F57F20] cursor-pointer hover:text-[#F57F20] transition-colors">
+                Login
+              </li>
+            </Link>
+            <Link href="/academy">
+              {/* <li className="text-[1.1rem] font-semibold text-gray-400 cursor-pointer hover:text-[#F57F20] transition-colors">
+                Home
+              </li> */}
+            </Link>
+            {/* <li className="text-[1.1rem] font-semibold text-gray-400 cursor-pointer hover:text-[#F57F20] transition-colors">
               Why Future Academy
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

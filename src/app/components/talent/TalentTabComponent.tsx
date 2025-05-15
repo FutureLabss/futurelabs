@@ -21,7 +21,7 @@ export default function TalentTabComponent() {
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            className={`text-lg sm:text-lg px-2 py-1 md:px-5 md:py-2 rounded-md md:text-3xl font-semibold transition-all duration-300 ${
+            className={`text-lg sm:text-lg px-2 py-1 rounded-md font-semibold transition-all duration-300 ${
               activeTab === tab.id
                 ? "text-primary bg-secondary-default/20 text-secondary-default text-2xl font-semibold"
                 : "text-[#D9D9D9]"
