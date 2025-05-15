@@ -58,7 +58,8 @@ export default function TalentPool() {
               </p>
               <Link
                 target="_blank"
-                href="/services/hiretalent/talent"
+                // href="/services/hiretalent/talent"
+                href=""
                 className="block mx-auto md:mx-0 text-primary bg-secondary-default/20 px-3 py-1  rounded text-secondary-default  font-semibold w-fit"
               >
                 Hire Talent
