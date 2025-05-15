@@ -26,7 +26,7 @@ export default function TalentPool() {
           <Link
             href=""
             onClick={handleShowModal}
-            className="text-primary text-sm sm:text-lg px-2 py-1 bg-secondary-default/20 md:px-5 md:py-2 rounded text-secondary-default md:text-2xl font-semibold"
+            className="text-primary text-sm sm:text-lg px-2 py-1 bg-secondary-default/20  rounded text-secondary-default  font-semibold"
           >
             Get Started
           </Link>
@@ -57,8 +57,9 @@ export default function TalentPool() {
                 roles.
               </p>
               <Link
+                target="_blank"
                 href="/services/hiretalent/talent"
-                className="block mx-auto md:mx-0 text-primary bg-secondary-default/20 px-3 py-2 md:px-5 md:py-2 rounded text-secondary-default text-2xl font-semibold w-fit"
+                className="block mx-auto md:mx-0 text-primary bg-secondary-default/20 px-3 py-1  rounded text-secondary-default  font-semibold w-fit"
               >
                 Hire Talent
               </Link>
@@ -122,7 +123,7 @@ export default function TalentPool() {
 
             <Link
               href=""
-              className="mx-auto lg:mx-0 text-sm sm:text-lg px-2 py-2 bg-secondary-default/20 md:px-5 md:py-4 rounded text-secondary-default md:text-2xl font-semibold w-fit"
+              className="mx-auto lg:mx-0 text-sm sm:text-lg px-2 py-2 bg-secondary-default/20  rounded text-secondary-default  font-semibold w-fit"
             >
               Explore Our Global Network
             </Link>
