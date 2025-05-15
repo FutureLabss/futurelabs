@@ -7,29 +7,48 @@ import Image from "next/image";
 export const dynamic = "force-dynamic";
 
 import work from "@/app/assets/images/work.png";
-import PricingCard from "../components/PricingCard";
+// import PricingCard from "../components/PricingCard";
+import { courses } from "@/data/data";
+
 import Footer from "../components/Footer";
-import { RiLiveLine } from "react-icons/ri";
+// import { RiLiveLine } from "react-icons/ri";
 import { PiStudent } from "react-icons/pi";
 import { MdOutlineAssignment } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
+import Nav from "../components/headcomponents/Nav";
 
-interface CourseData {
+// interface CourseData {
+//   title: string;
+//   aboutCourse: string;
+//   applicationFee: string;
+//   installmentAmount: string;
+//   programLength: string;
+//   startDate: string;
+//   location: string;
+// }
+
+interface Course {
   title: string;
+  description: string;
   aboutCourse: string;
   applicationFee: string;
   installmentAmount: string;
   programLength: string;
   startDate: string;
   location: string;
+  image: unknown; // Or more specific type if known
+  bgColor: string;
+  textColor: string;
+  highlightColor: string;
+  order: string;
 }
 
 const CoursePage = () => {
   const [activeTab, setActiveTab] = useState("overview");
   const router = useRouter();
-  const [courseData, setCourseData] = useState<CourseData | null>(null);
+  const [courseData, setCourseData] = useState<Course | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -55,15 +74,25 @@ const CoursePage = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       try {
-        const savedCourse = localStorage.getItem("selectedCourse");
+        const savedCourse = JSON.parse(
+          localStorage.getItem("selectedCourse") || ""
+        );
         if (savedCourse) {
-          setCourseData(JSON.parse(savedCourse));
+          const getCourse = courses.find(
+            (item) => item.title === savedCourse.title
+          );
+          // setCourseData(JSON.parse(getCourse));
+          if (getCourse) {
+            setCourseData(getCourse);
+          } else {
+            router.push("/academy");
+          }
         } else {
-          router.push("/");
+          router.push("/academy");
         }
       } catch (error) {
         console.error("Error loading course data:", error);
-        router.push("/");
+        router.push("/academy");
       } finally {
         setIsLoading(false);
       }
@@ -81,11 +110,15 @@ const CoursePage = () => {
   return (
     <div className="bg-[#F5F5FA]">
       {/* Navbar */}
-      <nav className="flex justify-end items-center p-6 bg-white">
+      <nav className="flex justify-between items-center p-6 bg-white">
+        <div className="md:ml-20">
+          <Nav />
+        </div>
+
         <div className="">
           <button
             onClick={toggleSidebar}
-            className="cursor-pointer z-50 focus:outline-none md:mr-60"
+            className="cursor-pointer z-50 focus:outline-none md:mr-40"
           >
             {isSidebarOpen ? (
               <IoMdClose size={25} className="text-[#F57F20]" />
@@ -104,16 +137,18 @@ const CoursePage = () => {
           <div className="p-8 mt-20">
             <ul className="space-y-8">
               <Link href={"/academy"}>
-                <li className="text-[1.1rem] font-semibold text-[#212C4A] cursor-pointer hover:text-[#F57F20] transition-colors">
+                <li className="text-[1.1rem] font-semibold text-[#F57F20] cursor-pointer hover:text-[#F57F20] transition-colors">
                   Home
                 </li>
               </Link>
-              <li className="text-[1.1rem] font-semibold text-gray-400 cursor-pointer hover:text-[#F57F20] transition-colors">
-                Schools
-              </li>
-              <li className="text-[1.1rem] font-semibold text-gray-400 cursor-pointer hover:text-[#F57F20] transition-colors">
+              {/* <Link href="https://futurelabs-lms.onrender.com/login">
+                <li className="text-[1.1rem] font-semibold text-gray-400 cursor-pointer hover:text-[#F57F20] transition-colors">
+                  Login
+                </li>
+              </Link> */}
+              {/* <li className="text-[1.1rem] font-semibold text-gray-400 cursor-pointer hover:text-[#F57F20] transition-colors">
                 Why Future Academy
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -214,18 +249,18 @@ const CoursePage = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="mt-10">
+        <section className="mt-10 mb-20">
           <h3 className="text-xl font-bold mb-2">This Course Includes</h3>
           <div className="md:flex gap-4">
             <div className="bg-white p-6 shadow-sm rounded-md w-full md:w-[60%]">
               <ul className="space-y-2 text-gray-600">
                 <li className="flex items-center space-x-2">
-                  <span>
+                  {/* <span>
                     <RiLiveLine />
-                  </span>{" "}
-                  <span className="font-semibold">
+                  </span> */}
+                  {/* <span className="font-semibold">
                     Live sessions and recordings
-                  </span>
+                  </span> */}
                 </li>
                 <li className="flex items-center space-x-2">
                   <span>
@@ -248,14 +283,22 @@ const CoursePage = () => {
             <div className="text-center flex flex-col mt-10 md:mt-0 items-center justify-center">
               <h2 className="text-xl font-bold">Are you ready to learn?</h2>
               <p className="text-gray-600">Let’s get started</p>
-              <button className="mt-4 px-12 py-2 bg-[#212C4A] text-white rounded-xl">
+              <Link
+                href="https://futurelabs-lms.onrender.com/login"
+                target="_blank"
+              >
+                <button className="mt-4 px-12 py-2 bg-[#F57F20] text-white rounded-xl">
+                  Apply now
+                </button>
+              </Link>
+              {/* <button className="mt-4 px-12 py-2 bg-[#212C4A] text-white rounded-xl">
                 Apply now
-              </button>
+              </button> */}
             </div>
           </div>
         </section>
 
-        <section className="w-full md:max-w-[50%] mx-auto mt-[100px] mb-20">
+        {/* <section className="w-full md:max-w-[50%] mx-auto mt-[100px] mb-20">
           <div className="text-center mb-10">
             <h3 className="text-[2rem] text-[#231D4F] font-bold">
               Simple, transparent pricing
@@ -290,7 +333,7 @@ const CoursePage = () => {
               ]}
             />
           </div>
-        </section>
+        </section> */}
       </section>
 
       <Footer />

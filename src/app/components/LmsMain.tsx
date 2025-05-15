@@ -2,7 +2,6 @@
 import Image from "next/image";
 import nsikan from "@/app/assets/images/nsikan.jpg";
 import dev from "@/app/assets/images/dev.jpg";
-import abraham from "@/app/assets/images/abraham.jpg";
 import frame1 from "@/app/assets/images/Frame1.jpg";
 import frame2 from "@/app/assets/images/Frame2.jpg";
 import frame3 from "@/app/assets/images/Frame3.jpg";
@@ -11,6 +10,7 @@ import frame5 from "@/app/assets/images/Frame5.jpg";
 import frame6 from "@/app/assets/images/Frame6.jpg";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
+import TestimonialCarousel from "./TestimonialsCarousel";
 
 // Add interface for course type
 interface Course {
@@ -179,7 +179,7 @@ export default function LmsMain() {
               <Link
                 href={{
                   pathname: "/course-details",
-                  query: { course: JSON.stringify(course) },
+                  query: { course: JSON.stringify(course.title) },
                 }}
                 onClick={() => handleCourseClick(course)}
                 passHref
@@ -198,35 +198,35 @@ export default function LmsMain() {
 
       {/* Stat Section */}
       <section className="max-w-[700px] mx-auto mt-10">
-        <h3 className="text-center font-bold text-[2rem] mb-2 ">
+        {/* <h3 className="text-center font-bold text-[2rem] mb-2 ">
           <span className="text-[#F57F20]">Stat</span> That Matter!
-        </h3>
+        </h3> */}
         <section className="md:flex items-end justify-center gap-5">
-          <div className="md:min-w-[229px] px-5 flex flex-col justify-between py-4 min-h-[270px] bg-[#F0F0F0] rounded-lg">
+          {/* <div className="md:min-w-[229px] px-5 flex flex-col justify-between py-4 min-h-[270px] bg-[#F0F0F0] rounded-lg">
             <p className="text-black text-[1.2rem] font-bold">Students</p>
             <p className="leading-6">
               <span className="text-[3.5rem] font-bold">650+</span> <br />
               <span className="text-black text-[1rem]">Since Inception</span>
             </p>
-          </div>
+          </div> */}
 
-          <div className="md:min-w-[229px] mt-2 md:mt-0 px-5 flex flex-col justify-between py-4 min-h-[240px] bg-[#000000] rounded-lg">
-            <p className="text-white text-[1.2rem] font-bold">Students</p>
+          {/* <div className="md:min-w-[229px] mt-2 md:mt-0 px-5 flex flex-col justify-between py-4 min-h-[240px] bg-[#000000] rounded-lg">
+            <p className="text-white text-[1.2rem] font-bold">Graduates</p>
             <p className="leading-6">
-              <span className="text-[3.5rem] font-bold text-white">650+</span>{" "}
+              <span className="text-[3.5rem] font-bold text-white">250+</span>{" "}
+              <br />
+              <span className="text-white text-[1rem]">With track record</span>
+            </p>
+          </div> */}
+
+          {/* <div className="md:min-w-[229px] px-5 flex mt-2 md:mt-0 flex-col justify-between py-4 min-h-[210px] bg-[#F57F20] rounded-lg">
+            <p className="text-white text-[1.2rem] font-bold">Job placements</p>
+            <p className="leading-6">
+              <span className="text-[3.5rem] font-bold text-white">120+</span>{" "}
               <br />
               <span className="text-white text-[1rem]">Since Inception</span>
             </p>
-          </div>
-
-          <div className="md:min-w-[229px] px-5 flex mt-2 md:mt-0 flex-col justify-between py-4 min-h-[210px] bg-[#F57F20] rounded-lg">
-            <p className="text-white text-[1.2rem] font-bold">Students</p>
-            <p className="leading-6">
-              <span className="text-[3.5rem] font-bold text-white">650+</span>{" "}
-              <br />
-              <span className="text-white text-[1rem]">Since Inception</span>
-            </p>
-          </div>
+          </div> */}
         </section>
       </section>
 
@@ -234,7 +234,7 @@ export default function LmsMain() {
       <section className="mt-20 max-w-[1200px] mx-auto">
         <div className="">
           <h3 className="text-center font-bold text-[2rem] leading-10">
-            <span className="text-black">Why</span> Choose Us
+            <span className="text-black">Why</span> Choose{" "}
             <span className="text-[#F57F20]">Us</span>
           </h3>
           <p className="text-[1.2rem] text-black text-center">
@@ -281,7 +281,9 @@ export default function LmsMain() {
       </section>
 
       {/* Carousel section */}
-      <section className="mt-20 mb-20">
+
+      <TestimonialCarousel />
+      {/* <section className="mt-20 mb-20">
         <h3 className="text-center font-bold text-[2rem] leading-10 mb-10">
           <span className="text-black">Testimonies from our </span>
           <span className="text-[#F57F20]">Alumni</span>
@@ -303,7 +305,7 @@ export default function LmsMain() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
