@@ -1,9 +1,8 @@
-
 "use client";
 import { createContext, useContext } from "react";
 import { useState } from "react";
 import { FormDataProps } from "@/app/types/types";
-import { toast } from 'react-toastify'
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 interface StateContextType {
@@ -37,11 +36,12 @@ export default function StateContextProvider({ children }: ProviderProps) {
     first_name: "",
     surname: "",
     email: "",
-    gender: "male",
+    // gender: "male",
     skill: "design",
     address: "",
-  })
-
+    profession: "frontend",
+    quantityNeeded: 0,
+  });
 
   const [talentForm, setTalentForm] = useState<FormDataProps>({
     first_name: "",
@@ -50,34 +50,34 @@ export default function StateContextProvider({ children }: ProviderProps) {
     phone_number: "",
     gender: "male",
     state: "",
-  })
+  });
 
   const showSuccessMessage = () => {
     toast.success("Submitted successfully", {
       position: "top-right",
-    })
-  }
+    });
+  };
 
   const showErrorMessage = () => {
     toast.error("Fields are required", {
       position: "top-right",
-    })
-  }
+    });
+  };
   const showEmailSuccessMessage = () => {
     toast.success("Check your mail box to verify email address", {
       position: "top-right",
-    })
-  }
+    });
+  };
   const talentSubmissionErrorMessage = () => {
     toast.error("Failed to register talent form", {
       position: "top-right",
-    })
-  }
+    });
+  };
   const showEmailErrorMessage = (message: string) => {
     toast.error(message, {
       position: "top-right",
-    })
-  }
+    });
+  };
 
   const contextValue = {
     showForm,
@@ -94,14 +94,14 @@ export default function StateContextProvider({ children }: ProviderProps) {
     showEmailErrorMessage,
     showEmailSuccessMessage,
     linkIndex,
-    setLinkIndex
+    setLinkIndex,
   };
   return (
-    <StateContext.Provider value={contextValue} >
+    <StateContext.Provider value={contextValue}>
       {children}
     </StateContext.Provider>
-  )
+  );
 }
 
 const useStateAuthProvider = () => useContext(StateContext);
-export { useStateAuthProvider }
+export { useStateAuthProvider };
