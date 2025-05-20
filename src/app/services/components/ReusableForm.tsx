@@ -1,14 +1,24 @@
 "use client";
 // import { useState } from "react";
-import ProceedBtn from "../ui/ProceedBtn";
+// import ProceedBtn from "../ui/ProceedBtn";
 import { useStateAuthProvider } from "@/app/context";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+// import { useRouter } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 
 export default function ReusableForm() {
-  const router = useRouter();
+  // const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
 
   const context = useStateAuthProvider();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [success]);
   if (!context) {
     return null;
   }
@@ -24,19 +34,88 @@ export default function ReusableForm() {
     setFormData({ ...formData, [name]: value });
   };
 
+  const resetForm = () => {
+    setFormData({
+      first_name: "",
+      surname: "",
+      email: "",
+      website: "",
+      profession: "",
+      quantityNeeded: 0,
+      address: "",
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { first_name, surname, email, gender, skill, address } = formData;
-    if (!first_name || !surname || !email || !gender || !skill || !address) {
+    const { first_name, surname, email, profession, address } = formData;
+    if (!first_name || !surname || !email || !profession || !address) {
       showErrorMessage();
       // return
     } else {
-      console.log(formData);
-      router.push("/services/learnskill/form2");
+      const submitData = {
+        firstName: first_name,
+        lastName: surname,
+        companyEmail: email,
+        companyWebsite: formData.website,
+        professionNeeded: formData.profession,
+        quantityNeeded: formData.quantityNeeded,
+        contactAddress: address,
+      };
+
+      async function submitRequest(submitData: {
+        firstName: string;
+        lastName: string;
+        companyEmail: string;
+        companyWebsite: string | undefined;
+        professionNeeded: string | undefined;
+        quantityNeeded: number | undefined;
+        contactAddress: string;
+      }) {
+        setLoading(true);
+        setError(null);
+        console.log("Submitting data:", submitData);
+        try {
+          const response = await fetch("http://localhost:5000/api/talents", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(submitData),
+          });
+
+          // if (!response.ok) {
+          //   throw new Error("Network response was not ok");
+          // }
+          setLoading(false);
+          setSuccess(true);
+          resetForm();
+          return await response.json();
+        } catch (error) {
+          console.error("Error:", error);
+          setError("An error occurred while submitting the form.");
+          setSuccess(false);
+          throw error;
+        } finally {
+          setLoading(false);
+        }
+      }
+      submitRequest(submitData);
+
+      // router.push("/services/learnskill/form2");
     }
   };
+
   return (
     <div>
+      {error && (
+        <div className="bg-red-500 text-white p-4 rounded">{error}</div>
+      )}
+      {success && (
+        <div className="bg-green-500 text-white p-4 rounded">
+          Form submitted successfully!
+        </div>
+      )}
       <form
         className="grid grid-cols-1 md:grid-cols-2 gap-[1rem]"
         onSubmit={handleSubmit}
@@ -71,7 +150,7 @@ export default function ReusableForm() {
             name="email"
             placeholder="Enter Email Address"
             onChange={handleChange}
-            // value={formData.email}
+            value={formData.email}
           />
         </div>
         <div className="flex flex-col gap-3 ">
@@ -90,7 +169,7 @@ export default function ReusableForm() {
           <div className="relative">
             <select
               className="form-select appearance-none"
-              name="gender"
+              name="profession"
               onChange={handleChange}
             >
               <option value="frontend">Front-end Developer</option>
@@ -124,10 +203,10 @@ export default function ReusableForm() {
           <input
             className="form-input"
             type="number"
-            name="email"
-            placeholder="2"
+            name="quantityNeeded"
+            placeholder="0"
             onChange={handleChange}
-            value={formData.email}
+            value={formData.quantityNeeded}
           />
         </div>
         <div className="flex flex-col gap-3 ">
@@ -176,7 +255,16 @@ export default function ReusableForm() {
           </div>
         </div> */}
         <div className="flex items-center justify-center mt-6">
-          <ProceedBtn />
+          <button
+            // disabled
+            disabled={loading}
+            type="submit"
+            className="text-white text-[1.125rem]  shadow-[0rem_.25rem_.25rem_0rem_rgba(0,0,0,1)]
+    bg-[#1D2640] max-w-[205px] h-auto w-full py-[10px]  rounded-[20px]"
+          >
+            {loading ? "Submitting..." : "Submit Application"}
+          </button>
+          {/* <ProceedBtn /> */}
         </div>
         <ToastContainer autoClose={2000} />
       </form>
