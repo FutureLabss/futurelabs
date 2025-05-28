@@ -76,21 +76,38 @@ export default function ReusableForm() {
         setError(null);
         console.log("Submitting data:", submitData);
         try {
-          const response = await fetch("http://localhost:5000/api/talents", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(submitData),
-          });
+          const response = await fetch(
+            "https://talent-backend-o5cb.onrender.com/api/talents",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(submitData),
+            }
+          );
 
-          // if (!response.ok) {
-          //   throw new Error("Network response was not ok");
-          // }
-          setLoading(false);
-          setSuccess(true);
-          resetForm();
-          return await response.json();
+          if (response.status === 409) {
+            // Check for 409 Conflict status
+            const data = await response.json();
+            setError(data.error || "A request with this email already exists.");
+            // If you use react-toastify's toast.error, you could call it here too
+            // toast.error(data.error || "A request with this email already exists.");
+          } else if (!response.ok) {
+            // Handle other non-2xx status codes
+            const data = await response.json();
+            // If your backend sends an array of errors for ValidationError, handle that
+            const errorMessage = Array.isArray(data.error)
+              ? data.error.join(", ")
+              : data.error || "Something went wrong.";
+            setError(errorMessage);
+            // toast.error(errorMessage);
+          } else {
+            // Successful submission (response.ok is true and not 409)
+            setSuccess(true);
+            resetForm();
+            // toast.success("Form submitted successfully!");
+          }
         } catch (error) {
           console.error("Error:", error);
           setError("An error occurred while submitting the form.");
