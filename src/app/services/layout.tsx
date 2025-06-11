@@ -1,13 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import Links from "./components/links";
-import Image from "next/image"
-import Talent from "@/app/assets/images/talent-image.png"
+import Image from "next/image";
+import Talent from "@/app/assets/images/talent-image.png";
 import Nav from "../components/headcomponents/Nav";
-import FrameBright from "@/app/assets/images/Frame-bright.png"
+import FrameBright from "@/app/assets/images/Frame-bright.png";
 import Footer from "../components/Footer";
 
 export default function layout({ children }: { children: React.ReactNode }) {
-
   return (
     <div className="flex flex-col gap-6 xl:gap-[3rem]">
       <div className="pl-[15px]  lg:pl-[2rem] xl:pl-[5rem] mt-[2rem] ">
@@ -46,7 +45,6 @@ export default function layout({ children }: { children: React.ReactNode }) {
       <div>
         <Footer />
       </div>
-
     </div>
-  )
+  );
 }

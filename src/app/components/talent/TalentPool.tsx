@@ -24,8 +24,9 @@ export default function TalentPool() {
           <Nav />
 
           <Link
-            href=""
-            onClick={handleShowModal}
+            href="/talent"
+            target="_blank"
+            // onClick={handleShowModal}
             className="text-primary text-sm sm:text-lg px-2 py-1 bg-secondary-default/20  rounded text-secondary-default  font-semibold"
           >
             Get Started
@@ -58,7 +59,7 @@ export default function TalentPool() {
               </p>
               <Link
                 target="_blank"
-                href="/services/learnskill"
+                href="/talent"
                 className="block mx-auto md:mx-0 text-primary bg-secondary-default/20 px-3 py-1  rounded text-secondary-default  font-semibold w-fit"
               >
                 Hire Talent
