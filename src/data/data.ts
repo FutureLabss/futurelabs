@@ -212,21 +212,13 @@ export const blogData = [
   {
     id: 1,
     content:
-      "FutureLabs has been the shoulder I needed to hone my tech skills and build a successful career.",
-    name: "Peter Ime",
-    title: "Software Engineer",
-    src: mrP,
-  },
-  {
-    id: 2,
-    content:
       "My experience at Future Labs, coupled with the opportunity to collaborate with an incredible community of talented innovators, has propelled my career to new heights. It gave me global exposure, led to an invaluable role at one of Nigeria’s top talent accelerators, and ultimately, to my current position as a manager at a leading UK EdTech firm.",
     name: "Justin Mark",
     title: "Business Development Manager",
     src: Frame,
   },
   {
-    id: 3,
+    id: 2,
     content:
       "Every day, I am grateful for the people and opportunities that have made my tech journey a breeze. Especially when I took a leap of faith by quitting my teaching job as a classroom teacher to start a tech career with little savings. My strategy? It's either it works or it works.",
     name: "Usenmfon Uko",
@@ -234,7 +226,7 @@ export const blogData = [
     src: Frame1,
   },
   {
-    id: 4,
+    id: 3,
     content:
       "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
     name: "Ukpono Titus",
@@ -242,12 +234,20 @@ export const blogData = [
     src: Frame2,
   },
   {
-    id: 5,
+    id: 4,
     content:
       "Futurelabs provided me with the perfect platform to grow as a software developer.  Their guidance and support helped me transition to Alphapay, where I now develop enterprise software solutions.",
     name: "Akpan Iniobong",
     title: "UI/UX",
     src: Frame3,
+  },
+  {
+    id: 5,
+    content:
+      "FutureLabs has been the shoulder I needed to hone my tech skills and build a successful career.",
+    name: "Peter Ime",
+    title: "Software Engineer",
+    src: mrP,
   },
   {
     id: 6,
