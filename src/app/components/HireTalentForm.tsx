@@ -118,7 +118,7 @@ const HireTalentForm: React.FC = () => {
 
     setLoading(true); // Start loading
     try {
-      console.log("Submitting recruiter data:", submitData);
+      // console.log("Submitting recruiter data:", submitData);
       const response = await fetch(
         "https://talent-backend-o5cb.onrender.com/api/talents",
         {
