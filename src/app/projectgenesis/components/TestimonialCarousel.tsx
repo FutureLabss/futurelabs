@@ -2,8 +2,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Users, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
+import { blogData } from "@/data/data";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -83,7 +85,7 @@ export default function TestimonialCarousel() {
     }, 500);
   };
 
-  const currentTestimonial = testimonials[currentTestimonialIndex];
+  const currentTestimonial = blogData[currentTestimonialIndex];
 
   return (
     <div className="max-w-3xl mx-auto text-center relative">
@@ -93,12 +95,18 @@ export default function TestimonialCarousel() {
         }`}
       >
         <blockquote className="text-lg text-gray-600 italic mb-6">
-          &apos;{currentTestimonial.quote}&apos;
+          &apos;{currentTestimonial.content}&apos;
         </blockquote>
 
         <div className="flex items-center justify-center space-x-3">
-          <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
-            <Users className="w-6 h-6 text-gray-600" />
+          <div className="w-12 h-12 flex items-center justify-center">
+            <Image
+              src={currentTestimonial.src}
+              alt={currentTestimonial.name}
+              height={100}
+              width={100}
+              className=" text-gray-600 rounded-full object-cover"
+            />
           </div>
           <div className="text-left">
             <div className="font-semibold">{currentTestimonial.name}</div>

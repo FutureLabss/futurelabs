@@ -9,18 +9,19 @@ import {
   // Users,
   // Award,
   // TrendingUp,
-  Menu,
+  // Menu,
   X,
 } from "lucide-react";
 import Image from "next/image";
 import { useIntersectionObserver } from "./hooks/use-intersection-observer";
-import { AnimatedCounter } from "./components/animated-counter";
+// import { AnimatedCounter } from "./components/animated-counter";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import Nav from "../components/headcomponents/Nav";
+// import Link from "next/link";
+// import Nav from "../components/headcomponents/Nav";
 import Footer from "../components/Footer";
 import TestimonialCarousel from "./components/TestimonialCarousel";
-import ping from "../../../public/images/ping.png";
+import ping from "../../../public/images/ping-logo.jpg";
+import Navigation from "../components/Navigation";
 
 export default function ProjectGenesisPage() {
   const [mounted, setMounted] = useState(false);
@@ -33,7 +34,7 @@ export default function ProjectGenesisPage() {
   });
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
 
-  const statsObserver = useIntersectionObserver({ threshold: 0.3 });
+  // const statsObserver = useIntersectionObserver({ threshold: 0.3 });
   const aboutObserver = useIntersectionObserver({ threshold: 0.2 });
   const applicationObserver = useIntersectionObserver({ threshold: 0.1 });
   const successObserver = useIntersectionObserver({ threshold: 0.2 });
@@ -76,7 +77,7 @@ export default function ProjectGenesisPage() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Blog", href: "#blog" },
+    // { name: "Blog", href: "#blog" },
   ];
 
   // Your Google Form embed URL with embedded=true parameter
@@ -90,37 +91,8 @@ export default function ProjectGenesisPage() {
   return (
     <div className="min-h-screen bg-white overflow-hidden">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-sm py-4 px-4">
-        <div className="container mx-auto flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Nav />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-700 hover:text-orange-600 font-medium transition-colors duration-300"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <Menu className="h-6 w-6 text-gray-700" />
-            </Button>
-          </div>
-        </div>
+      <header className="sticky top-0 z-50 bg-white shadow-sm py-2 px-2">
+        <Navigation />
 
         {/* Mobile Navigation (Dropdown) */}
         {isMobileMenuOpen && (
@@ -136,14 +108,14 @@ export default function ProjectGenesisPage() {
                   {link.name}
                 </a>
               ))}
-              <a href="#contact" className="w-full text-center">
+              {/* <a href="#contact" className="w-full text-center">
                 <Button
                   className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-md transition-colors duration-300 w-3/4 mx-auto"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact Us
                 </Button>
-              </a>
+              </a> */}
             </div>
           </nav>
         )}
@@ -207,11 +179,11 @@ export default function ProjectGenesisPage() {
               onClick={handleApplyClick}
               className="bg-orange-400 hover:bg-orange-300 text-orange-900 px-10 py-6 rounded-lg font-semibold transform hover:scale-105 transition-all duration-300 animate-fade-in animation-delay-1000"
             >
-              Learn More
+              Apply Now
             </Button>
           </div>
 
-          <div className="flex justify-center items-center space-x-8 mt-12 opacity-80 animate-fade-in animation-delay-1200">
+          {/* <div className="flex justify-center items-center space-x-8 mt-12 opacity-80 animate-fade-in animation-delay-1200">
             {[
               // { icon: TrendingUp, text: "START INNOVATION HUB" },
               { icon: ping, text: "PIND" },
@@ -233,13 +205,13 @@ export default function ProjectGenesisPage() {
                 <span className="text-sm">{partner.text}</span>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* About Section */}
       <section className="py-16 px-4" ref={aboutObserver.ref}>
-        <div className="container mx-auto">
+        <div className="container mx-auto md:px-16">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div
               className={`transform transition-all duration-1000 ${
@@ -254,23 +226,42 @@ export default function ProjectGenesisPage() {
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p className="transform transition-all duration-700 delay-200">
-                  Project Genesis is a digital talent development programme
-                  designed to help young people with market-relevant skills and
-                  help them get hired or support them to start their own
-                  businesses.
+                  This project was born from a desire to tackle unemployment and
+                  empower the youth in our community for the digital age.
+                  It&apos;s a goal we proudly share with our sponsor,{" "}
+                  <a
+                    className="text-blue-500"
+                    target="_blank"
+                    href="https://pindfoundation.org/"
+                  >
+                    PIND
+                  </a>{" "}
+                  , who helps make this opportunity possible. Together, we are
+                  committed to training and connecting young people to
+                  meaningful employment and entrepreneurial opportunities.
                 </p>
-                <p className="transform transition-all duration-700 delay-400">
+                <h3 className="text-lg font-bold mt-4 text-gray-900">
+                  Our Sponsor
+                </h3>
+                <Image
+                  className="mb-10"
+                  src={ping}
+                  height={140}
+                  width={140}
+                  alt="Ping"
+                />
+                {/* <p className="transform transition-all duration-700 delay-400">
                   Genesis aims born out of the need to reduce working
                   unemployment rates, empower youths in the Niger Delta region
                   of Nigeria, and promote them for enhanced digital
                   transformation.
-                </p>
-                <p className="transform transition-all duration-700 delay-600">
+                </p> */}
+                {/* <p className="transform transition-all duration-700 delay-600">
                   Our goal is to train young people in the Niger Delta to
                   relevant ICT skills and link them to employment and relevant
                   opportunities. A feat we keep achieving with the efforts of
                   our dynamic trainers like PIND and other corporate partners.
-                </p>
+                </p> */}
               </div>
             </div>
             <div
@@ -315,7 +306,7 @@ export default function ProjectGenesisPage() {
         className="py-16 px-4 bg-orange-100"
         ref={applicationObserver.ref}
       >
-        <div className="container mx-auto">
+        <div className="container mx-auto md:px-16">
           <h2
             className={`text-3xl font-bold text-center mb-12 text-gray-900 transform transition-all duration-1000 ${
               applicationObserver.hasIntersected
@@ -366,7 +357,7 @@ export default function ProjectGenesisPage() {
                       style={{ transitionDelay: `${400 + index * 100}ms` }}
                     >
                       <Check className="w-4 h-4 text-orange-600" />
-                      <span className="text-gray-700">{course}</span>
+                      <span className="text-gray-700 font-bold">{course}</span>
                     </div>
                   ))}
                 </div>
@@ -383,19 +374,47 @@ export default function ProjectGenesisPage() {
                   Thanks to Our Partners
                 </h3>
                 <div className="space-y-2 text-gray-700">
-                  <p>
-                    Original Price:{" "}
-                    <span className="font-bold text-orange-600">₦300,000</span>
-                  </p>
-                  <p>
-                    You Pay: <span className="font-bold">₦50,000 only</span>
-                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        Original Price:{" "}
+                        <span className="font-bold text-orange-600">
+                          ₦300,000
+                        </span>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        You Pay: <span className="font-bold">₦50,000 only</span>
+                      </p>
+                    </li>
+                  </ul>
+                  {/* <p>
+                    Program Duration:{" "}
+                    <span className="font-bold">
+                      6 Months Training, 3 Months Internship
+                    </span>
+                  </p> */}
+                </div>
+                <div className="space-y-2 text-gray-700">
                   <p>
                     Program Duration:{" "}
                     <span className="font-bold">
                       6 Months Training, 3 Months Internship
                     </span>
                   </p>
+                  <ul>
+                    <li>
+                      <p className="font-bold">
+                        Apply between June 17 and July 17.
+                      </p>
+                    </li>
+                    <li>
+                      <p className="font-bold">
+                        Heads up: We only have 40 spots, and they go fast.
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -492,7 +511,7 @@ export default function ProjectGenesisPage() {
       </section>
 
       {/* Statistics */}
-      <section
+      {/* <section
         className="bg-gradient-to-r from-orange-500 to-amber-400 text-white py-16 px-4"
         ref={statsObserver.ref}
       >
@@ -536,7 +555,7 @@ export default function ProjectGenesisPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Success Stories Section */}
       <section className="py-16 px-4" ref={successObserver.ref}>
