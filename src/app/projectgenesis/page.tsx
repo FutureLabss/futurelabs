@@ -230,7 +230,7 @@ export default function ProjectGenesisPage() {
                   empower the youth in our community for the digital age.
                   It&apos;s a goal we proudly share with our sponsor,{" "}
                   <a
-                    className="text-blue-500"
+                    className="text-blue-500 hover:underline"
                     target="_blank"
                     href="https://pindfoundation.org/"
                   >
@@ -375,7 +375,9 @@ export default function ProjectGenesisPage() {
                 </h3>
                 <div className="space-y-2 text-gray-700">
                   <ul>
-                    <li>
+                    <li className="flex items-center space-x-2">
+                      <p className="w-1 h-1 bg-black rounded-full flex-shrink-0"></p>
+
                       <p>
                         Original Price:{" "}
                         <span className="font-bold text-orange-600">
@@ -383,7 +385,9 @@ export default function ProjectGenesisPage() {
                         </span>
                       </p>
                     </li>
-                    <li>
+                    <li className="flex items-center space-x-2">
+                      <p className="w-1 h-1 bg-black rounded-full flex-shrink-0"></p>
+
                       <p>
                         You Pay: <span className="font-bold">₦50,000 only</span>
                       </p>
@@ -395,6 +399,19 @@ export default function ProjectGenesisPage() {
                       6 Months Training, 3 Months Internship
                     </span>
                   </p> */}
+                </div>
+                <div className="mt-4 mb-4">
+                  <p>
+                    This discount is made possible by our partner,{" "}
+                    <a
+                      href="https://pindfoundation.org/"
+                      target="_blank"
+                      className="text-blue-500 hover:underline"
+                    >
+                      PIND
+                    </a>{" "}
+                    , who is helping us cover the cost.
+                  </p>
                 </div>
                 <div className="space-y-2 text-gray-700">
                   <p>
