@@ -190,6 +190,12 @@ export const servicesData = [
     href: "/talentpool",
   },
   {
+    service: "Project Genesis",
+    description: "Learn the skills you need for the jobs of today.",
+    src: serviceimg5,
+    href: "/projectgenesis",
+  },
+  {
     service: "Minimum Viable Products",
     description:
       "We have free and premium products developed to meet specific needs",
