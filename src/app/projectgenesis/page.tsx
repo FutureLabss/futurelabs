@@ -389,7 +389,7 @@ export default function ProjectGenesisPage() {
                       <p className="w-1 h-1 bg-black rounded-full flex-shrink-0"></p>
 
                       <p>
-                        You Pay: <span className="font-bold">₦50,000 only</span>
+                        You Pay: <span className="font-bold">₦100,000 only</span>
                       </p>
                     </li>
                   </ul>
