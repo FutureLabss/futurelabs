@@ -25,7 +25,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "FutureLabs | Empowering Africa’s Tech Talent",
   description:
-    "FutureLabs is a dynamic tech hub providing training, mentorship, and development services for tech enthusiasts, students, and companies across Africa.",
+    "FutureLabs is a dynamic tech hub providing training, mentorship, and development services for tech enthusiasts, students, and companies across Africa. Discover cutting-edge projects, AI solutions, and sustainable tech innovations.",
   keywords: [
     "FutureLabs",
     "Tech Hub Nigeria",
@@ -38,17 +38,21 @@ export const metadata: Metadata = {
     "Tech Training Africa",
     "App Development",
     "Website Design",
+    "Innovation",
+    "AI",
+    "Sustainable Tech",
+    "Tech Solutions",
   ],
   applicationName: "FutureLabs",
   authors: [{ name: "FutureLabs", url: "https://futurelabs.ng" }],
   creator: "FutureLabs Team",
   publisher: "FutureLabs",
-  metadataBase: new URL("https://futurelabs.ng"), // Replace with your production domain
+  metadataBase: new URL("https://futurelabs.ng"),
+
   icons: {
     icon: "/favicon.ico",
   },
 
-  // ✅ Robots Metadata
   robots: {
     index: true,
     follow: true,
@@ -63,7 +67,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // ✅ Sitemap Metadata
   alternates: {
     canonical: "https://futurelabs.ng",
     languages: {
@@ -79,14 +82,14 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "FutureLabs | Tech Training & Software Services",
+    title: "FutureLabs | Empowering Africa’s Tech Talent",
     description:
-      "Join FutureLabs — a tech hub committed to equipping Africa's next generation of software engineers, designers, and innovators.",
+      "Join FutureLabs — a tech hub committed to equipping Africa's next generation of software engineers, designers, and innovators. Explore our innovations in AI, sustainable tech, and software development.",
     url: "https://futurelabs.ng",
     siteName: "FutureLabs",
     images: [
       {
-        url: "/images/futurelabs-og.png",
+        url: "https://futurelabs.ng/images/seoImage.jpeg",
         width: 1200,
         height: 630,
         alt: "FutureLabs Tech Training and Services",
@@ -98,12 +101,12 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "FutureLabs | Africa’s Tech Talent Hub",
+    title: "FutureLabs | Empowering Africa’s Tech Talent",
     description:
-      "Explore FutureLabs, a platform offering tech training, internship programs, and software development services for individuals and companies.",
-    site: "@futurelabs", // Update with real Twitter handle
-    creator: "@futurelabs", // Update with real Twitter handle
-    images: ["/images/futurelabs-og.png"],
+      "Explore FutureLabs, a platform offering tech training, internship programs, and software development services. Discover our work in AI, sustainable tech, and digital innovation.",
+    site: "@FutureLabsNG",
+    creator: "@FutureLabsNG",
+    images: ["https://futurelabs.ng/images/seoImage.jpeg"],
   },
 };
 

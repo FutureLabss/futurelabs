@@ -27,11 +27,11 @@ ul.ul-style > li {
 }
 
 label {
-  @apply text-[#000] font-medium text-[22px] font-inter;
+  @apply text-[#000] font-medium  font-inter;
 }
 
 select {
-  @apply text-[24px] text-[#222D4BB2] font-[450] pr-[1.25rem];
+  @apply  text-[#222D4BB2] font-[450] pr-[1.25rem];
 }
 
 .faq-background {
@@ -94,15 +94,15 @@ select {
 }
 
 input.form-input {
-  @apply py-[18px] md:py-[22px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2] text-[24px];
+  @apply py-[10px] px-2 rounded-lg border-[1px] border-[#222D4B]   placeholder:text-[#222D4BB2];
 }
 
 label.form-label {
-  @apply text-[#000] font-medium  xl:text-[22px] font-inter;
+  @apply text-[#000]   font-inter;
 }
 
 select.form-select {
-  @apply py-[18px] md:py-[22px] px-[24px] rounded-lg border-[1px] border-[#222D4B] placeholder:text-[24px] font-[450] placeholder:text-[#222D4BB2] text-[24px] w-full;
+  @apply py-[10px] px-2 rounded-lg border-[1px] border-[#222D4B]   placeholder:text-[#222D4BB2]  w-full;
 }
 
 select.form-select option {
@@ -112,7 +112,7 @@ select.form-select option {
 }
 
 label.form-input {
-  @apply py-[18px] md:py-[22px] pl-[24px] rounded-lg border-[1px] border-[#222D4B] font-[450] text-[#222D4BB2] text-[24px];
+  @apply py-[10px] px-2 rounded-lg border-[1px] border-[#222D4B]  text-[#222D4BB2];
 }
 
 .slick-dots li button:before {

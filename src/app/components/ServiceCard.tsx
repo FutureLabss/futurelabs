@@ -4,16 +4,16 @@ import Link from "next/link";
 
 export default function ServiceCard() {
   return (
-    // <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-    <div className=" items-start w-full grid sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-6">
+    // Updated grid classes here
+    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {servicesData.map((service, index) => (
         <Link
           href={service?.href || ""}
           className={` ${
             service.href === undefined
               ? "hidden"
-              : "grid-item px-2 md:px-4 sm:px-4 pt-10 bg-cover bg-[#FFFFFF0F] rounded-[1.5rem] cursor-pointer border-2 border-transparent hover:border-2 hover:border-secondary-50 "
-          } `}
+              : "grid-item px-2 md:px-4 sm:px-4 pt-10 bg-cover bg-[#FFFFFF0F] rounded-[1.5rem] cursor-pointer border-2 border-transparent hover:border-2 hover:border-secondary-50"
+          }`}
           key={index}
         >
           <div className="max-w-[329px] w-full flex flex-col gap-2 ">

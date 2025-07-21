@@ -14,7 +14,7 @@ export default function LmsHero() {
         ></video>
         <div className="flex flex-col w-full md:max-w-[1130px]  mx-auto  mt-[20rem] mb-20 ">
           <h1 className="font-semibold text-[2rem] leading-8 w-full text-white">
-            Where You Journey to <br />
+            Where Your Journey to <br />
             <span className="text-[#F57F20]">Infinite Possibilities</span>{" "}
             <br />
             Begins.
@@ -29,7 +29,7 @@ export default function LmsHero() {
               type="button"
               className="font-semibold rounded-md bg-[#F57f20] px-12 py-3 text-white text-[0.8rem] flex items-center justify-center "
             >
-              <Link href="" passHref>
+              <Link href="https://futurelabs-lms.onrender.com/login" passHref>
                 Apply now
               </Link>
             </button>
