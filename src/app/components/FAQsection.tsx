@@ -1,8 +1,9 @@
 "use client";
-
+import dynamic from "next/dynamic";
 import { useStateAuthProvider } from "../context";
-import Accordion from "../ui/Accordion";
+// import Accordion from "../ui/Accordion"
 import Button from "../ui/Button";
+const Accordion = dynamic(() => import("../ui/Accordion"), { ssr: false });
 
 export default function FAQsection() {
   const context = useStateAuthProvider();

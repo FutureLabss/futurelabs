@@ -30,7 +30,8 @@ export default function ServiceCard() {
               alt={service.service}
               width={531}
               height={398}
-              className="h-auto w-full object-cover"
+              loading="lazy"
+              // className="h-auto w-full object-cover"
             />
           </div>
         </Link>

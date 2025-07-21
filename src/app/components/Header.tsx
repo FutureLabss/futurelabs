@@ -9,6 +9,13 @@ import Navigation from "@/app/components/Navigation";
 
 const HeaderImageSlider = dynamic(() => import("../ui/HeaderImageSlider"), {
   ssr: false,
+  loading: () => (
+    <div className="w-full h-[400px] flex items-center justify-center gap-5">
+      {Array(4).fill(
+        <div className="animate-pulse bg-gray-200/20 w-full h-full rounded-lg"></div>
+      )}
+    </div>
+  ),
 });
 const ImageGallerySwiper = dynamic(() => import("../ui/ImageGallerySwiper"), {
   ssr: false,
@@ -59,10 +66,10 @@ export default function Header() {
 
       <div className="text-center justify-center lg:mx-[5rem] flex flex-col gap-4 relative z-[5] px-[2.5rem] pb-[30px]">
         {/* Slider container */}
-        <div className="hidden sm:block">
+        <div className="hidden sm:block ">
           <HeaderImageSlider />
         </div>
-        <div className="block sm:hidden">
+        <div className="block sm:hidden ">
           <ImageGallerySwiper />
         </div>
 

@@ -1,7 +1,6 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
 import { pictureData } from "../../data/data";
-
 
 export default function HeaderImageSlider() {
   return (
@@ -15,12 +14,12 @@ export default function HeaderImageSlider() {
               width={288}
               height={321}
               className=" object-cover"
-            // style={{ objectFit: "cover" }}
+              loading="lazy"
+              quality={80}
             />
           </div>
         ))}
-        {/* Repeat images to create an infinite loop */}
       </div>
     </div>
-  )
+  );
 }
