@@ -57,6 +57,9 @@ export default function LmsHeader() {
             </p>
             <p className="border-l-2 py-2 sm:py-3 border-[#F57F20] flex items-center justify-center"></p>
             <button
+              type="button"
+              aria-label="Open sidebar menu"
+              role="button"
               onClick={toggleSidebar}
               className="cursor-pointer z-50 focus:outline-none"
             >

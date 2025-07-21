@@ -20,6 +20,9 @@ export default function TalentTabComponent() {
       <div className="flex justify-center my-6 md:my-12 space-x-4">
         {tabs.map((tab) => (
           <button
+            type="button"
+            aria-label={tab.label}
+            role="button"
             key={tab.id}
             className={`text-lg sm:text-lg px-2 py-1 md:px-5 md:py-2 rounded-md md:text-3xl font-semibold transition-all duration-300 ${
               activeTab === tab.id

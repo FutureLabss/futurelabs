@@ -31,6 +31,9 @@ function Navigation() {
       {/* Hamburger Button */}
       <div className="flex items-center gap-1 sm:gap-2 md:hidden">
         <button
+          type="button"
+          aria-label="Toggle sidebar"
+          role="button"
           onClick={handleToggleSidebar}
           className="cursor-pointer z-50 focus:outline-none"
         >
@@ -45,13 +48,20 @@ function Navigation() {
       {/* Desktop Buttons */}
       <div className="hidden md:flex md:flex-row gap-2 md:gap-5">
         <Link
+          aria-label="Alumni"
           href="/alumni"
+          role="link"
           className="text-secondary-default font-medium text-[14px] sm:text-[20px] font-manrope border border-secondary-default px-5 py-1 rounded"
         >
-          <button>Alumni</button>
+          Alumni
         </Link>
         <div className="text-white font-medium text-[14px] sm:text-[20px] font-manrope bg-secondary-default px-3 py-1 rounded">
-          <Link href="https://studio.futurelabs.ng" target="_blank">
+          <Link
+            aria-label="Studios"
+            role="link"
+            href="https://studio.futurelabs.ng"
+            target="_blank"
+          >
             Studios
           </Link>
         </div>

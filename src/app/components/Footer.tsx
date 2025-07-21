@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="flex  gap-6 flex-col lg:flex-row justify-between px-[20px] py-[20px] md:px-[40px] md:py-[40px]  xl:px-[80px] xl:py-[80px] ">
         <div className="flex gap-4 flex-col lg:max-w-[27.5rem] w-full ">
           <div>
-            <Image src={FutureLogo} alt="" width={100} height={100} />
+            <Image src={FutureLogo} alt="FutureLabs Logo" width={100} height={100} />
           </div>
           <p className="leading-[1.5rem] font-inter font-normal text-primary-light_dark">
             An innovative design agency with the passion to deliver exceptional

@@ -1,17 +1,16 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { navigation } from "./core/const/navdata";
-import { Menu, X } from 'lucide-react'
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Nav from "@/app/components/headcomponents/Nav";
 import { IoIosArrowDown } from "react-icons/io";
 
-
-export default function AppBarComponent(){
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    return(
-      <header className="bg-white w-full">
+export default function AppBarComponent() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  return (
+    <header className="bg-white w-full">
       <nav
         className="container mx-auto flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -23,6 +22,8 @@ export default function AppBarComponent(){
         <div className="flex lg:hidden">
           <button
             type="button"
+            aria-label="Open main menu"
+            role="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
             onClick={() => setMobileMenuOpen(true)}
           >
@@ -40,7 +41,7 @@ export default function AppBarComponent(){
                 >
                   {item.name}
                   <span className="mt-1">
-                    <IoIosArrowDown size={18}/>
+                    <IoIosArrowDown size={18} />
                   </span>
                 </Link>
                 <div
@@ -57,7 +58,6 @@ export default function AppBarComponent(){
                     </Link>
                   ))}
                 </div>
-
               </div>
             ) : (
               <Link
@@ -78,6 +78,8 @@ export default function AppBarComponent(){
             <Nav />
             <button
               type="button"
+              role="button"
+              aria-label="Close menu"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -182,7 +184,6 @@ export default function AppBarComponent(){
     //       </div>
     //     </div>
     //   </div>
-    // </header> 
-     
-    )
+    // </header>
+  );
 }

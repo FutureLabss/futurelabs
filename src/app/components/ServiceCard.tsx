@@ -30,7 +30,6 @@ export default function ServiceCard() {
               alt={service.service}
               width={531}
               height={398}
-              priority
               className="h-auto w-full object-cover"
             />
           </div>

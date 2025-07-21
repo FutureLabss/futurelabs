@@ -38,7 +38,12 @@ export default function TalentPool() {
                 href=""
                 className="flex items-center w-fit text-sm gap-2 rounded-3xl text-secondary-default py-1 pl-2 pr-4 bg-[#FDDEC7]"
               >
-                <button className="bg-secondary-default text-white py-1 px-2 rounded-3xl text-xs">
+                <button
+                  type="button"
+                  aria-label="New"
+                  role="button"
+                  className="bg-secondary-default text-white py-1 px-2 rounded-3xl text-xs"
+                >
                   New
                 </button>
                 <p className="grow text-xs md:text-[1rem]">

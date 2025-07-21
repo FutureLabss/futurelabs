@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  /* border: solid green 0.0625rem; */
-}
-
 html {
   scroll-behavior: smooth;
 }

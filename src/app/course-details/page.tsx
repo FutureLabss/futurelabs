@@ -84,6 +84,8 @@ const CoursePage = () => {
       <nav className="flex justify-end items-center p-6 bg-white">
         <div className="">
           <button
+            data-testid="toggle-sidebar-button"
+            type="button"
             onClick={toggleSidebar}
             className="cursor-pointer z-50 focus:outline-none md:mr-60"
           >
@@ -133,6 +135,7 @@ const CoursePage = () => {
           <Image
             src={work}
             alt="Course Banner"
+            priority
             style={{
               height: "300px",
               width: "100%",
@@ -248,7 +251,12 @@ const CoursePage = () => {
             <div className="text-center flex flex-col mt-10 md:mt-0 items-center justify-center">
               <h2 className="text-xl font-bold">Are you ready to learn?</h2>
               <p className="text-gray-600">Let’s get started</p>
-              <button className="mt-4 px-12 py-2 bg-[#212C4A] text-white rounded-xl">
+              <button
+                role="button"
+                type="button"
+                aria-label="Apply now"
+                className="mt-4 px-12 py-2 bg-[#212C4A] text-white rounded-xl"
+              >
                 Apply now
               </button>
             </div>

@@ -45,7 +45,12 @@ const PricingCard: React.FC<PricingCardProps> = ({
       </ul>
 
       {/* CTA Button */}
-      <button className="mt-6 w-full bg-[#f9e7d8] text-[#F57F20] font-semibold py-2 rounded-xl hover:bg-orange-300">
+      <button
+        role="button"
+        aria-label="Choose plan"
+        type="button"
+        className="mt-6 w-full bg-[#f9e7d8] text-[#F57F20] font-semibold py-2 rounded-xl hover:bg-orange-300"
+      >
         Choose plan
       </button>
     </div>

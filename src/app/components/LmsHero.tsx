@@ -24,6 +24,8 @@ export default function LmsHero() {
           </p>
           <div className="mt-3">
             <button
+              role="button"
+              aria-label="Apply now"
               type="button"
               className="font-semibold rounded-md bg-[#F57f20] px-12 py-3 text-white text-[0.8rem] flex items-center justify-center "
             >

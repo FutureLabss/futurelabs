@@ -1,14 +1,24 @@
 "use client";
+import dynamic from "next/dynamic";
 import Button from "@/app/ui/Button";
 import Image from "next/image";
 import IntroBg from "@/app/assets/icons/intro-bg.png";
 import CompanyLogos from "../assets/logo/company-logos.png";
-import HeaderCard from "./headcomponents/HeaderCard";
-import ContactForm from "../ui/ContactForm";
 import { useStateAuthProvider } from "../context";
-import HeaderImageSlider from "../ui/HeaderImageSlider";
-import ImageGallerySwiper from "../ui/ImageGallerySwiper";
 import Navigation from "@/app/components/Navigation";
+
+const HeaderImageSlider = dynamic(() => import("../ui/HeaderImageSlider"), {
+  ssr: false,
+});
+const ImageGallerySwiper = dynamic(() => import("../ui/ImageGallerySwiper"), {
+  ssr: false,
+});
+const HeaderCard = dynamic(() => import("./headcomponents/HeaderCard"), {
+  ssr: false,
+});
+const ContactForm = dynamic(() => import("../ui/ContactForm"), {
+  ssr: false,
+});
 
 export default function Header() {
   const context = useStateAuthProvider();
@@ -57,17 +67,18 @@ export default function Header() {
         </div>
 
         <div className="flex justify-center flex-col gap-2 ">
-          <p className="text-size-16 text-center leading-[24px] font-normal text-[#7F94CB] ">
+          <p className="text-lg text-center leading-[24px] py-2 font-normal text-[#7F94CB] ">
             Where Futurist work
           </p>
-          <div className="text-center py-5 sm:py-0 mx-auto">
+          <div className="text-center md:py-3 sm:py-0 mx-auto">
             <Image
               src={CompanyLogos}
               alt="company logos"
+              priority
               width={700}
               height={300}
               quality={100}
-              className="w-auto"
+              className="w-full h-full"
             />
             {/* <Image
               src={RapidRiver}
@@ -83,9 +94,10 @@ export default function Header() {
         <Image
           src={IntroBg}
           alt="hero image"
-          width={300}
-          height={300}
-          className="w-full h-[190px] sm:h-[150px] md:h-[200px] lg:h-[290px] absolute left-0 bottom-0 right-0 z-[-1]"
+          priority
+          width={640}
+          height={427}
+          className="w-full h-[50%] md:h-[90%] absolute left-0 bottom-0 right-0 z-[-1]"
         />
       </div>
 
