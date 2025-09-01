@@ -2,16 +2,11 @@
 import Image from "next/image";
 import nsikan from "@/app/assets/images/nsikan.jpg";
 import dev from "@/app/assets/images/dev.jpg";
-import abraham from "@/app/assets/images/abraham.jpg";
+
 
 import { courses } from "@/data/courses-data";
 import { Course } from "@/app/const/courses";
-import frame1 from "@/app/assets/images/Frame1.jpg";
-import frame2 from "@/app/assets/images/Frame2.jpg";
-import frame3 from "@/app/assets/images/Frame3.jpg";
-import frame4 from "@/app/assets/images/Frame4.jpg";
-import frame5 from "@/app/assets/images/Frame5.jpg";
-import frame6 from "@/app/assets/images/Frame6.jpg";
+
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
 import TestimonialCarousel from "./TestimonialsCarousel";
