@@ -140,3 +140,5 @@ export default function Footer() {
     </div>
   );
 }
+
+//privacy-policy
