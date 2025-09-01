@@ -112,7 +112,7 @@ export default function PolicyPage() {
         </section>
 
         {/* 3. Data Processing Agreement */}
-        <section className="mb-10">
+        {/* <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-3">
             3. Data Processing Agreement (DPA)
           </h2>
@@ -134,10 +134,10 @@ export default function PolicyPage() {
             </li>
             <li>Processor must delete or return data after services end.</li>
           </ul>
-        </section>
+        </section> */}
 
         {/* 4. Data Subject Rights Request Form */}
-        <section className="mb-10">
+        {/* <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-3">
             4. Data Subject Rights Request Form
           </h2>
@@ -150,10 +150,10 @@ export default function PolicyPage() {
             <li>ID verification</li>
             <li>Date & Signature</li>
           </ul>
-        </section>
+        </section> */}
 
         {/* 5. Data Breach Management Procedure */}
-        <section className="mb-10">
+        {/* <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-3">
             5. Data Breach Management Procedure
           </h2>
@@ -165,10 +165,10 @@ export default function PolicyPage() {
             <li>Notify affected individuals if high risk exists.</li>
             <li>Review lessons and update security measures.</li>
           </ol>
-        </section>
+        </section> */}
 
         {/* 6. NDPA Compliance Brochure */}
-        <section className="mb-10">
+        {/* <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-3">
             6. NDPA Compliance Brochure
           </h2>
@@ -202,7 +202,7 @@ export default function PolicyPage() {
           <p>
             <em>FutureLabs: Building trust through responsible data use.</em>
           </p>
-        </section>
+        </section> */}
       </main>
     </section>
   );
