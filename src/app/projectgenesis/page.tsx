@@ -155,7 +155,7 @@ export default function ProjectGenesisPage() {
 
           <div className="mb-8 animate-fade-in animation-delay-400">
             <p className="text-md mb-6">
-              Heads up: We only have 40 spots, and they go fast.
+              Heads up: We only have 20 spots, and they go fast.
             </p>
             <div className="flex justify-center space-x-4 mb-8">
               {[
