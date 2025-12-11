@@ -43,7 +43,7 @@ export default function ProjectGenesisPage() {
     setMounted(true);
 
     const calculateTimeLeft = () => {
-      const deadline = new Date("July 17, 2025 23:59:59").getTime();
+      const deadline = new Date("January 05, 2026 23:59:59").getTime();
       const now = new Date().getTime();
       const difference = deadline - now;
 
@@ -329,10 +329,10 @@ export default function ProjectGenesisPage() {
               <Card className="mb-6 hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-3 mb-4">
-                    <Calendar className="w-6 w-6 text-orange-600" />
+                    <Calendar className="w-6 text-orange-600" />
                     <div>
                       <h3 className="font-bold text-lg">Application Close</h3>
-                      <p className="text-gray-600">17th July, 2025</p>
+                      <p className="text-gray-600">05th January, 2026</p>
                     </div>
                   </div>
                 </CardContent>
@@ -423,12 +423,12 @@ export default function ProjectGenesisPage() {
                   <ul>
                     <li>
                       <p className="font-bold">
-                        Apply between June 17 and July 17.
+                        Apply between December 11 and January 05.
                       </p>
                     </li>
                     <li>
                       <p className="font-bold">
-                        Heads up: We only have 40 spots, and they go fast.
+                        Heads up: We only have 20 spots, and they go fast.
                       </p>
                     </li>
                   </ul>
