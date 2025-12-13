@@ -154,6 +154,7 @@ import serviceimg2 from "../app/assets/images/service-img2.png";
 import videorecord from "../app/assets/images/videorecord.png";
 import serviceimg5 from "../app/assets/images/service-img5.png";
 import serviceimg6 from "../app/assets/images/service-img6.png";
+import serviceimg7 from "../app/assets/images/service-img7.jpg"
 import talentpool from "../app/assets/images/talentpool.png";
 
 export const servicesData = [
@@ -192,7 +193,7 @@ export const servicesData = [
   {
     service: "Project Genesis",
     description: "Learn the skills you need for the jobs of today.",
-    src: serviceimg5,
+    src: serviceimg7,
     href: "/projectgenesis",
   },
   {
