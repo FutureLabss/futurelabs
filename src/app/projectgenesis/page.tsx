@@ -43,7 +43,7 @@ export default function ProjectGenesisPage() {
     setMounted(true);
 
     const calculateTimeLeft = () => {
-      const deadline = new Date("January 05, 2026 23:59:59").getTime();
+      const deadline = new Date("January 30, 2026 23:59:59").getTime();
       const now = new Date().getTime();
       const difference = deadline - now;
 
@@ -423,7 +423,7 @@ export default function ProjectGenesisPage() {
                   <ul>
                     <li>
                       <p className="font-bold">
-                        Apply between December 11 and January 05.
+                        Apply between January 20 and January 30.
                       </p>
                     </li>
                     <li>
