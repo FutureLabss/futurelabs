@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Manrope, Poppins } from "next/font/google";
 import "./globals.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import StateContextProvider from "../app/context";
 
 const inter = Inter({
