@@ -48,7 +48,7 @@ export default function AlumniForum() {
                 aria-label="linkedin url"
                 href={person.linkedin}
                 target="_blank"
-                className="inline-flex items-center justify-center w-10 h-10"
+                className="relative inline-flex items-center justify-center w-10 h-10"
               >
                 <Image
                   src={linkedin}
