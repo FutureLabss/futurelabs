@@ -83,7 +83,7 @@ export const alumni:IAlumni[] = [
       name: "Utibe Akaninyene",
       image: utibe,
       linkedin: "https://www.linkedin.com/in/utibeabasi-akaninyene-09199722a/",
-      role: "Product Designer, UI/UX Designe"
+      role: "Software Engineer"
     },
     {
       name: "EnoAbasi Asuquo",
