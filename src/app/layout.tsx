@@ -1,28 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope, Poppins } from "next/font/google";
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import StateContextProvider from "../app/context";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  display: "swap",
-  weight: ["400", "700"],
-});
 
 export const metadata: Metadata = {
   title: "FutureLabs | Empowering Africa’s Tech Talent",
@@ -126,7 +106,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${manrope.variable} ${poppins.variable} font-sans mx-auto  w-full `}
+        className="font-sans mx-auto w-full"
       >
         <StateContextProvider>{children}</StateContextProvider>
       </body>
