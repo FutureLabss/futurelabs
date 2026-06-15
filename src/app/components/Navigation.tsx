@@ -51,20 +51,28 @@ function Navigation() {
           aria-label="Alumni"
           href="/alumni"
           role="link"
-          className="text-secondary-default font-medium text-[14px] sm:text-[20px] font-manrope border border-secondary-default px-5 py-1 rounded"
+          className="text-secondary-default font-medium text-[14px] sm:text-[20px] font-manrope border border-secondary-default px-5 py-1 rounded hover:bg-secondary-default hover:text-white hover:scale-105 hover:shadow-md active:scale-95 transition-all duration-300 ease-in-out text-center"
         >
           Alumni
         </Link>
-        <div className="text-white font-medium text-[14px] sm:text-[20px] font-manrope bg-secondary-default px-3 py-1 rounded">
-          <Link
-            aria-label="Studios"
-            role="link"
-            href="https://studio.futurelabs.ng"
-            target="_blank"
-          >
-            Studios
-          </Link>
-        </div>
+        <Link
+          aria-label="Academy"
+          href="https://ai.futurelabs.ng"
+          target="_blank"
+          role="link"
+          className="text-secondary-default font-medium text-[14px] sm:text-[20px] font-manrope border border-secondary-default px-5 py-1 rounded hover:bg-secondary-default hover:text-white hover:scale-105 hover:shadow-md active:scale-95 transition-all duration-300 ease-in-out text-center"
+        >
+          Academy
+        </Link>
+        <Link
+          aria-label="Studios"
+          role="link"
+          href="https://studio.futurelabs.ng"
+          target="_blank"
+          className="text-white font-medium text-[14px] sm:text-[20px] font-manrope bg-secondary-default px-5 py-1 rounded "
+        >
+          Studios
+        </Link>
       </div>
 
       {/* overlay */}
@@ -84,10 +92,18 @@ function Navigation() {
         <div className="flex flex-col w-full gap-4 p-2 text-center">
           <Link
             href="/alumni"
-            className="text-secondary-default font-medium text-[16px] font-manrope border border-secondary-default px-5 py-2 rounded"
+            className="text-secondary-default font-medium text-[16px] font-manrope border border-secondary-default px-5 py-2 rounded hover:bg-secondary-default hover:text-white active:scale-95 transition-all duration-300 ease-in-out"
             onClick={handleToggleSidebar}
           >
             Alumni
+          </Link>
+          <Link
+            href="https://ai.futurelabs.ng"
+            target="_blank"
+            className="text-secondary-default font-medium text-[16px] font-manrope border border-secondary-default px-5 py-2 rounded hover:bg-secondary-default hover:text-white active:scale-95 transition-all duration-300 ease-in-out"
+            onClick={handleToggleSidebar}
+          >
+            Academy
           </Link>
           <Link
             href="https://studio.futurelabs.ng"
