@@ -42,7 +42,7 @@ export default function Header() {
       <div className="flex flex-col gap-10">
         <div className="text-center flex flex-col gap-4 px-[20px]">
           <h1
-            className="text-2xl font-medium leading-[32px] sm:text-3xl md:text-4xl lg:text-[3rem] xl:text-size-61 text-center md:leading-[48px]
+            className="text-2xl font-semibold leading-[32px] sm:text-3xl md:text-4xl lg:text-[3rem] xl:text-size-61 text-center md:leading-[48px]
            mx-auto lg:leading-[60px] xl:leading-[72px] text-primary-default w-full 
            lg:max-w-[1113px]"
           >
@@ -127,7 +127,7 @@ export default function Header() {
           </div>
 
           {/* Background overlay */}
-          <div className="w-full h-full fixed bg-[#00000026] transition-all duration-1000 opacity-70 top-0 left-0 right-0 bottom-0 z-[10]"></div>
+          <div className="w-full h-full fixed bg-black/60 backdrop-blur-sm top-0 left-0 right-0 bottom-0 z-[10]"></div>
         </>
       )}
     </header>
