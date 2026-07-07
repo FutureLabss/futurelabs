@@ -1,6 +1,6 @@
 "use client";
-import { createContext, useContext } from "react";
-import { useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { FormDataProps } from "@/app/types/types";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -32,6 +32,12 @@ export default function StateContextProvider({ children }: ProviderProps) {
   const [linkIndex, setLinkIndex] = useState<number | undefined>(undefined);
   const [showForm, setShowForm] = useState<boolean>(false);
   const [showPayment, setShowPayment] = useState<boolean>(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setShowForm(false);
+    setShowPayment(false);
+  }, [pathname]);
   const [formData, setFormData] = useState<FormDataProps>({
     first_name: "",
     surname: "",

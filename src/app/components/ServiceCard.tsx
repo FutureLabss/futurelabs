@@ -14,6 +14,7 @@ export default function ServiceCard() {
               ? "hidden"
               : "grid-item px-2 md:px-4 sm:px-4 pt-10 bg-cover bg-[#FFFFFF0F] rounded-[1.5rem] cursor-pointer border-2 border-transparent hover:border-2 hover:border-secondary-50"
           }`}
+          target="_blank"
           key={index}
         >
           <div className="max-w-[329px] w-full flex flex-col gap-2 ">
