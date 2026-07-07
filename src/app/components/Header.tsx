@@ -11,9 +11,12 @@ const HeaderImageSlider = dynamic(() => import("../ui/HeaderImageSlider"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-[400px] flex items-center justify-center gap-5">
-      {Array(4).fill(
-        <div className="animate-pulse bg-gray-200/20 w-full h-full rounded-lg"></div>
-      )}
+      {Array.from({ length: 4 }).map((_, index) => (
+        <div
+          key={index}
+          className="animate-pulse bg-gray-200/20 w-full h-full rounded-lg"
+        ></div>
+      ))}
     </div>
   ),
 });
