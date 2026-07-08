@@ -149,7 +149,7 @@ export const imageGallery = [
   },
 ];
 
-import serviceimg1 from "../app/assets/images/service-img1.png";
+// import serviceimg1 from "../app/assets/images/service-img1.png";
 import serviceimg2 from "../app/assets/images/service-img2.png";
 import videorecord from "../app/assets/images/videorecord.png";
 import serviceimg5 from "../app/assets/images/service-img5.png";
