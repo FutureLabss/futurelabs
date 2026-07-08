@@ -167,14 +167,7 @@ export const servicesData = [
     href: "/academy",
   },
 
-  {
-    id: "service-1",
-    service: "Custom Web and Mobile Solutions",
-    description:
-      "Our software solution is specially designed for startups looking to build minimum viable products  for their ideas quickly",
-    src: serviceimg1,
-    href: "https://studio.futurelabs.ng",
-  },
+
 
   {
     id: "service-3",
