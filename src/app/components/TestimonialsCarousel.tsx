@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ButtonG } from "@/app/ui/ButtonG";
@@ -48,21 +48,21 @@ export default function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % blogData.length);
     setTimeout(() => setIsAnimating(false), 300);
-  };
+  }, [isAnimating]);
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + blogData.length) % blogData.length
     );
     setTimeout(() => setIsAnimating(false), 300);
-  };
+  }, [isAnimating]);
 
   // Auto-advance the carousel
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function TestimonialCarousel() {
       goToNext();
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [goToNext]);
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-12">
