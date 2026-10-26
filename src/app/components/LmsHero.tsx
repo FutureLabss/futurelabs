@@ -29,7 +29,7 @@ export default function LmsHero() {
               type="button"
               className="font-semibold rounded-md bg-[#F57f20] px-12 py-3 text-white text-[0.8rem] flex items-center justify-center "
             >
-              <Link href="https://futurelabs-lms.onrender.com/login" passHref>
+              <Link href="https://admin.futurelabs.ng/login" passHref>
                 Apply now
               </Link>
             </button>
