@@ -83,7 +83,7 @@ export default function LmsHeader() {
         <div className="p-8 mt-20">
           <ul className="space-y-8">
             <Link
-              href="https://futurelabs-lms.onrender.com/login"
+              href="https://admin.futurelabs.ng/login"
               target="_blank"
             >
               <li className="text-[1.1rem] font-semibold text-[#F57F20] cursor-pointer hover:text-[#F57F20] transition-colors">
