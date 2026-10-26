@@ -143,7 +143,7 @@ const CoursePage = () => {
                   Home
                 </li>
               </Link>
-              {/* <Link href="https://futurelabs-lms.onrender.com/login">
+              {/* <Link href="https://admin.futurelabs.ng/login">
                 <li className="text-[1.1rem] font-semibold text-gray-400 cursor-pointer hover:text-[#F57F20] transition-colors">
                   Login
                 </li>
@@ -287,7 +287,7 @@ const CoursePage = () => {
               <h2 className="text-xl font-bold">Are you ready to learn?</h2>
               <p className="text-gray-600">Let’s get started</p>
               <Link
-                href="https://futurelabs-lms.onrender.com/login"
+                href="https://admin.futurelabs.ng/login"
                 target="_blank"
               >
                 <button className="mt-4 px-12 py-2 bg-[#F57F20] text-white rounded-xl">
